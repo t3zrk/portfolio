@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AJU KRISHNA M K — Graphic Designer</title>
+<meta name="description" content="AJU KRISHNA M K — graphic designer, visual storyteller, AI experimenter and creative technologist." />
+<style>
+  :root{
+    --bg:#f4f0e8;
+    --ink:#171717;
+    --accent:#8f1402;
+    --blue:#3855ff;
+    --yellow:#f3d34a;
+    --paper:#fffdf8;
+    --green:#b9df9c;
+    --line:rgba(23,23,23,.15);
+    --shadow:10px 10px 0 rgba(23,23,23,.12);
+    --radius:28px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden;cursor:none}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit}
+  .noise{position:fixed;inset:0;pointer-events:none;opacity:.055;background-image:url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"%3E%3Cfilter id="n"%3E%3CfeTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23n)" opacity=".35"/%3E%3C/svg%3E');z-index:30}
+  .wrap{width:min(1240px,92vw);margin:auto}
+  header{position:sticky;top:14px;z-index:40;padding:14px 0;pointer-events:none}
+  nav{display:flex;justify-content:space-between;align-items:center;background:rgba(244,240,232,.9);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:999px;padding:10px 12px 10px 18px;box-shadow:0 4px 0 rgba(23,23,23,.06);pointer-events:auto}
+  .logo{font-weight:900;letter-spacing:-.04em}
+  .navlinks{display:flex;gap:6px;align-items:center}
+  .navlinks a,.navlinks button{border:0;background:transparent;padding:10px 13px;border-radius:999px;cursor:none;font-weight:800}
+  .navlinks a:hover,.navlinks button:hover{background:#171717;color:#fff}
+
+  .hero{min-height:88vh;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;padding:56px 0 80px;position:relative}
+  .hero h1{font-size:clamp(4.5rem,10vw,9.4rem);line-height:.82;letter-spacing:-.085em;margin:0 0 22px;max-width:900px}
+  .hero h1 span{color:var(--accent);font-style:italic}
+  .hero-copy{font-size:clamp(1.05rem,1.7vw,1.35rem);line-height:1.35;max-width:680px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase;margin-bottom:18px}
+  .dot{width:10px;height:10px;background:var(--accent);border-radius:50%;display:inline-block;box-shadow:0 0 0 6px rgba(143,20,2,.12)}
+  .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 18px;border:2px solid var(--ink);border-radius:999px;font-weight:900;box-shadow:5px 5px 0 var(--ink);transition:transform .18s,box-shadow .18s;background:var(--paper);cursor:none}
+  .btn:hover{transform:translate(4px,4px);box-shadow:1px 1px 0 var(--ink)}
+  .btn.dark{background:var(--ink);color:#fff}
+
+  .hero-art{min-height:520px;position:relative;display:grid;place-items:center}
+  .blob{position:absolute;width:330px;height:330px;border-radius:40% 60% 55% 45% / 45% 40% 60% 55%;background:var(--yellow);border:3px solid var(--ink);transform:rotate(-12deg);box-shadow:var(--shadow);animation:wobble 7s ease-in-out infinite}
+  @keyframes wobble{0%,100%{border-radius:40% 60% 55% 45% / 45% 40% 60% 55%;transform:rotate(-12deg) scale(1)}50%{border-radius:52% 48% 40% 60% / 58% 34% 66% 42%;transform:rotate(-4deg) scale(1.04)}}
+  .sticker{position:absolute;background:var(--paper);border:3px solid var(--ink);padding:14px 16px;border-radius:18px;font-weight:900;box-shadow:8px 8px 0 var(--ink);z-index:3}
+  .sticker.one{top:8%;left:5%;rotate:-8deg}.sticker.two{right:3%;top:17%;background:var(--blue);color:#fff;rotate:7deg}.sticker.three{bottom:7%;left:10%;background:var(--accent);color:#fff;rotate:-12deg}.sticker.four{bottom:16%;right:7%;rotate:5deg}
+  .face{width:230px;height:280px;position:relative;z-index:2;background:var(--paper);border:4px solid var(--ink);border-radius:52% 48% 45% 55% / 38% 36% 64% 62%;display:flex;align-items:center;justify-content:center;box-shadow:14px 14px 0 var(--ink);transition:transform .35s ease}
+  .face::before,.face::after{content:"";position:absolute;top:104px;width:36px;height:14px;background:var(--ink);border-radius:999px}.face::before{left:52px;rotate:8deg}.face::after{right:52px;rotate:-8deg}
+  .mouth{position:absolute;bottom:72px;width:48px;height:23px;border-bottom:5px solid var(--ink);border-radius:0 0 50px 50px}
+  .hair{position:absolute;top:-8px;left:15px;right:15px;height:120px;background:var(--ink);border-radius:60% 60% 30% 30%;transform:rotate(2deg)}
+  .ear{position:absolute;width:26px;height:40px;background:var(--paper);border:4px solid var(--ink);top:116px;border-radius:50%}.ear.l{left:-15px}.ear.r{right:-15px}
+
+  /* Playful cursor */
+  .cursor{position:fixed;left:0;top:0;width:26px;height:26px;border:2px solid var(--ink);border-radius:50%;pointer-events:none;z-index:999;mix-blend-mode:difference;transform:translate(-50%,-50%);transition:width .18s ease,height .18s ease,background .18s ease,border-radius .18s ease,transform .08s linear}
+  .cursor-dot{position:fixed;left:0;top:0;width:7px;height:7px;background:#fff;border-radius:50%;pointer-events:none;z-index:1000;mix-blend-mode:difference;transform:translate(-50%,-50%)}
+  .cursor-label{position:fixed;left:0;top:0;pointer-events:none;z-index:998;font-size:10px;font-weight:900;letter-spacing:.06em;opacity:0;transform:translate(18px,18px) rotate(-8deg);transition:opacity .2s}
+  body.hovering .cursor{width:56px;height:56px;background:#fff;border-radius:16px;transform:translate(-50%,-50%) rotate(8deg)}
+  body.hovering .cursor-label{opacity:1}
+  .trail{position:fixed;width:8px;height:8px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:998;opacity:.55;mix-blend-mode:multiply}
+
+  .ticker{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);overflow:hidden;white-space:nowrap;background:var(--accent);color:#fff}
+  .ticker-track{display:inline-block;padding:14px 0;animation:marquee 22s linear infinite;font-size:1rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+  @keyframes marquee{to{transform:translateX(-50%)}}
+
+  section{padding:100px 0}
+  .section-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:32px}
+  .section-head h2{font-size:clamp(2.8rem,6vw,5.2rem);letter-spacing:-.07em;line-height:.9;margin:0}
+  .section-head p{max-width:470px;line-height:1.45;margin:0}
+
+  .projects{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+  .project{position:relative;border:3px solid var(--ink);border-radius:var(--radius);overflow:hidden;min-height:420px;background:var(--paper);box-shadow:var(--shadow);transform:translateY(0);transition:transform .2s ease;cursor:none}
+  .project:hover{transform:translateY(-8px)}
+  .project:nth-child(1){grid-column:span 5;min-height:520px}.project:nth-child(2){grid-column:span 4}.project:nth-child(3){grid-column:span 3;min-height:520px}
+  .project-visual{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden}
+  .visual-a{background:linear-gradient(135deg,#111 0 49%,#8f1402 49% 100%)}.visual-b{background:#d7d4c8}.visual-c{background:#1d47ff}.visual-d{background:#efe8db}
+  .type{font-weight:900;letter-spacing:-.08em;line-height:.8;font-size:clamp(4rem,9vw,8rem);color:#fff;text-transform:uppercase;transform:rotate(-7deg);text-align:center}.type.dark{color:var(--ink)}
+  .project-info{position:absolute;left:16px;right:16px;bottom:16px;display:flex;justify-content:space-between;gap:14px;align-items:end}
+  .tag{display:inline-flex;padding:8px 10px;border-radius:999px;border:2px solid var(--ink);background:rgba(255,253,248,.92);font-size:.76rem;font-weight:900}
+  .project h3{margin:8px 0 0;font-size:1.2rem;max-width:520px}.arrow{width:50px;height:50px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;background:var(--paper);font-size:1.35rem;flex:none}
+  .work-note{margin-top:24px;border-left:4px solid var(--accent);padding:14px 18px;background:rgba(255,253,248,.55);border-radius:0 18px 18px 0;max-width:760px;font-weight:700;line-height:1.45}
+
+  .about{display:grid;grid-template-columns:.7fr 1.3fr;gap:48px;align-items:start}.about-card{background:var(--ink);color:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}.about-card .big{font-size:5rem;font-weight:900;letter-spacing:-.08em;line-height:.8}.about-card p{margin-top:28px;line-height:1.45;color:#ddd}
+  .about-copy{font-size:clamp(1.25rem,2.4vw,2rem);line-height:1.15;letter-spacing:-.03em}.about-copy p{margin-top:0}.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.pill{border:2px solid var(--ink);padding:10px 14px;border-radius:999px;font-weight:800;background:var(--paper)}
+
+
+  .micro-game{position:absolute;right:18%;top:48%;width:54px;height:54px;border-radius:50%;border:3px solid var(--ink);background:var(--accent);color:#fff;font-weight:900;display:grid;place-items:center;cursor:none;box-shadow:7px 7px 0 var(--ink);z-index:5;transition:transform .18s ease;animation:floatBug 3.8s ease-in-out infinite}
+  .micro-game:hover{transform:scale(1.15) rotate(12deg)}
+  .micro-score{position:absolute;right:7%;top:58%;font-size:.72rem;font-weight:900;letter-spacing:.08em;background:var(--paper);border:2px solid var(--ink);padding:7px 9px;border-radius:999px;rotate:5deg;z-index:5}
+  @keyframes floatBug{0%,100%{translate:0 0}50%{translate:-10px -8px}}
+  .studio-art{margin-top:26px;border:3px solid var(--ink);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#111}
+  .studio-art img{display:block;width:100%;height:auto}
+  .hobbies{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:stretch}.hobby-main,.hobby-stack{border:3px solid var(--ink);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.hobby-main{background:var(--yellow);padding:32px;position:relative;min-height:470px}.hobby-main h3{font-size:clamp(2.8rem,5vw,5.5rem);line-height:.88;letter-spacing:-.08em;margin:0;max-width:780px}.hobby-main p{max-width:640px;font-size:1.18rem;line-height:1.45;margin-top:28px}.orbit-note{position:absolute;right:22px;bottom:22px;width:150px;height:150px;border:3px dashed var(--ink);border-radius:50%;display:grid;place-items:center;text-align:center;font-size:.75rem;font-weight:900;rotate:12deg}.hobby-stack{display:grid;grid-template-rows:1fr 1fr}.hobby-card{padding:28px;background:var(--paper);position:relative}.hobby-card:nth-child(2){background:var(--green)}.hobby-card h4{margin:0 0 12px;font-size:1.9rem;letter-spacing:-.05em}.hobby-card p{margin:0;max-width:470px;line-height:1.45}.hobby-icon{position:absolute;right:22px;bottom:12px;font-size:4.5rem;font-weight:900;opacity:.14;rotate:-10deg}
+
+  .ideas-teaser{border:3px solid var(--ink);border-radius:var(--radius);padding:28px;background:var(--blue);color:#fff;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end}.ideas-teaser h3{font-size:clamp(2.5rem,5vw,5rem);line-height:.9;letter-spacing:-.08em;margin:0}.ideas-teaser p{max-width:610px;line-height:1.45}.ideas-btn{background:#fff;color:#111;box-shadow:5px 5px 0 rgba(255,255,255,.25)}
+
+  .contact{background:var(--ink);color:#fff;border-radius:48px;padding:50px;position:relative;overflow:hidden}.contact h2{font-size:clamp(3rem,8vw,7rem);letter-spacing:-.08em;line-height:.85;margin:0 0 22px;max-width:850px}.contact p{max-width:600px;color:#ddd;font-size:1.1rem;line-height:1.45}.contact .orbit{position:absolute;right:4%;top:6%;width:min(320px,28vw);aspect-ratio:1;display:grid;place-items:center;z-index:1;pointer-events:none;opacity:.95}.contact .orbit svg{width:100%;height:100%;overflow:visible}.contact .orbit circle{fill:none;stroke:rgba(255,255,255,.34);stroke-width:3;stroke-dasharray:7 7}.contact .orbit text{fill:#fff;font-size:12px;font-weight:900;letter-spacing:.22em;text-transform:uppercase}.contact .orbit .orbit-text{transform-origin:50% 50%;animation:orbitText 14s linear infinite}.contact .orbit .orbit-star{fill:#fff;filter:drop-shadow(0 0 12px rgba(255,255,255,.22))}.contact .orbit .orbit-dot{fill:#fff;opacity:.9}@keyframes orbitText{to{transform:rotate(360deg)}}
+  /* Contact: preserve the dark card while keeping links legible and aligned. */
+  .contact{isolation:isolate;min-height:430px;padding:clamp(30px,5vw,60px);}
+  .contact > .eyebrow,.contact > h2,.contact > p,.contact > .cta-row{position:relative;z-index:2;}
+  .contact > h2{max-width:min(790px,78%);font-size:clamp(3rem,6.5vw,6.25rem);line-height:.96;overflow-wrap:break-word;}
+  .contact > p{max-width:min(650px,75%);}
+  .contact .cta-row{align-items:center;max-width:100%;}
+  .contact .btn{background:var(--paper);color:var(--ink);border-color:var(--paper);box-shadow:5px 5px 0 rgba(255,255,255,.21);cursor:none;max-width:100%;overflow-wrap:anywhere;text-align:center;justify-content:center;}
+  .contact .btn:hover{background:var(--yellow);border-color:var(--yellow);box-shadow:1px 1px 0 rgba(255,255,255,.21);}
+  .contact .orbit{z-index:1;pointer-events:none;}
+  @media(max-width:900px){.contact > h2,.contact > p{max-width:100%;}.contact .orbit{opacity:.18;right:-110px;top:5%;}}
+  @media(max-width:600px){.contact{padding:30px 22px;min-height:auto;}.contact h2{font-size:clamp(2.55rem,11vw,4rem);line-height:1;}.contact .cta-row{flex-direction:column;align-items:stretch;}.contact .btn{cursor:pointer;font-size:clamp(.8rem,3.3vw,1rem);padding:14px 10px;}.contact .orbit{display:none;}}
+  footer{display:flex;justify-content:space-between;gap:20px;padding:30px 0 60px;font-size:.9rem}.smalllinks{display:flex;gap:16px}
+
+  @media (max-width:900px){
+    body{cursor:auto}.cursor,.cursor-dot,.cursor-label,.trail{display:none}.hero{grid-template-columns:1fr}.hero-art{min-height:420px}.project,.project:nth-child(n){grid-column:span 12;min-height:420px}.micro-game{cursor:pointer}.about,.hobbies{grid-template-columns:1fr}.lab{grid-template-columns:1fr}.ideas-teaser{grid-template-columns:1fr}.contact{padding:34px;border-radius:32px}.contact .orbit{opacity:.4;right:-70px}.navlinks a:not(:last-child){display:none}
+  }
+  @media (max-width:600px){
+    header{top:8px}.hero{padding-top:30px}.hero h1{font-size:clamp(4rem,18vw,7rem)}.hero-art{min-height:350px}.blob{width:260px;height:260px}.face{width:180px;height:220px}.sticker{font-size:.8rem;padding:10px 11px}.section-head{flex-direction:column;align-items:flex-start}section{padding:75px 0}.contact h2{font-size:3.5rem}.about-card .big{font-size:4rem}footer{flex-direction:column}.smalllinks{flex-wrap:wrap}.hobby-main{min-height:420px}
+  }
+
+  /* Mobile navigation remains usable instead of hiding every menu link. */
+  @media(max-width:900px){
+    nav{flex-wrap:wrap;gap:8px;border-radius:22px;align-items:flex-start;}
+    .navlinks{width:100%;display:flex;flex-wrap:wrap;gap:2px 4px;}
+    .navlinks a:not(:last-child){display:inline-flex;}
+    .navlinks a,.navlinks button{font-size:.78rem;padding:9px 10px;cursor:pointer;}
+    .navlinks button{margin-left:auto;}
+  }
+  @media(max-width:600px){nav{padding:12px 14px;}.navlinks a,.navlinks button{font-size:.73rem;padding:8px 9px;}}
+  .project-visual.media-cover{background:#111}.project-visual.media-cover img{width:100%;height:100%;object-fit:cover;object-position:center 30%;transition:transform .32s ease}.project:hover .media-cover img{transform:scale(1.035)}.project:has(.media-cover) .project-info{background:linear-gradient(transparent,rgba(0,0,0,.85) 20%);left:0;right:0;bottom:0;padding:42px 17px 17px;color:white}.project:has(.media-cover) .project-info .tag{background:#fffdf8;color:#171717}.project:has(.media-cover) .project-info h3{font-size:clamp(1rem,1.5vw,1.38rem);line-height:1.2}.project:has(.media-cover) .project-info h3 small{display:block;margin-top:7px;font-size:.75rem;line-height:1.35;font-weight:500;letter-spacing:0;max-width:340px}.project:has(.media-cover) .arrow{flex-shrink:0}
+
+  /* Selected work: equal-weight art direction, readable metadata outside the artwork. */
+  .work-showcase{padding-top:112px;padding-bottom:106px}
+  .featured-head{align-items:end;gap:clamp(20px,5vw,80px);margin-bottom:38px}
+  .featured-head h2{font-size:clamp(3.6rem,7.6vw,7rem);line-height:.85;letter-spacing:-.092em}
+  .featured-head h2 em{font-style:italic;color:var(--accent)}
+  .featured-intro{max-width:345px;display:flex;flex-direction:column;gap:16px;align-items:flex-start;padding-bottom:7px}
+  .featured-intro p{font-size:clamp(1rem,1.45vw,1.14rem);line-height:1.42;margin:0}
+  .featured-intro-mark{font-size:2.5rem;color:var(--accent);line-height:1;transform:rotate(18deg);font-weight:600}
+  .featured-head-link{font-size:.75rem;font-weight:900;letter-spacing:.095em;border-bottom:2px solid var(--accent);padding:0 0 6px;display:inline-flex;gap:14px;align-items:center}
+  .featured-head-link:hover{color:var(--accent)}
+  .featured-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.3vw,28px);align-items:stretch}
+  .featured-card{min-width:0;display:flex;flex-direction:column;border:2px solid var(--ink);border-radius:25px;overflow:hidden;background:var(--paper);box-shadow:8px 8px 0 rgba(23,23,23,.11);transition:transform .23s ease,box-shadow .23s ease;position:relative}
+  .featured-card:hover{transform:translateY(-7px);box-shadow:12px 14px 0 rgba(23,23,23,.12)}
+  .featured-card:focus-visible,.featured-endcap:focus-visible,.featured-head-link:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+  .featured-art{height:clamp(300px,29vw,400px);width:100%;position:relative;overflow:hidden;display:grid;place-items:center;background:#edeee9;border-bottom:2px solid var(--ink)}
+  .featured-art--poster img{width:100%;height:100%;min-height:0;min-width:0;max-height:100%;display:block;object-fit:contain;object-position:center center;transition:transform .4s ease}
+  .featured-card:hover .featured-art img{transform:scale(1.035)}
+  .featured-art--film{background:#101817}
+  .featured-art--film img{height:100%;width:100%;min-height:0;min-width:0;max-height:100%;display:block;object-fit:contain;transition:transform .4s ease}
+  .featured-corner{position:absolute;left:14px;top:14px;font-size:.67rem;letter-spacing:.085em;font-weight:900;background:var(--paper);border:1.5px solid var(--ink);padding:8px 10px;border-radius:99px;box-shadow:3px 3px 0 rgba(23,23,23,.12)}
+  .featured-film-stamp{position:absolute;bottom:15px;left:15px;right:15px;display:flex;align-items:center;gap:9px;background:var(--paper);border:2px solid var(--ink);border-radius:99px;padding:8px 12px 8px 8px;font-size:.7rem;font-weight:900;letter-spacing:.07em;box-shadow:5px 5px 0 rgba(0,0,0,.33)}
+  .featured-play{width:30px;height:30px;background:var(--accent);color:#fff;border-radius:50%;display:grid;place-items:center;font-size:.55rem;padding-left:2px}
+  .featured-duration{margin-left:auto;white-space:nowrap}
+  .featured-card-copy{padding:22px 22px 21px;display:flex;flex-direction:column;flex:1;gap:0;min-width:0}
+  .featured-card-kicker{font-size:.68rem;font-weight:900;letter-spacing:.075em;color:var(--accent);display:flex;gap:8px;justify-content:space-between;line-height:1.3;margin-bottom:15px}
+  .featured-card-kicker span:last-child{color:#5d5a53;white-space:nowrap}
+  .featured-card h3{font-size:clamp(1.65rem,2.35vw,2.3rem);line-height:.98;letter-spacing:-.052em;margin:0 0 12px;max-width:none}
+  .featured-card p{font-size:.91rem;line-height:1.46;margin:0 0 24px;color:#44423d;max-width:36ch}
+  .featured-open{margin-top:auto;border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;align-items:center;font-size:.72rem;font-weight:900;letter-spacing:.09em}
+  .featured-open span{display:grid;place-items:center;width:33px;height:33px;border:1.5px solid var(--ink);border-radius:50%;font-size:1.1rem;transition:background .18s,color .18s,transform .18s}
+  .featured-card:hover .featured-open span{background:var(--ink);color:#fff;transform:rotate(45deg)}
+  .featured-endcap{margin-top:29px;display:flex;align-items:center;gap:16px;border:2px solid var(--ink);border-radius:22px;padding:18px 21px;background:#e3e9d7;transition:background .2s,transform .2s;max-width:none}
+  .featured-endcap:hover{background:#f3d34a;transform:translateY(-2px)}
+  .featured-endcap-icon{font-size:1.8rem;color:var(--accent);flex-shrink:0}
+  .featured-endcap-title{font-size:1.07rem;font-weight:900;letter-spacing:-.025em;line-height:1.2}
+  .featured-endcap-title small{display:block;font-size:.78rem;font-weight:500;letter-spacing:0;line-height:1.4;margin-top:5px}
+  .featured-endcap-arrow{margin-left:auto;font-size:1.3rem;width:43px;height:43px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;flex-shrink:0}
+  @media(max-width:980px){.featured-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.featured-card--film{grid-column:1/-1;display:grid;grid-template-columns:1.05fr .95fr}.featured-card--film .featured-art{height:100%;min-height:350px;border-bottom:0;border-right:2px solid var(--ink)}.featured-card--film .featured-card-copy{min-height:350px}}
+  @media(max-width:670px){.work-showcase{padding-top:68px;padding-bottom:72px}.featured-head{align-items:start;gap:20px}.featured-head h2{font-size:clamp(3.2rem,14vw,5rem)}.featured-intro{max-width:100%;padding-bottom:0}.featured-intro-mark{display:none}.featured-grid{grid-template-columns:minmax(0,1fr);gap:22px}.featured-card--film{grid-column:auto;display:flex}.featured-card--film .featured-art{height:290px;min-height:0;border-right:0;border-bottom:2px solid var(--ink)}.featured-card--film .featured-card-copy{min-height:0}.featured-art{height:330px}.featured-card-copy{padding:21px}.featured-card h3{font-size:2rem}.featured-endcap{margin-top:23px;padding:15px}.featured-endcap-title{font-size:.97rem}.featured-endcap-title small{font-size:.73rem}}
+  @media(prefers-reduced-motion:reduce){.featured-card,.featured-card:hover,.featured-card img,.featured-card:hover img,.featured-open span,.featured-endcap{transform:none!important;transition:none!important}}
+
+
+  /* About 2.0 — editorial craft meets a small interactive character sheet. */
+  .about-new{scroll-margin-top:100px}
+  .about-new-head{margin-bottom:30px;align-items:end}
+  .about-new-head h2 em{font-style:italic;color:var(--accent)}
+  .about-new-head>p{font-size:1.04rem;max-width:305px;line-height:1.5}
+  .about-new-layout{grid-template-columns:minmax(360px,1.04fr) minmax(0,1.36fr);align-items:start;gap:26px}
+  .about-persona{background:var(--ink);color:var(--paper);border:3px solid var(--ink);border-radius:30px;box-shadow:var(--shadow);padding:clamp(23px,3vw,37px);position:relative;overflow:hidden;min-height:560px;display:flex;flex-direction:column;justify-content:space-between;isolation:isolate}
+  .about-persona::before{content:"";position:absolute;width:270px;aspect-ratio:1;border:2px dashed rgba(255,255,255,.15);border-radius:50%;right:-135px;top:90px;z-index:-1}
+  .about-persona-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;font-size:.68rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+  .about-persona-top>span:last-child{color:#b7b7b7;font-size:.66rem}
+  .about-persona-spark{color:var(--yellow);font-size:2.2rem;line-height:1;animation:aboutTwinkle 9s linear infinite}
+  @keyframes aboutTwinkle{to{transform:rotate(180deg)}}
+  .about-persona-title{position:relative;font-size:clamp(2.35rem,4.4vw,4.6rem);line-height:.91;font-weight:900;letter-spacing:-.085em;overflow-wrap:normal;z-index:1;margin:62px 0 40px}
+  .about-persona-title span{color:var(--yellow)}
+  .about-persona-scribble{align-self:flex-end;color:var(--yellow);font-style:italic;font-size:.95rem;line-height:1.1;transform:rotate(-8deg);text-align:center;margin:-12px 2px 42px 0}
+  .about-persona-bottom{border-top:1px solid rgba(255,255,255,.22);padding-top:16px;display:flex;align-items:center;gap:9px;font-size:.67rem;font-weight:900;line-height:1.35;letter-spacing:.1em}
+  .about-live-dot{flex:0 0 8px;width:8px;height:8px;border-radius:50%;background:#b8ed88;box-shadow:0 0 0 4px rgba(184,237,136,.16)}
+  .about-new-content{min-width:0;display:flex;flex-direction:column;gap:18px}
+  .about-new-intro{background:var(--paper);border:2px solid var(--ink);border-radius:27px;padding:clamp(22px,3vw,33px);box-shadow:6px 6px 0 rgba(23,23,23,.09)}
+  .about-new-label{display:block;font-size:.66rem;font-weight:900;letter-spacing:.12em;line-height:1.5;text-transform:uppercase}
+  .about-new-lead{font-size:clamp(1.5rem,2.3vw,2.15rem)!important;line-height:1.17!important;letter-spacing:-.048em;font-weight:700;margin:20px 0 17px!important}
+  .about-new-intro>p:not(.about-new-lead){line-height:1.58;max-width:64ch;margin:0 0 12px}
+  .about-new-intro>p:last-child{margin-bottom:0}
+  .about-starter{border:2px solid var(--ink);border-radius:27px;background:#e7edf5;padding:clamp(20px,2.4vw,27px);box-shadow:6px 6px 0 rgba(23,23,23,.09);min-width:0}
+  .about-starter-heading{display:flex;align-items:end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .about-starter h3{font-size:clamp(1.7rem,3vw,2.6rem);line-height:1;letter-spacing:-.06em;margin:8px 0 18px}
+  .about-starter h3 span{color:var(--accent)}
+  .about-starter-aside{font-size:.75rem;font-weight:700;font-style:italic;opacity:.7;margin-bottom:18px}
+  .about-starter-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+  .about-starter-tab{min-width:0;border:2px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:15px;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 8px;font-size:.86rem;font-weight:900;cursor:pointer;transition:transform .18s,background .18s,box-shadow .18s}
+  .about-starter-tab>span:first-child{font-size:1.35rem;line-height:1}
+  .about-starter-tab:hover{transform:translateY(-3px)}
+  .about-starter-tab.is-active{background:var(--yellow);box-shadow:3px 3px 0 var(--ink);transform:translate(-1px,-1px)}
+  .about-starter-tab:focus-visible,.about-ideas-link:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+  .about-starter-note{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;min-height:117px;margin-top:15px;background:var(--paper);border:2px solid var(--ink);border-radius:18px;padding:16px;position:relative}
+  .about-starter-icon{width:55px;height:55px;display:grid;place-items:center;border-radius:14px;background:var(--yellow);font-size:2rem;transform:rotate(-6deg);font-weight:900}
+  .about-starter-kicker{font-size:.62rem;line-height:1.4;letter-spacing:.12em;font-weight:900;color:var(--accent)}
+  .about-starter-note p{margin:5px 0 0;line-height:1.4;font-size:.94rem}
+  .about-starter-corner{align-self:start;font-size:1.4rem;opacity:.45}
+  .about-new-lower{display:grid;grid-template-columns:1.2fr .8fr;gap:15px;align-items:stretch}
+  .about-currently{border:2px dashed var(--ink);border-radius:20px;padding:19px 21px;background:#e9ebd9}
+  .about-currently-items{display:flex;flex-wrap:wrap;gap:9px 16px;margin-top:12px;font-size:.79rem;font-weight:800}
+  .about-ideas-link{border:2px solid var(--ink);border-radius:20px;background:var(--yellow);padding:19px 20px;display:flex;flex-direction:column;justify-content:space-between;gap:14px;transition:transform .2s,box-shadow .2s}
+  .about-ideas-link:hover{transform:translateY(-3px);box-shadow:4px 4px 0 var(--ink)}
+  .about-ideas-link>span{font-size:.66rem;letter-spacing:.1em;line-height:1.35;font-weight:900}
+  .about-ideas-link strong{font-size:1.08rem;letter-spacing:-.04em;line-height:1.12}
+  @media(max-width:1040px){.about-new-layout{grid-template-columns:minmax(225px,.78fr) minmax(0,1.6fr)}.about-persona-title{font-size:clamp(2.35rem,4.4vw,4.6rem)}.about-new-lower{grid-template-columns:1fr}}
+  @media(max-width:760px){.about-new-head{align-items:start;flex-direction:column}.about-new-head>p{max-width:540px}.about-new-layout{grid-template-columns:1fr}.about-persona{min-height:340px}.about-persona-title{font-size:clamp(3.2rem,12vw,5.8rem);margin:30px 0}.about-persona-scribble{margin:0 0 20px}.about-new-lower{grid-template-columns:1fr 1fr}}
+  @media(max-width:500px){.about-new-layout{gap:16px}.about-new-lower{grid-template-columns:1fr}.about-persona{min-height:320px}.about-starter-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.about-starter-aside{display:none}.about-starter-note{grid-template-columns:auto 1fr}.about-starter-corner{display:none}.about-starter-icon{width:44px;height:44px;font-size:1.5rem}.about-new-intro,.about-starter{padding:21px}.about-new-lead{font-size:1.5rem!important}}
+  @media(prefers-reduced-motion:reduce){.about-persona-spark{animation:none}.about-starter-tab,.about-ideas-link{transition:none}.about-starter-tab:hover,.about-ideas-link:hover{transform:none}}
+
+
+  /* About alignment polish — balanced columns, deliberate vertical rhythm. */
+  .about-new-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,335px);align-items:end;column-gap:clamp(24px,5vw,90px);row-gap:16px;margin-bottom:32px}
+  .about-new-head>p{max-width:335px;margin:0 0 6px;font-size:1rem;line-height:1.5;justify-self:end}
+  .about-new-layout{grid-template-columns:minmax(315px,.92fr) minmax(0,1.58fr);gap:clamp(18px,2vw,28px);align-items:stretch}
+  .about-persona{min-height:0;padding:clamp(25px,2.8vw,34px);display:grid;grid-template-rows:auto 1fr auto;gap:32px}
+  .about-persona-top{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;white-space:nowrap}
+  .about-persona-top>span:last-child{text-align:right;font-size:.61rem}
+  .about-persona-middle{align-self:center;display:flex;flex-direction:column;align-items:flex-start;gap:23px;min-width:0}
+  .about-persona-title{font-size:clamp(2.45rem,4.15vw,4.05rem);line-height:.98;margin:0;letter-spacing:-.075em;max-width:100%}
+  .about-persona-scribble{align-self:flex-start;text-align:left;margin:0 0 0 5px;font-size:1rem;transform:rotate(-4deg)}
+  .about-persona-bottom{margin-top:0;min-height:33px}
+  .about-new-content{gap:16px}
+  .about-new-intro{padding:clamp(25px,2.6vw,33px)}
+  .about-new-lead{font-size:clamp(1.45rem,2.04vw,1.95rem)!important;line-height:1.2!important;letter-spacing:-.038em;margin:15px 0 16px!important;max-width:37ch}
+  .about-new-intro>p:not(.about-new-lead){font-size:.96rem;line-height:1.55;max-width:62ch;margin-bottom:12px}
+  .about-starter{padding:clamp(23px,2.4vw,28px)}
+  .about-starter-heading{align-items:center}
+  .about-starter h3{margin:7px 0 15px;font-size:clamp(1.55rem,2.4vw,2.18rem)}
+  .about-starter-aside{margin:0 0 8px}
+  .about-starter-tab{min-height:46px}
+  .about-starter-note{min-height:100px;grid-template-columns:auto minmax(0,1fr) auto}
+  .about-new-lower{grid-template-columns:minmax(0,1.2fr) minmax(215px,.9fr);gap:15px}
+  .about-currently,.about-ideas-link{min-height:114px;padding:18px 19px}
+  .about-currently-items{gap:9px 14px;font-size:.78rem}
+  @media(max-width:1100px) and (min-width:761px){
+    .about-new-layout{grid-template-columns:minmax(265px,.84fr) minmax(0,1.55fr)}
+    .about-persona-title{font-size:clamp(2.2rem,4vw,3.7rem)}
+    .about-persona-top{grid-template-columns:1fr auto;white-space:normal}
+    .about-persona-top>span:last-child{grid-column:1/-1;text-align:left}
+    .about-new-lower{grid-template-columns:1fr}
+  }
+  @media(max-width:760px){
+    .about-new-head{grid-template-columns:1fr;align-items:start;gap:13px}
+    .about-new-head>p{justify-self:start;max-width:540px;margin:0}
+    .about-new-layout{grid-template-columns:minmax(0,1fr);gap:18px}
+    .about-persona{min-height:360px;grid-template-rows:auto 1fr auto;gap:16px}
+    .about-persona-middle{align-self:center;gap:12px}
+    .about-persona-title{font-size:clamp(3rem,10vw,5rem);margin:0}
+    .about-persona-scribble{margin:0}
+    .about-new-lower{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media(max-width:500px){
+    .about-persona{min-height:330px;padding:24px}
+    .about-persona-title{font-size:clamp(2.8rem,12vw,4.45rem)}
+    .about-new-lower{grid-template-columns:1fr}
+    .about-new-intro,.about-starter{padding:22px}
+    .about-starter-note{grid-template-columns:auto minmax(0,1fr)}
+  }
+
+
+  /* Final About alignment and comfortable card width at tablet sizes. */
+  .about-persona-tags{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px;max-width:100%}
+  .about-persona-tags span{border:1px solid rgba(255,255,255,.32);border-radius:999px;color:#ecebe4;padding:8px 10px;font-size:.61rem;letter-spacing:.08em;font-weight:800;line-height:1.2;white-space:nowrap}
+  .about-currently-items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 12px}
+  .about-currently-items span{min-width:0;overflow-wrap:break-word}
+  @media(max-width:1080px){
+    .about-new-layout{grid-template-columns:minmax(0,1fr);align-items:start}
+    .about-persona{min-height:335px;gap:16px}
+    .about-persona-middle{align-self:center;gap:12px}
+    .about-persona-title{font-size:clamp(3rem,6.8vw,4.5rem)}
+    .about-persona-tags{margin-top:5px}
+    .about-persona-top{grid-template-columns:1fr auto 1fr;white-space:nowrap}
+    .about-persona-top>span:last-child{grid-column:auto;text-align:right}
+    .about-new-lower{grid-template-columns:1.2fr .9fr}
+  }
+  @media(max-width:650px){
+    .about-new-lower{grid-template-columns:1fr}
+    .about-persona-tags{gap:7px}
+    .about-persona-tags span{font-size:.58rem;padding:7px 9px}
+  }
+  @media(max-width:425px){
+    .about-persona-top{grid-template-columns:1fr auto;white-space:normal}
+    .about-persona-top>span:last-child{grid-column:1/-1;text-align:left}
+    .about-persona{min-height:370px}
+  }
+
+
+
+
+
+
+
+/* After-hours: remixed as an off-clock idea desk. */
+.after-hours-section{scroll-margin-top:125px;padding-top:clamp(80px,9vw,120px);padding-bottom:clamp(75px,8vw,105px)}
+.after-hours-heading{align-items:end;gap:clamp(20px,6vw,95px);margin-bottom:32px}
+.after-hours-heading .eyebrow{display:flex;align-items:center;flex-wrap:wrap;gap:9px}
+.after-hours-led{width:9px;height:9px;border-radius:50%;background:#35a268;box-shadow:0 0 0 5px rgba(53,162,104,.13)}
+.hobby-side-quest{font-size:.64rem;letter-spacing:.02em;color:#8f1402;font-weight:800;margin-left:6px;transform:rotate(-4deg)}
+.after-hours-heading h2{font-size:clamp(3.7rem,7vw,7.15rem);line-height:.88;letter-spacing:-.09em;margin:0}
+.after-hours-heading h2 em{color:#8f1402;font-style:italic}
+.after-hours-heading>p{max-width:470px;line-height:1.56;margin:0 0 4px;font-size:clamp(.99rem,1.1vw,1.1rem)}
+.after-hours-board{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(310px,.92fr);gap:24px;align-items:start}
+.hobby-console,.hobby-quest,.hobby-download{position:relative;min-width:0;overflow:hidden}
+.hobby-console{background:linear-gradient(180deg,#fffdf8 0%,#f4ede0 100%);border:2.5px solid #171717;border-radius:36px 36px 28px 42px;box-shadow:12px 12px 0 rgba(23,23,23,.11);padding:clamp(24px,3.2vw,32px);min-height:560px;display:flex;flex-direction:column;gap:0;isolation:isolate}
+.hobby-console:before{content:"";position:absolute;right:-72px;top:-68px;width:220px;height:220px;border-radius:42% 58% 61% 39%;background:var(--accent);opacity:.08;transform:rotate(-22deg);pointer-events:none}
+.hobby-console:after{content:"";position:absolute;left:24px;right:24px;top:74px;border-top:1px dashed rgba(23,23,23,.18);pointer-events:none}
+.hobby-console-top,.hobby-quest-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;font-size:.66rem;letter-spacing:.11em;font-weight:900;position:relative;z-index:1}
+.hobby-live{display:inline-flex;align-items:center;gap:9px;color:#3d3a35}
+.hobby-live span{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(143,20,2,.12);animation:blinkWorkbench 2.8s ease-in-out infinite}
+.hobby-console-stamp{padding:8px 12px;border:1.5px dashed rgba(23,23,23,.45);border-radius:999px;background:rgba(255,255,255,.66);transform:rotate(6deg)}
+.hobby-console h3{font-size:clamp(2.6rem,4.4vw,4.8rem);letter-spacing:-.085em;line-height:.88;margin:34px 0 12px;max-width:690px;position:relative;z-index:1}
+.hobby-console h3 em{font-style:italic;color:var(--accent)}
+.hobby-console-lead{font-size:1rem;line-height:1.48;max-width:580px;margin:0 0 19px;position:relative;z-index:1}
+.hobby-tabs{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px;position:relative;z-index:1}
+.hobby-tab{display:flex;align-items:center;justify-content:flex-start;gap:8px;flex:1 1 calc(50% - 10px);min-width:130px;min-height:47px;padding:11px 15px;border:1.6px solid #171717;border-radius:18px 18px 18px 8px;background:#fffdf8;color:#171717;font-size:.84rem;font-weight:900;box-shadow:4px 4px 0 rgba(23,23,23,.09);cursor:pointer;transition:transform .16s,background .16s,color .16s,box-shadow .16s,border-radius .16s}
+.hobby-tab:nth-child(2){transform:rotate(-1deg)}
+.hobby-tab:nth-child(3){transform:rotate(1.2deg)}
+.hobby-tab:nth-child(4){transform:rotate(-1.4deg)}
+.hobby-tab[aria-pressed="true"],.hobby-tab:hover{background:var(--accent);color:#fffdf8;box-shadow:6px 7px 0 rgba(23,23,23,.13);transform:translateY(-2px) rotate(-1deg);border-radius:18px}
+.hobby-tab:focus-visible,.hobby-quest-button:focus-visible,.hobby-output-link:focus-visible,.hobby-download a:focus-visible,.hobby-shuffle:focus-visible{outline:3px solid #3855ff;outline-offset:3px}
+.hobby-output{border:2px solid #171717;border-radius:28px 18px 28px 18px;background:#171717;color:#fffdf8;padding:22px 22px 20px;min-height:210px;display:flex;flex-direction:column;box-shadow:7px 8px 0 rgba(23,23,23,.1);position:relative;z-index:1}
+.hobby-output:before{content:"";position:absolute;right:18px;top:18px;width:44px;height:44px;border:1px dashed rgba(255,255,255,.14);border-radius:50%;opacity:.8}
+.hobby-output-kicker{font-size:.64rem;font-weight:900;letter-spacing:.11em;color:#f6d957}
+.hobby-output-row{display:flex;align-items:flex-start;gap:16px;margin-top:12px;position:relative;z-index:1}
+.hobby-output-icon{width:54px;height:54px;flex:0 0 54px;display:grid;place-items:center;border:1.7px solid #171717;border-radius:17px;background:#f6d957;color:#171717;font-size:1.65rem;font-weight:900;transform:rotate(-7deg);box-shadow:4px 4px 0 rgba(0,0,0,.25)}
+.hobby-output h4{font-size:clamp(1.28rem,2.2vw,1.78rem);letter-spacing:-.05em;line-height:1.06;margin:0 0 7px}
+.hobby-output p{font-size:.93rem;line-height:1.5;margin:0;max-width:53ch}
+.hobby-output-link{display:inline-flex;align-items:center;gap:9px;align-self:flex-start;margin:18px 0 0 71px;font-size:.82rem;font-weight:900;text-decoration:underline;text-underline-offset:4px;color:#fffdf8}
+.hobby-console-bottom{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-top:auto;padding-top:18px;border-top:1px dashed rgba(23,23,23,.18);font-size:.64rem;font-weight:900;letter-spacing:.08em;color:#5b564e;position:relative;z-index:1}
+.hobby-console-bottom strong{color:var(--accent)}
+.hobby-side{display:grid;grid-template-rows:1fr auto;gap:24px;min-width:0}
+.hobby-quest,.hobby-download{border:2.5px solid #171717;box-shadow:10px 10px 0 rgba(23,23,23,.1);padding:clamp(22px,2.6vw,30px)}
+.hobby-quest{background:linear-gradient(180deg,#111 0%,#1e1d1d 100%);color:#fffdf8;border-radius:28px 58px 30px 30px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;min-height:295px}
+.hobby-quest:before{content:"01";position:absolute;right:18px;top:10px;font-size:6rem;font-weight:900;line-height:1;opacity:.06;pointer-events:none}
+.hobby-quest-top{color:#f6d957}
+.hobby-quest h4{font-size:clamp(1.95rem,3.1vw,3rem);letter-spacing:-.07em;line-height:.95;margin:2px 0 0;max-width:8ch}
+.hobby-quest>p{font-size:clamp(.99rem,1.4vw,1.08rem);line-height:1.46;font-weight:700;margin:0;max-width:38ch;opacity:.94}
+.hobby-quest-button{width:max-content;max-width:100%;display:inline-flex;align-items:center;gap:13px;padding:12px 17px;border:2px solid #171717;border-radius:999px;background:#f6d957;color:#171717;font-size:.8rem;font-weight:900;cursor:pointer;box-shadow:4px 4px 0 rgba(0,0,0,.24);transition:transform .15s,box-shadow .15s,background .15s}
+.hobby-quest-button:hover{transform:translate(2px,2px);box-shadow:1px 2px 0 rgba(0,0,0,.22);background:#fffdf8}
+.quest-counter{margin-top:auto;padding-top:15px;border-top:1px dashed rgba(255,255,255,.16);font-size:.61rem;letter-spacing:.11em;font-weight:900;opacity:.72}
+.hobby-download{background:linear-gradient(180deg,#d7ebc8 0%,#eff7e5 100%);border-radius:58px 28px 30px 30px;display:flex;flex-direction:column;gap:12px;min-height:238px}
+.hobby-download:before{content:"";position:absolute;right:-26px;bottom:-26px;width:148px;height:148px;border-radius:28px;background:rgba(23,23,23,.06);transform:rotate(18deg);pointer-events:none}
+.hobby-download-kicker{font-size:.65rem;font-weight:900;letter-spacing:.1em;color:#4f6926;position:relative;z-index:1}
+.hobby-download h4{font-size:clamp(1.95rem,2.75vw,2.8rem);letter-spacing:-.065em;line-height:1.02;margin:0;position:relative;z-index:1;max-width:10ch}
+.hobby-download p{font-size:.94rem;line-height:1.5;margin:0;max-width:38ch;position:relative;z-index:1}
+.hobby-download a{display:inline-flex;align-items:center;gap:10px;margin-top:auto;padding-top:10px;width:max-content;max-width:100%;font-weight:900;font-size:.8rem;text-decoration:underline;text-underline-offset:4px;position:relative;z-index:1}
+.hobby-download-mark{position:absolute;right:16px;bottom:-6px;font-size:7.2rem;font-weight:900;opacity:.09;transform:rotate(-12deg);pointer-events:none}
+@keyframes blinkWorkbench{50%{opacity:.4}}
+@media(max-width:1000px){.after-hours-board{grid-template-columns:minmax(0,1fr)}.hobby-console{min-height:0}.hobby-side{grid-template-columns:1fr 1fr;grid-template-rows:auto}.hobby-quest,.hobby-download{min-height:280px}}
+@media(max-width:760px){.after-hours-heading{align-items:flex-start}.after-hours-board{gap:18px}.hobby-side{grid-template-columns:1fr;gap:18px}.hobby-console{padding:22px}.hobby-console:after{top:68px}.hobby-console h3{margin-top:28px}.hobby-tabs{gap:8px}.hobby-tab{min-width:0;flex:1 1 calc(50% - 8px)}.hobby-output{padding:18px}.hobby-output-icon{width:42px;height:42px;flex-basis:42px;font-size:1.35rem}.hobby-output-link{margin-left:58px}.hobby-quest,.hobby-download{min-height:0}}
+@media(max-width:520px){.hobby-console-stamp{font-size:.6rem}.hobby-tab{font-size:.76rem;padding:10px 12px}.hobby-output-link{margin-left:0}.hobby-output-row{gap:11px}.hobby-output p,.hobby-download p,.hobby-console-lead,.hobby-quest>p{font-size:.9rem}}
+@media(max-width:370px){.hobby-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.hobby-tab{flex:auto}.hobby-console-top{gap:8px}}
+@media(prefers-reduced-motion:reduce){.hobby-live span{animation:none}.hobby-tab,.hobby-quest-button,.hobby-shuffle{transition:none!important}.hobby-tab:hover,.hobby-quest-button:hover,.hobby-shuffle:hover{transform:none}}
+
+
+/* --- Homepage refinement: improved about section + scroll portrait + shuffle button alignment --- */
+html,body,a,button,[role="button"],summary,input,textarea,select{cursor:none !important;}
+.about-new-head>p{max-width:380px}
+.about-new-layout{grid-template-columns:minmax(360px,440px) minmax(0,1fr);align-items:start;gap:26px}
+.about-persona--portrait{position:sticky;top:108px;min-height:0;width:100%;max-width:440px;justify-self:start;align-self:start;display:grid;grid-template-rows:auto 1fr auto;gap:14px;padding:24px;background:linear-gradient(180deg,#151515 0%,#101010 100%);z-index:1}
+.about-portrait-card{display:grid;grid-template-rows:auto 1fr auto auto;gap:14px;min-height:0}
+.about-portrait-head{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.64rem;letter-spacing:.11em;text-transform:uppercase;font-weight:900;color:#ece5d8}
+.about-portrait-head span:last-child{color:var(--yellow)}
+.about-portrait-stage{display:grid;place-items:center;border:1.5px solid rgba(255,255,255,.16);border-radius:24px;background:radial-gradient(circle at 50% 45%,rgba(255,255,255,.065),rgba(255,255,255,.018) 48%,transparent 72%),linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));padding:14px 16px;min-height:290px;overflow:hidden;position:relative}
+.about-portrait-stage:before{content:"";position:absolute;inset:14px;border:1px dashed rgba(255,255,255,.08);border-radius:20px;pointer-events:none}
+.about-portrait-art{width:100%;max-width:276px;height:auto;display:block;overflow:visible}
+.about-portrait-path{fill:none;stroke:#fffdf8;stroke-width:1.52;stroke-linecap:round;stroke-linejoin:round}
+#about-pen-tip{fill:var(--yellow);opacity:0;filter:drop-shadow(0 0 6px rgba(243,211,74,.38))}
+.about-portrait-trail{fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
+.about-portrait-trail.faint{opacity:.52}
+.about-portrait-trail.ghost{opacity:.22}
+.about-portrait-trail.detail{opacity:0}
+.about-portrait-controls{display:flex;flex-direction:column;gap:9px;margin-top:-2px}
+.about-portrait-slider-label{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;font-weight:900;color:#f4efdf}
+.about-portrait-slider-label span:last-child{color:var(--yellow)}
+.about-portrait-slider-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center}
+.about-portrait-slider{appearance:none;-webkit-appearance:none;width:100%;height:10px;border-radius:999px;background:linear-gradient(90deg,var(--yellow) 0%, var(--yellow) var(--about-slider-fill,0%), rgba(255,255,255,.1) var(--about-slider-fill,0%), rgba(255,255,255,.1) 100%);border:1.5px solid rgba(255,255,255,.18);outline:none;box-shadow:inset 0 1px 2px rgba(0,0,0,.35)}
+.about-portrait-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:18px;height:18px;border-radius:50%;background:#fffdf8;border:2px solid #121212;box-shadow:0 1px 0 rgba(255,255,255,.15),0 0 0 4px rgba(243,211,74,.16)}
+.about-portrait-slider::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fffdf8;border:2px solid #121212;box-shadow:0 1px 0 rgba(255,255,255,.15),0 0 0 4px rgba(243,211,74,.16)}
+.about-portrait-slider::-moz-range-track{height:10px;border-radius:999px;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.18)}
+.about-portrait-slider:hover::-webkit-slider-thumb{transform:scale(1.06)}
+.about-portrait-slider:focus-visible{box-shadow:0 0 0 3px rgba(243,211,74,.22), inset 0 1px 2px rgba(0,0,0,.35)}
+.about-portrait-play{border:1.5px solid rgba(255,255,255,.18);border-radius:999px;background:#fffdf8;color:#101010;padding:9px 14px;font-size:.72rem;font-weight:900;letter-spacing:.03em;white-space:nowrap;cursor:none;box-shadow:0 2px 0 rgba(0,0,0,.28);transition:transform .16s,background .16s,color .16s,box-shadow .16s}
+.about-portrait-play:hover{transform:translateY(-2px);background:var(--yellow);box-shadow:0 4px 0 rgba(0,0,0,.28)}
+.about-portrait-play.is-playing{background:#101010;color:#fffdf8;border-color:rgba(255,255,255,.28)}
+.about-portrait-footer{display:flex;flex-direction:column;gap:12px}
+.about-portrait-footer>span{color:var(--yellow);font-style:italic;font-size:.96rem;transform:rotate(-3deg);display:inline-block}
+.about-persona--portrait .about-persona-tags{margin-top:0}
+.about-mini-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.about-mini-card{background:#fffdf8;border:2px solid var(--ink);border-radius:20px;box-shadow:6px 6px 0 rgba(23,23,23,.08);padding:17px 18px;min-width:0}
+.about-mini-card strong{display:block;font-size:1.05rem;letter-spacing:-.035em;line-height:1.1;margin:10px 0 8px}
+.about-mini-card p{margin:0;font-size:.9rem;line-height:1.45}
+.about-new-content{gap:14px;min-width:0}
+.about-new-intro,.about-starter{box-shadow:7px 7px 0 rgba(23,23,23,.09)}
+.about-new-intro{padding:28px 30px 26px}
+.about-new-intro>p:not(.about-new-lead){max-width:66ch}
+.hobby-console-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.hobby-shuffle{padding:10px 14px;border:1.5px solid #171717;border-radius:16px 16px 16px 8px;background:var(--accent);color:#fffdf8;font-size:.74rem;font-weight:900;cursor:none;box-shadow:4px 4px 0 rgba(23,23,23,.13);transition:transform .16s,background .16s,color .16s,box-shadow .16s,border-radius .16s}
+.hobby-shuffle:hover{background:#171717;color:#fff;transform:translateY(-2px) rotate(-2deg);box-shadow:6px 6px 0 rgba(23,23,23,.16);border-radius:16px}
+@media(max-width:980px){.about-new-layout{grid-template-columns:1fr}.about-mini-grid{grid-template-columns:1fr}.about-persona--portrait{position:relative;top:auto;max-width:none}.about-portrait-card{min-height:0}.about-portrait-art{max-width:300px}.about-portrait-stage{min-height:320px}}
+@media(max-width:760px){.about-persona--portrait{padding:22px}.about-portrait-stage{min-height:330px}.about-portrait-art{max-width:320px}.hobby-console-actions{justify-content:flex-start}.about-new-head>p{max-width:540px}}
+@media(max-width:520px){.about-portrait-head{font-size:.58rem}.about-portrait-stage{min-height:300px}.about-portrait-slider-row{grid-template-columns:1fr}.about-portrait-play{justify-self:start}.about-new-intro{padding:22px}.about-mini-card{padding:16px}.hobby-console-top{gap:12px}}
+@media(prefers-reduced-motion:reduce){.hobby-shuffle,.hobby-shuffle:hover,.about-portrait-play,.about-portrait-play:hover{transition:none;transform:none;box-shadow:none}}
+
+
+
+/* ABOUT LAYOUT: Explicit two-column grid. Portrait is NOT sticky and cannot cover content. */
+#about .about-new-layout {
+  display:grid;
+  grid-template-columns:minmax(0,440px) minmax(0,1fr);
+  gap:26px;
+  align-items:start;
+  isolation:isolate;
+}
+#about .about-persona--portrait {
+  position:relative;
+  inset:auto;
+  width:100%;
+  max-width:440px;
+  min-width:0;
+  min-height:0;
+  height:auto;
+  align-self:start;
+  justify-self:start;
+  z-index:auto;
+}
+#about .about-new-content {min-width:0; width:100%; position:relative; z-index:0}
+#about .about-portrait-card{min-width:0; min-height:0; grid-template-rows:auto auto auto auto}
+#about .about-portrait-stage {min-width:0; min-height:0; aspect-ratio:1 / 1; padding:12px; overflow:hidden}
+#about .about-portrait-art{display:block; width:100%; max-width:285px; max-height:100%; height:auto; margin:auto}
+#about .about-persona-top,#about .about-portrait-head,#about .about-portrait-controls,#about .about-portrait-footer{min-width:0}
+@media(max-width:960px){
+  #about .about-new-layout{grid-template-columns:minmax(0,1fr); gap:22px}
+  #about .about-persona--portrait{max-width:440px}
+}
+@media(max-width:520px){
+  #about .about-persona--portrait{max-width:100%}
+  #about .about-portrait-stage{aspect-ratio:1 / 1; min-height:0}
+  #about .about-portrait-art{max-width:285px}
+}
+
+
+/* --- About section redesign: playful composition while preserving portrait animation --- */
+#about.about-new{padding-top:96px}
+#about .about-new-head{align-items:flex-start;margin-bottom:34px}
+#about .about-new-head p{max-width:440px;font-size:1.03rem;line-height:1.5}
+#about .about-new-layout{grid-template-columns:minmax(350px,420px) minmax(0,1fr);gap:24px;align-items:start}
+#about .about-persona--portrait{position:sticky;top:106px;max-width:420px;width:100%;justify-self:start;align-self:start}
+#about .about-new-content{display:grid;gap:20px;align-content:start}
+#about .about-panel{position:relative;background:var(--paper);border:2px solid var(--ink);border-radius:32px;padding:24px;box-shadow:7px 7px 0 rgba(23,23,23,.09);overflow:hidden}
+#about .about-panel::after{content:"";position:absolute;inset:auto -12px -38px auto;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(23,23,23,.06) 0%,rgba(23,23,23,0) 72%);pointer-events:none}
+#about .about-intro-wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.18fr) minmax(270px,.82fr);gap:18px;align-items:stretch}
+#about .about-intro-card{background:linear-gradient(180deg,#fffdf8 0%,#fbf5ea 100%)}
+#about .about-intro-card::before{content:"";position:absolute;right:-10px;top:-10px;width:96px;height:96px;border-radius:22px;border:2px dashed rgba(23,23,23,.16);transform:rotate(12deg);opacity:.75}
+#about .about-card-kicker-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+#about .about-stamp{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:var(--yellow);border:1.5px solid var(--ink);font-size:.64rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;transform:rotate(-4deg)}
+#about .about-playful-lead{margin:18px 0 16px;font-size:clamp(2rem,3.15vw,3.2rem);line-height:.96;letter-spacing:-.07em}
+#about .about-playful-lead strong{white-space:nowrap}
+#about .about-intro-card p{max-width:780px;line-height:1.5}
+#about .about-skill-ribbon{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+#about .about-skill-ribbon span{padding:10px 12px;border:1.5px solid rgba(23,23,23,.12);background:#fff;border-radius:999px;font-size:.73rem;font-weight:800;letter-spacing:.02em}
+#about .about-meta-card{display:flex;flex-direction:column;gap:14px;background:linear-gradient(180deg,#f4d54b 0%,#efd148 100%)}
+#about .about-meta-card h4{margin:4px 0 2px;font-size:clamp(1.65rem,2.1vw,2.25rem);line-height:.98;letter-spacing:-.06em}
+#about .about-meta-card h4 em{font-style:italic;color:var(--accent)}
+#about .about-meta-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+#about .about-meta-list li{padding:12px 14px;background:rgba(255,253,248,.78);border:1.5px solid rgba(23,23,23,.12);border-radius:18px;line-height:1.45}
+#about .about-doodle-stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+#about .about-doodle-stack span{padding:8px 10px;border-radius:999px;background:#161616;color:#fffdf8;font-size:.64rem;font-weight:900;letter-spacing:.09em}
+#about .about-floating-note{position:absolute;right:18px;bottom:-10px;z-index:3;padding:12px 16px;border:2px solid var(--ink);border-radius:20px;background:var(--accent);color:#fff;font-weight:900;letter-spacing:.08em;box-shadow:5px 5px 0 rgba(23,23,23,.16);transform:rotate(7deg)}
+#about .about-mini-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+#about .about-mini-card{background:var(--paper);border:2px solid var(--ink);border-radius:26px;padding:18px 18px 20px;box-shadow:6px 6px 0 rgba(23,23,23,.08);transition:transform .18s ease,box-shadow .18s ease;min-height:100%}
+#about .about-mini-card:hover{transform:translateY(-4px);box-shadow:8px 10px 0 rgba(23,23,23,.1)}
+#about .about-mini-card:nth-child(1){background:#fff7d6}
+#about .about-mini-card:nth-child(2){background:#edf4ff}
+#about .about-mini-card:nth-child(3){background:#f4efe3}
+#about .about-mini-card:nth-child(4){background:#efe7ff}
+#about .about-mini-card strong{display:block;font-size:1.05rem;line-height:1.15;letter-spacing:-.03em;margin:6px 0 10px}
+#about .about-mini-card p{margin:0;line-height:1.45;font-size:.95rem}
+#about .about-playboard{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(300px,.88fr);gap:18px;align-items:start}
+#about .about-starter{height:100%;background:linear-gradient(180deg,#e9eef7 0%,#dfe7f2 100%);box-shadow:7px 7px 0 rgba(23,23,23,.09)}
+#about .about-starter::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(23,23,23,.07) .8px, transparent .8px);background-size:18px 18px;opacity:.12;pointer-events:none}
+#about .about-starter>*{position:relative}
+#about .about-starter-note{background:rgba(255,253,248,.94)}
+#about .about-open-tabs{background:linear-gradient(180deg,#fffdf8 0%,#eef2df 100%);display:flex;flex-direction:column;gap:14px}
+#about .about-open-tabs h3{margin:8px 0 0;font-size:clamp(1.55rem,2.2vw,2.1rem);line-height:1;letter-spacing:-.06em}
+#about .about-open-tabs p{margin:0;line-height:1.45}
+#about .about-open-tab-list{display:grid;gap:10px}
+#about .about-open-tab{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:flex-start;padding:14px;background:rgba(255,255,255,.72);border:1.5px solid rgba(23,23,23,.14);border-radius:18px;transition:transform .18s ease,background .18s ease}
+#about .about-open-tab:hover{transform:translateY(-3px);background:#fffdf8}
+#about .about-open-tab-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:14px;border:1.5px solid var(--ink);background:var(--paper);font-size:1.1rem;font-weight:900}
+#about .about-open-tab strong{display:block;font-size:.98rem;letter-spacing:-.03em;margin-bottom:3px}
+#about .about-currently{margin-top:2px;padding:16px;border:1.5px dashed rgba(23,23,23,.4);border-radius:22px;background:rgba(255,255,255,.55)}
+#about .about-currently-items{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}
+#about .about-currently-items span{padding:8px 10px;border-radius:999px;background:#fffdf8;border:1.5px solid rgba(23,23,23,.13);font-size:.74rem;font-weight:800}
+#about .about-ideas-link{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:auto;padding:18px 18px 20px;border:2px solid var(--ink);border-radius:24px;background:var(--accent);color:#fff;box-shadow:6px 6px 0 rgba(23,23,23,.12);transition:transform .18s ease,box-shadow .18s ease}
+#about .about-ideas-link span{font-size:.72rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase;opacity:.9}
+#about .about-ideas-link strong{font-size:1.2rem;letter-spacing:-.03em}
+#about .about-ideas-link:hover{transform:translateY(-4px);box-shadow:8px 10px 0 rgba(23,23,23,.13)}
+#about .about-new-label{display:inline-block;font-size:.65rem;line-height:1.3;letter-spacing:.13em;font-weight:900;text-transform:uppercase}
+#about .about-starter h3{line-height:.95}
+#about .about-starter-tab{background:rgba(255,253,248,.9)}
+#about .about-starter-tab.is-active{background:var(--yellow)}
+#about .about-starter-copy{line-height:1.45}
+@media(max-width:1180px){
+  #about .about-intro-wrap,#about .about-playboard{grid-template-columns:1fr}
+  #about .about-mini-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #about .about-floating-note{right:16px;bottom:-14px}
+}
+@media(max-width:980px){
+  #about .about-new-layout{grid-template-columns:1fr}
+  #about .about-persona--portrait{position:relative;top:auto;max-width:440px}
+}
+@media(max-width:620px){
+  #about .about-mini-grid{grid-template-columns:1fr}
+  #about .about-panel{padding:20px}
+  #about .about-playful-lead{font-size:clamp(1.7rem,7.2vw,2.4rem)}
+  #about .about-floating-note{position:static;justify-self:start;display:inline-flex;margin-top:4px;transform:rotate(4deg)}
+  #about .about-stamp{font-size:.59rem}
+  #about .about-ideas-link strong{font-size:1.08rem}
+}
+
+
+/* FINAL ABOUT LAYOUT: one portrait + two right-hand cards; no floating/extra cards */
+#about.about-new{padding-top:90px}
+#about .about-new-head{margin-bottom:30px;align-items:flex-end}
+#about .about-new-layout{display:grid;grid-template-columns:minmax(320px,440px) minmax(0,1fr);gap:24px;align-items:start;isolation:isolate}
+#about .about-persona--portrait{position:relative;top:auto;inset:auto;align-self:start;justify-self:stretch;width:100%;max-width:none;height:auto;min-height:0;z-index:auto}
+#about .about-simple-content{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;min-width:0;align-content:start}
+#about .about-simple-card{min-width:0;position:relative;overflow:hidden;border:2px solid var(--ink);border-radius:30px;background:var(--paper);box-shadow:7px 7px 0 rgba(23,23,23,.1);padding:clamp(23px,3vw,34px)}
+#about .about-simple-top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+#about .about-simple-stamp{border:1.5px solid var(--ink);border-radius:999px;background:var(--yellow);padding:7px 11px;font-size:.64rem;font-weight:900;letter-spacing:.07em;transform:rotate(3deg)}
+#about .about-simple-card h3{font-size:clamp(2.55rem,4.4vw,4.3rem);line-height:.91;letter-spacing:-.075em;margin:17px 0 18px}
+#about .about-simple-card h3 em{font-style:italic;color:var(--accent)}
+#about .about-simple-card p{max-width:75ch;font-size:clamp(.96rem,1.18vw,1.07rem);line-height:1.53;margin:0 0 12px}
+#about .about-simple-card .about-simple-lead{font-size:clamp(1.19rem,1.7vw,1.46rem);line-height:1.32;letter-spacing:-.022em;margin-bottom:16px}
+#about .about-simple-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:21px}
+#about .about-simple-tags span{border:1.5px solid rgba(23,23,23,.22);border-radius:999px;padding:9px 11px;background:#fffaf0;font-size:.64rem;font-weight:900;letter-spacing:.035em;white-space:nowrap}
+#about .about-simple-content>.about-starter{height:auto;min-height:0;display:block;padding:clamp(20px,2.3vw,27px);border-radius:28px;overflow:hidden}
+#about .about-starter h3{font-size:clamp(1.65rem,2.35vw,2.3rem);margin:7px 0 17px}
+#about .about-starter-note{min-height:94px;margin-top:14px}
+#about .about-starter-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+#about .about-starter-tab{min-width:0}
+@media(max-width:960px){
+ #about .about-new-layout{grid-template-columns:minmax(0,1fr);gap:21px}
+ #about .about-persona--portrait{max-width:440px;justify-self:start}
+ #about .about-simple-card{padding:25px}
+}
+@media(max-width:520px){
+ #about .about-persona--portrait{max-width:100%}
+ #about .about-simple-card{padding:21px}
+ #about .about-starter-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #about .about-simple-tags span{white-space:normal}
+ #about .about-new-head p{max-width:100%}
+}
+
+
+/* Tighten the right-hand pair so the composition tracks the portrait height. */
+#about .about-simple-card{padding:25px 27px}
+#about .about-simple-card h3{font-size:clamp(2.5rem,3.8vw,3.7rem);margin:12px 0 13px}
+#about .about-simple-card p{font-size:clamp(.94rem,1.1vw,1.02rem);line-height:1.43;margin-bottom:9px}
+#about .about-simple-card .about-simple-lead{font-size:clamp(1.12rem,1.45vw,1.32rem);line-height:1.28;margin-bottom:13px}
+#about .about-simple-tags{margin-top:14px}
+#about .about-simple-tags span{padding:8px 10px}
+#about .about-simple-content>.about-starter{padding:21px 24px}
+#about .about-starter h3{font-size:clamp(1.65rem,2.1vw,2.1rem);margin:5px 0 12px}
+#about .about-starter-tab{min-height:43px;padding:9px 7px}
+#about .about-starter-note{min-height:84px;margin-top:12px;padding:12px}
+@media(max-width:520px){#about .about-simple-card{padding:21px}#about .about-simple-content>.about-starter{padding:19px}}
+
+
+/* Desktop: the two right cards share the exact height of the portrait card. */
+@media (min-width: 961px) {
+  #about .about-new-layout { align-items:stretch; }
+  #about .about-persona--portrait { align-self:stretch; height:100%; }
+  #about .about-simple-content {
+    align-self:stretch;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    height:100%;
+    min-height:0;
+  }
+  #about .about-simple-card { flex:1 1 auto; }
+  #about .about-simple-content > .about-starter { flex:0 0 auto; }
+}
+
+
+/* Starter Pack: compact, interactive editorial demo; fits the About portrait row. */
+#about .about-starter{display:flex!important;flex-direction:column;min-width:0;justify-content:flex-start}
+#about .about-starter-note{display:flex;flex-direction:column;gap:10px;min-width:0;margin-top:12px;padding:15px 17px 13px;border-radius:20px;min-height:0;background:#fffdf8}
+#about .about-starter-note-header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+#about .about-starter-kicker{font-size:.62rem;letter-spacing:.12em;line-height:1.3;font-weight:900;color:var(--accent)}
+#about .about-starter-count{font-size:.64rem;color:#75716a;white-space:nowrap;font-weight:900;letter-spacing:.08em}
+#about .about-starter-note-body{display:grid;grid-template-columns:47px minmax(0,1fr);gap:13px;align-items:start;min-width:0}
+#about .about-starter-icon{width:43px;height:43px;border:1px solid var(--ink);border-radius:13px;display:grid;place-items:center;background:#e6f4ff;transform:rotate(-5deg);font-size:1.5rem;line-height:1}
+#about .about-starter-text{min-width:0}
+#about .about-starter-text h4{font-size:clamp(1.05rem,1.65vw,1.42rem);line-height:1.1;letter-spacing:-.045em;margin:0 0 6px;font-weight:900}
+#about .about-starter-note p{margin:0;font-size:.91rem;line-height:1.4;max-width:65ch}
+#about .about-starter-cta{align-self:flex-start;margin:0 0 0 60px;display:inline-flex;align-items:center;gap:6px;font-size:.81rem;font-weight:900;border-bottom:1.5px solid var(--ink);padding-bottom:3px;transition:transform .18s}
+#about .about-starter-cta:hover{transform:translateX(4px)}
+#about .about-starter-cta:focus-visible{outline:3px solid var(--accent);outline-offset:4px;border-radius:2px}
+@media(max-width:520px){#about .about-starter-note{padding:14px 13px;gap:9px}#about .about-starter-note-body{grid-template-columns:40px minmax(0,1fr);gap:10px}#about .about-starter-icon{width:38px;height:38px;font-size:1.25rem}#about .about-starter-cta{margin-left:50px}}
+@media(prefers-reduced-motion:reduce){#about .about-starter-cta{transition:none}}
+
+/* After-hours / matched alignment: main workbench matches two equal-height side panels. */
+#hobbies .after-hours-board{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:22px;align-items:stretch}
+#hobbies .hobby-console{height:100%;min-height:696px;align-self:stretch}
+#hobbies .hobby-side{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:repeat(2,minmax(0,1fr));gap:22px;align-self:stretch;min-height:0}
+#hobbies .hobby-quest,#hobbies .hobby-download{min-height:0;height:100%;width:100%;box-sizing:border-box;border-radius:30px;padding:24px 28px;display:flex;flex-direction:column;justify-content:flex-start;gap:12px}
+#hobbies .hobby-quest h4,#hobbies .hobby-download h4{max-width:none;font-size:clamp(1.9rem,2.4vw,2.65rem);line-height:1.04;letter-spacing:-.06em;margin:0;overflow-wrap:normal}
+#hobbies .hobby-quest h4{max-width:100%;margin-top:6px}
+#hobbies .hobby-download h4{max-width:100%;margin-top:4px}
+#hobbies .hobby-quest>p,#hobbies .hobby-download>p{max-width:44ch;font-size:.96rem;line-height:1.4;min-height:0;margin:0}
+#hobbies .hobby-quest-button{margin-top:auto;flex:none}
+#hobbies .quest-counter{margin-top:0;padding-top:12px}
+#hobbies .hobby-download a{margin-top:auto;flex:none}
+@media(max-width:1000px){
+ #hobbies .after-hours-board{grid-template-columns:minmax(0,1fr);align-items:start}
+ #hobbies .hobby-console{height:auto;min-height:0}
+ #hobbies .hobby-side{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;min-height:0;align-self:auto}
+ #hobbies .hobby-quest,#hobbies .hobby-download{height:100%;min-height:310px}
+ #hobbies .hobby-quest h4,#hobbies .hobby-download h4{font-size:clamp(1.8rem,3vw,2.25rem)}
+}
+@media(max-width:680px){
+ #hobbies .hobby-side{grid-template-columns:minmax(0,1fr);grid-template-rows:auto}
+ #hobbies .hobby-quest,#hobbies .hobby-download{height:auto;min-height:280px;padding:22px}
+ #hobbies .hobby-quest h4,#hobbies .hobby-download h4{font-size:clamp(1.9rem,7vw,2.35rem)}
+}
+
+
+
+/* Homepage art studio: one generous artboard, no competing inspector panels. */
+.hero.wrap{width:min(1480px,94vw);grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:clamp(32px,4vw,76px);min-height:min(880px,89vh);padding-top:44px;padding-bottom:64px}
+.hero>div:first-child{min-width:0;max-width:650px}
+.hero h1{font-size:clamp(4rem,5.8vw,6.45rem);line-height:.89;max-width:650px}
+.hero-copy{max-width:580px}
+.creative-lab{--lab-blue:#4165ee;--lab-gold:#f6d954;--lab-coral:#f27966;--lab-mint:#a9dbd0;--lab-lilac:#ded2ff;position:relative;min-width:0;width:100%;min-height:0;display:block;padding:0}
+.lab-board{width:100%;height:clamp(565px,48vw,690px);min-height:0;display:grid;grid-template-rows:60px minmax(0,1fr) 55px;gap:0;border:2px solid #242322;border-radius:26px;background:#e8e5df;box-shadow:10px 12px 0 rgba(23,23,23,.1);overflow:hidden;isolation:isolate}
+.lab-appbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 17px;background:#f8f6f1;border-bottom:1px solid #cdcac3}
+.lab-brand{display:flex;align-items:center;gap:10px;min-width:0}
+.lab-brand-mark{flex:0 0 29px;width:29px;height:29px;display:grid;place-items:center;border-radius:9px;background:#252525;color:#f6d954;font-weight:900;font-size:1.15rem}
+.lab-app-title{display:flex;flex-direction:column;gap:3px;line-height:1;min-width:0}.lab-app-title strong{font-size:.78rem;font-weight:900;letter-spacing:.065em;white-space:nowrap}.lab-app-title small{font-size:.59rem;color:#77716a;letter-spacing:.065em;white-space:nowrap}
+.lab-remix{border:1.5px solid #242322;border-radius:999px;background:#f6d954;min-width:90px;padding:10px 12px;font-size:.7rem;font-weight:900;letter-spacing:.055em;box-shadow:3px 3px 0 #242322;transition:transform .15s,box-shadow .15s;cursor:pointer}.lab-remix:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 #242322}
+.lab-editor{display:grid;grid-template-columns:50px minmax(0,1fr);gap:0;min-width:0;min-height:0}
+.lab-toolrail{display:flex;flex-direction:column;align-items:center;gap:9px;padding:16px 5px;background:#f2f0ea;border-right:1px solid #cac7be}
+.lab-tool{width:37px;height:37px;flex:0 0 37px;border:1.5px solid #bcb7ae;background:#fffefa;border-radius:11px;font-size:1.1rem;font-weight:900;display:grid;place-items:center;transition:background .14s,transform .14s;cursor:pointer}
+.lab-tool:hover,.lab-tool.is-active{background:#f6d954;border-color:#242322;transform:translateY(-1px)}.lab-tool:focus-visible,.lab-remix:focus-visible,.lab-swatch:focus-visible,.lab-shape:focus-visible{outline:3px solid #4165ee;outline-offset:3px}
+.lab-tool-divider{height:1px;width:25px;background:#d4cec4;margin:3px auto}.lab-rail-label{font-size:.54rem;text-transform:uppercase;font-weight:900;letter-spacing:.075em;writing-mode:vertical-rl;margin-top:auto;color:#938d83}
+.lab-workspace{min-width:0;min-height:0;display:grid;grid-template-rows:minmax(0,1fr);padding:22px 25px 24px;position:relative;background-color:#e8e5df;background-image:linear-gradient(to right,rgba(49,48,45,.035) 1px,transparent 1px),linear-gradient(to bottom,rgba(49,48,45,.035) 1px,transparent 1px);background-size:23px 23px}
+.lab-artboard{position:relative;min-width:0;min-height:0;border:1.75px solid #2d2b28;background:#fffefa;box-shadow:0 0 0 8px rgba(255,255,255,.34),8px 10px 0 rgba(23,23,23,.075);overflow:hidden;touch-action:pan-y}
+.lab-artboard:before{content:'';position:absolute;inset:20px;border:1px dashed rgba(23,23,23,.12);pointer-events:none}
+.lab-artboard-label{position:absolute;left:16px;top:12px;font-size:.56rem;font-weight:900;letter-spacing:.12em;opacity:.57;z-index:0;pointer-events:none}
+.lab-shape{position:absolute;touch-action:none;user-select:none;cursor:grab;transform:rotate(var(--shape-rotate,0deg));transition:filter .15s,box-shadow .15s}
+.lab-shape:active{cursor:grabbing}.lab-shape.is-selected:after{content:'';position:absolute;inset:-7px;border:1.7px dashed #4165ee;pointer-events:none}
+.lab-shape.is-selected{z-index:8!important}.lab-shape.is-selected:before{content:'';position:absolute;right:-11px;bottom:-11px;width:8px;height:8px;background:#fff;border:2px solid #4165ee;z-index:2}
+.lab-shape--poster{left:13%;top:16%;width:46%;height:59%;min-height:220px;padding:15px 16px 13px;background:#fffdf8;border:2px solid #242322;border-radius:8px;box-shadow:7px 9px 0 rgba(23,23,23,.11);display:flex;flex-direction:column;justify-content:space-between;--shape-rotate:-7deg;z-index:2}
+.lab-poster-art{height:42%;min-height:73px;border-radius:5px;background:radial-gradient(circle at 50% 35%,#f6d954 0 11%,transparent 12% 100%),linear-gradient(163deg,#4366ee 0 58%,#ee7b65 59% 100%);position:relative;overflow:hidden}
+.lab-poster-art:after{content:'';position:absolute;width:43%;aspect-ratio:1;left:26%;top:10%;border:2px solid rgba(255,255,255,.75);border-radius:50%}
+.lab-poster-type{font-weight:1000;letter-spacing:-.075em;font-size:clamp(1.45rem,2.3vw,2.4rem);line-height:.87}.lab-poster-type em{font-style:normal;color:#4165ee}
+.lab-poster-foot{font-size:.52rem;font-weight:900;letter-spacing:.11em}
+.lab-shape--circle{left:67%;top:19%;width:90px;height:90px;background:var(--lab-mint);border:2px solid #242322;border-radius:50%;display:grid;place-items:center;z-index:3;box-shadow:6px 7px 0 rgba(23,23,23,.10);font-size:2.3rem}
+.lab-shape--note{left:60%;top:52%;width:145px;min-height:122px;padding:13px;background:#fff3bf;border:2px solid #242322;border-radius:9px;box-shadow:6px 7px 0 rgba(23,23,23,.12);--shape-rotate:7deg;z-index:4;display:flex;flex-direction:column;gap:10px}
+.lab-shape--note small{font-size:.57rem;font-weight:900;letter-spacing:.12em}.lab-shape--note strong{font-size:1.13rem;letter-spacing:-.045em;line-height:.97}
+.lab-shape--tag{left:12%;top:81%;padding:11px 16px;border:2px solid #242322;border-radius:999px;background:var(--lab-lilac);font-size:.75rem;font-weight:900;letter-spacing:.04em;--shape-rotate:-6deg;z-index:5;box-shadow:4px 5px 0 rgba(23,23,23,.12)}
+.lab-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:7px 16px;background:#f8f6f1;border-top:1px solid #cbc6be;min-width:0}
+.lab-footer-left{display:flex;align-items:center;gap:9px;min-width:0}.lab-footer-dot{width:8px;height:8px;background:#64ae78;border-radius:50%;box-shadow:0 0 0 3px rgba(100,174,120,.18);flex:none}.lab-footer-copy{min-width:0;font-size:.66rem;font-weight:900;letter-spacing:.04em;line-height:1.25}.lab-footer-copy small{display:block;color:#77716a;font-size:.61rem;font-weight:600;margin-top:2px}
+.lab-swatches{display:flex;gap:7px;align-items:center;flex:none}.lab-swatch{width:24px;height:24px;border-radius:50%;border:1.7px solid #242322;cursor:pointer;transition:transform .15s;box-shadow:2px 2px 0 rgba(23,23,23,.12)}.lab-swatch:hover{transform:scale(1.12)}.lab-swatch[aria-pressed=true]{outline:2px solid #242322;outline-offset:2px}.lab-swatch[data-color=yellow]{background:#f6d954}.lab-swatch[data-color=blue]{background:#4165ee}.lab-swatch[data-color=coral]{background:#f27966}.lab-swatch[data-color=mint]{background:#a9dbd0}
+@media(max-width:1120px){.hero.wrap{grid-template-columns:minmax(0,.83fr) minmax(0,1.17fr);gap:22px}.hero h1{font-size:clamp(3.55rem,5.9vw,5.6rem)}.lab-board{height:570px}.lab-workspace{padding:20px 19px 20px}.lab-shape--poster{width:52%}.lab-shape--circle{width:70px;height:70px;left:72%}.lab-shape--note{width:124px;min-height:110px;left:64%}.lab-poster-type{font-size:clamp(1.3rem,2.4vw,2rem)}}
+@media(max-width:900px){.hero.wrap{width:min(760px,92vw);grid-template-columns:1fr;min-height:0;padding:60px 0 75px;gap:35px}.hero h1{font-size:clamp(4rem,10vw,6.5rem)}.creative-lab{width:100%;margin:auto}.lab-board{height:min(680px,90vw);min-height:510px}.lab-shape--poster{width:47%}.lab-shape--circle{width:85px;height:85px;left:70%}.lab-shape--note{width:150px;left:61%}.lab-poster-type{font-size:clamp(1.6rem,3.8vw,2.5rem)}}
+@media(max-width:600px){.hero.wrap{width:min(500px,92vw);padding:42px 0 60px}.hero h1{font-size:clamp(3.35rem,12vw,5.4rem)}.lab-board{height:535px;min-height:0;border-radius:20px;grid-template-rows:54px minmax(0,1fr) 55px}.lab-appbar{padding:8px 10px}.lab-app-title strong{font-size:.69rem}.lab-app-title small{font-size:.52rem}.lab-remix{min-width:0;padding:9px 10px;font-size:.62rem}.lab-editor{grid-template-columns:40px minmax(0,1fr)}.lab-toolrail{padding:11px 3px;gap:6px}.lab-tool{width:32px;height:32px;flex-basis:32px;font-size:.95rem}.lab-workspace{padding:18px 14px}.lab-shape--poster{width:56%;height:59%;top:17%;left:9%;padding:10px}.lab-poster-art{min-height:55px}.lab-poster-type{font-size:clamp(1.1rem,4.6vw,1.65rem)}.lab-shape--circle{width:58px;height:58px;left:70%;font-size:1.5rem}.lab-shape--note{width:101px;min-height:91px;padding:9px;left:65%;top:53%}.lab-shape--note strong{font-size:.85rem}.lab-shape--tag{left:9%;top:80%;font-size:.62rem;padding:8px 12px}.lab-footer{padding:7px 10px}.lab-footer-copy{font-size:.6rem}.lab-footer-copy small{font-size:.56rem}.lab-swatches{gap:5px}.lab-swatch{width:19px;height:19px}}
+@media(max-width:380px){.lab-brand-mark{display:none}.lab-app-title small{font-size:.47rem}.lab-board{height:490px}.lab-shape--note{left:62%;width:94px}.lab-shape--circle{left:69%}}
+@media(prefers-reduced-motion:reduce){.creative-lab *{animation:none!important;transition:none!important}}
+
+</style>
+<link rel="stylesheet" href="cursor.css" /><link rel="stylesheet" href="site-nav.css"></head>
+<body><svg id="wavy-cursor" aria-hidden="true" focusable="false">
+  <path class="ink-path" d=""></path>
+  <g class="ink-head"><circle class="head-ring" r="9"></circle><circle class="head-dot" r="2.7"></circle>
+    <g class="hover-marks"><path d="M0 -37V-31 M0 31V37 M-37 0H-31 M31 0H37" /></g>
+    <text class="hover-action" x="34" y="-30">VIEW ↗</text>
+  </g>
+</svg>
+<div class="noise"></div>
+
+
+<header class="site-header"><div class="site-container"><nav class="site-nav" aria-label="Main navigation"><a class="site-brand" href="index.html">AJU<span class="brand-mark">✦</span> KRISHNA M K</a><div class="site-links"><a href="index.html" aria-current="page">Home</a><a href="works.html">Work</a><a href="app-ideas.html">App Ideas</a><a href="index.html#about">About</a><a href="index.html#hobbies">Playground</a><a href="index.html#contact">Contact</a></div><details class="site-menu"><summary>Menu +</summary><div class="site-mobile-links"><a href="index.html" aria-current="page">Home</a><a href="works.html">Work</a><a href="app-ideas.html">App Ideas</a><a href="index.html#about">About</a><a href="index.html#hobbies">Playground</a><a href="index.html#contact">Contact</a></div></details></nav></div></header>
+
+<main id="top">
+<section class="hero wrap">
+  <div>
+    <div class="eyebrow"><span class="dot"></span> Graphic Designer · Visual Storyteller · Creative Technologist</div>
+    <h1>Make it <span>look</span> like you mean it.</h1>
+    <p class="hero-copy">I'm Aju — a designer who likes branding, visual experiments, AI rabbit holes, useful little tools, and turning random ideas into things you can actually click.</p>
+    <div class="cta-row"><a class="btn dark" href="works.html">See the work ↓</a><a class="btn" href="#hobbies">Enter the playground ↘</a><a class="btn" href="app-ideas.html">See my app ideas ↗</a></div>
+  </div>
+  <div class="hero-art creative-lab" aria-label="Interactive mini vector studio: drag shapes to rearrange the artwork">
+ <div class="lab-board">
+  <div class="lab-appbar">
+   <div class="lab-brand"><span class="lab-brand-mark" aria-hidden="true">A✳</span><span class="lab-app-title"><strong>AJU / VECTOR STUDIO</strong><small>YOUR CANVAS, YOUR RULES</small></span></div>
+   <button class="lab-remix" type="button" id="labRemix" aria-label="Remix the vector composition">REMIX ↻</button>
+  </div>
+  <div class="lab-editor">
+   <div class="lab-toolrail" role="toolbar" aria-label="Vector studio tools">
+    <button class="lab-tool is-active" id="labSelect" type="button" title="Select and move" aria-label="Select and move shapes">↖</button>
+    <div class="lab-tool-divider" aria-hidden="true"></div>
+    <button class="lab-tool" id="labAddRect" type="button" title="Add rectangle" aria-label="Add a rectangle">▭</button>
+    <button class="lab-tool" id="labAddCircle" type="button" title="Add ellipse" aria-label="Add a circle">◯</button>
+    <span class="lab-rail-label">MINI DESIGN DESK</span>
+   </div>
+   <div class="lab-workspace">
+    <div class="lab-artboard" id="labArtboard" aria-label="Drag the artwork elements to rearrange them">
+     <span class="lab-artboard-label" aria-hidden="true">ARTBOARD 01 / CREATIVE PLAY</span>
+     <div class="lab-shape lab-shape--poster" role="button" tabindex="0" aria-label="Move poster artwork" data-shape-name="Poster artwork">
+      <span class="lab-poster-art" aria-hidden="true"></span>
+      <span class="lab-poster-type">IDEAS<br>INTO<br><em>IMPACT.</em></span>
+      <span class="lab-poster-foot">DESIGN / BUILD / EXPERIMENT ↗</span>
+     </div>
+     <div class="lab-shape lab-shape--circle" role="button" tabindex="0" aria-label="Move circular graphic" data-shape-name="Circle">✳</div>
+     <div class="lab-shape lab-shape--note" role="button" tabindex="0" aria-label="Move idea note" data-shape-name="Idea note"><small>NOTES / 01</small><strong>WHAT IF<br>WE TRY<br>THIS?</strong></div>
+     <div class="lab-shape lab-shape--tag" role="button" tabindex="0" aria-label="Move design label" data-shape-name="Design label">✦ MAKE SOMETHING</div>
+    </div>
+   </div>
+  </div>
+  <div class="lab-footer">
+   <div class="lab-footer-left"><span class="lab-footer-dot" aria-hidden="true"></span><span class="lab-footer-copy" id="labStatus" aria-live="polite">Drag anything on the canvas<small>Select an object, then choose a colour.</small></span></div>
+   <div class="lab-swatches" role="group" aria-label="Colour selected shape">
+    <button class="lab-swatch" type="button" data-color="yellow" aria-label="Set selected shape to yellow"></button>
+    <button class="lab-swatch" type="button" data-color="blue" aria-label="Set selected shape to blue"></button>
+    <button class="lab-swatch" type="button" data-color="coral" aria-label="Set selected shape to coral"></button>
+    <button class="lab-swatch" type="button" data-color="mint" aria-label="Set selected shape to mint"></button>
+   </div>
+  </div>
+ </div>
+</div>
+</section>
+
+<div class="ticker"><div class="ticker-track">BRANDING ✦ VISUAL IDENTITY ✦ MOTION ✦ AI EXPERIMENTS ✦ PLUGINS ✦ APP IDEAS ✦ CREATIVE AUTOMATION ✦ BRANDING ✦ VISUAL IDENTITY ✦ MOTION ✦ AI EXPERIMENTS ✦ PLUGINS ✦ APP IDEAS ✦ CREATIVE AUTOMATION ✦ </div></div>
+
+<section id="work" class="wrap work-showcase" aria-labelledby="featured-work-title">
+  <div class="section-head featured-head">
+    <div><div class="eyebrow"><span class="dot"></span> SELECTED WORK / IN THE WILD</div><h2 id="featured-work-title">Made to be<br><em>seen.</em></h2></div>
+    <div class="featured-intro"><span class="featured-intro-mark" aria-hidden="true">↗</span><p>Campaigns, stories and moving images for Shadowfax — visual ideas made to work in the real world.</p><a href="works.html" class="featured-head-link">EXPLORE ALL WORK <span aria-hidden="true">↗</span></a></div>
+  </div>
+  <div class="featured-grid">
+    <a class="featured-card" href="projects/shadowfax360.html" aria-label="View Shadowfax360 campaign case study">
+      <div class="featured-art featured-art--poster">
+        <img src="media/shadowfax360-01.jpg" alt="Shadowfax360 shipping campaign: green traffic signal against a clean white background" loading="lazy" decoding="async">
+        <span class="featured-corner" aria-hidden="true">01 / CAMPAIGN</span>
+      </div>
+      <div class="featured-card-copy">
+        <div class="featured-card-kicker"><span>CAMPAIGN DESIGN · CAROUSEL</span><span aria-hidden="true">01—03</span></div>
+        <h3>Shadowfax360</h3>
+        <p>Shipping benefits, distilled into four frames and one clear green-light idea.</p>
+        <span class="featured-open">VIEW PROJECT <span aria-hidden="true">↗</span></span>
+      </div>
+    </a>
+    <a class="featured-card" href="projects/local-artisans.html" aria-label="View Hidden PIN Codes Sanganer editorial case study">
+      <div class="featured-art featured-art--poster">
+        <img src="media/local-artisans-01.jpg" alt="Hidden PIN Codes: Sanganer visual story, featuring traditional block printing" loading="lazy" decoding="async">
+        <span class="featured-corner" aria-hidden="true">02 / EDITORIAL</span>
+      </div>
+      <div class="featured-card-copy">
+        <div class="featured-card-kicker"><span>EDITORIAL · VISUAL STORYTELLING</span><span aria-hidden="true">02—03</span></div>
+        <h3>Hidden PIN Codes:<br>Sanganer</h3>
+        <p>A story of craft, community and commerce, told through the visual language of block printing.</p>
+        <span class="featured-open">VIEW PROJECT <span aria-hidden="true">↗</span></span>
+      </div>
+    </a>
+    <a class="featured-card featured-card--film" href="projects/delivery-legends.html" aria-label="Watch Delivery Has Many Legends Christmas campaign film">
+      <div class="featured-art featured-art--film">
+        <img src="media/delivery-legends-featured.jpg" alt="Shadowfax delivery rider racing Santa's sleigh in the Christmas campaign film" loading="lazy" decoding="async">
+        <span class="featured-corner" aria-hidden="true">03 / MOTION</span>
+        <span class="featured-film-stamp"><span class="featured-play" aria-hidden="true">▶</span> PLAY THE FILM <span class="featured-duration">00:30</span></span>
+      </div>
+      <div class="featured-card-copy">
+        <div class="featured-card-kicker"><span>BRAND FILM · MOTION</span><span aria-hidden="true">03—03</span></div>
+        <h3>Delivery Has<br>Many Legends</h3>
+        <p>A festive delivery race. One familiar red suit meets a rider who knows a thing or two about speed.</p>
+        <span class="featured-open">WATCH PROJECT <span aria-hidden="true">↗</span></span>
+      </div>
+    </a>
+  </div>
+  <a class="featured-endcap" href="works.html">
+    <span class="featured-endcap-icon" aria-hidden="true">✳</span>
+    <span class="featured-endcap-title">There's more where that came from.<small>Explore the full collection of campaigns, visual stories and films.</small></span>
+    <span class="featured-endcap-arrow" aria-hidden="true">↗</span>
+  </a>
+</section>
+
+<section id="about" class="wrap about-new" aria-labelledby="about-title">
+  <div class="section-head about-new-head">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> THE HUMAN BEHIND THE PIXELS</div>
+      <h2 id="about-title">One brain.<br><em>Many tabs.</em></h2>
+    </div>
+    <p>Designer by profession. Curious by default. A visual storyteller who keeps turning ideas into things you can click.</p>
+  </div>
+  <div class="about-new-layout">
+    <aside class="about-persona about-persona--portrait" aria-label="Aju at a glance">
+      <div class="about-persona-top"><span>AJU.EXE</span><span class="about-persona-spark" aria-hidden="true">✳</span><span>scroll to sketch</span></div>
+      <div class="about-portrait-card">
+        <div class="about-portrait-head">
+          <span>01 / LINE ART SELF PORTRAIT</span>
+          <span id="about-portrait-meter">000 / 100</span>
+        </div>
+        <div class="about-portrait-stage" aria-hidden="true">
+          <svg id="about-portrait-art" class="about-portrait-art" viewBox="0 0 750 762" role="img" aria-label="A line-art portrait of Aju gradually draws itself as you scroll through the about section">
+            <g id="about-trail-group"></g>
+            <path id="about-portrait-path" class="about-portrait-path" d="M244 72L242 74L237 86L237 102L243 114L255 126L265 131L267 131L271 133L274 133L275 134L287 134L288 135L307 135L309 133L311 133L313 135L315 135L316 136L325 136L326 137L335 138L355 146L361 150L369 158L373 165L373 167L374 168L374 173L375 174L375 181L374 182L374 188L373 189L373 200L376 207L383 215L384 218L378 219L376 217L374 217L373 216L364 217L352 206L349 200L347 198L342 186L337 180L336 181L330 175L320 168L318 168L317 166L314 164L301 164L300 165L294 166L284 171L281 174L280 174L274 180L268 191L268 194L267 195L267 204L268 205L270 212L274 218L282 226L288 229L289 231L281 239L277 246L276 253L274 255L274 260L276 262L275 264L265 273L260 273L260 274L246 289L246 292L243 296L239 295L238 294L238 292L243 288L247 288L246 288L246 289L245 288L246 289L246 288L243 288L241 289L238 292L235 293L227 299L221 302L219 302L215 304L205 305L204 304L198 304L192 301L182 292L175 288L173 288L172 287L163 287L158 290L158 292L162 294L169 301L170 308L171 309L170 316L167 319L164 319L163 320L154 320L147 314L145 310L145 307L144 305L141 302L137 300L134 300L131 302L127 301L123 303L119 303L118 304L110 304L109 305L106 305L105 304L98 304L97 303L90 301L81 292L79 285L78 284L78 276L79 275L79 272L81 269L81 267L84 261L92 251L94 251L97 254L100 254L100 256L102 258L105 258L109 260L116 266L117 266L122 271L131 276L134 276L135 277L146 277L147 276L154 275L157 273L162 273L163 272L163 270L157 266L152 260L146 245L140 239L132 235L120 235L119 236L116 236L111 239L103 241L101 244L101 246L99 248L97 248L94 251L97 248L99 248L100 249L100 254L100 253L99 254L100 255L99 254L100 253L100 247L100 248L99 248L100 248L100 249L99 248L101 246L101 244L104 240L104 236L110 225L117 219L128 214L141 214L142 215L144 215L150 218L164 231L164 238L163 239L164 246L166 250L171 255L176 257L177 259L174 264L174 267L163 270L164 270L163 271L174 266L175 267L179 267L185 264L187 264L194 261L198 261L199 260L208 260L209 261L212 261L233 270L237 270L238 271L249 271L250 270L261 269L269 262L268 261L268 258L269 257L274 257L273 257L274 258L273 259L271 257L272 258L272 257L272 258L274 256L272 258L274 260L273 259L274 259L273 259L274 258L273 257L269 257L268 256L262 256L261 257L258 257L257 256L251 256L250 255L248 255L244 253L234 242L231 235L231 232L230 231L230 219L231 218L232 212L234 209L234 207L236 203L236 194L233 191L230 191L228 193L228 195L222 202L219 208L218 215L216 219L217 227L215 228L213 226L213 225L216 222L215 223L216 223L213 225L213 226L208 232L201 235L196 235L195 234L193 234L186 227L184 223L183 218L181 216L181 208L179 208L177 206L177 204L165 193L160 193L155 191L132 191L131 192L127 192L126 193L118 195L106 201L93 213L87 223L87 225L85 228L85 239L86 240L86 242L89 247L93 251L92 250L92 251L92 250L89 247L85 239L85 228L87 225L87 223L93 213L102 204L103 204L106 201L118 195L120 195L127 192L131 192L132 191L155 191L160 193L165 193L168 190L185 190L198 185L202 185L204 187L215 187L217 190L227 190L229 192L227 190L217 190L214 187L218 184L227 184L228 185L230 185L233 188L233 191L233 190L232 191L233 190L233 188L236 185L236 183L241 178L244 177L247 173L247 170L241 170L240 171L233 171L232 172L228 172L227 171L213 171L212 170L206 169L200 166L181 147L175 144L167 144L160 147L155 152L151 160L151 172L154 178L163 187L164 187L167 190L167 191L167 190L169 191L167 194L166 194L166 192L166 193L165 193L166 193L167 195L166 193L166 194L167 194L170 190L169 191L169 190L169 191L163 187L154 178L151 172L151 160L153 157L153 155L160 147L167 144L175 144L181 147L200 166L206 169L212 170L213 171L220 171L221 170L219 167L215 165L208 158L208 154L201 147L198 146L191 139L186 128L186 113L187 112L188 107L192 100L199 94L201 94L204 92L210 92L214 94L221 101L221 104L222 105L221 116L216 123L212 131L212 141L216 148L222 155L224 155L225 156L245 156L246 155L250 155L251 154L268 149L271 147L274 147L279 145L282 145L285 148L282 151L281 151L276 157L269 160L266 160L254 168L252 168L250 170L247 170L248 170L247 171L246 170L247 171L248 170L250 170L252 168L254 168L262 162L265 161L266 160L266 158L270 154L273 153L275 151L278 151L279 153L277 152L274 149L274 147L274 148L273 147L275 151L275 150L278 154L277 153L278 152L280 152L278 152L278 149L277 148L277 146L277 147L276 146L277 147L278 146L277 147L278 149L277 152L278 150L278 152L277 153L277 152L279 153L278 151L275 151L269 155L269 157L271 159L270 158L270 159L268 156L269 156L268 156L269 157L269 155L266 159L267 160L268 159L267 158L266 158L269 160L268 159L268 160L268 159L267 160L266 159L267 157L266 158L266 160L269 160L276 157L278 154L284 149L284 147L284 148L289 146L296 146L298 145L299 146L314 146L315 147L321 148L332 153L338 157L347 166L351 172L351 174L353 177L353 180L355 184L356 191L359 197L359 199L365 208L372 216L371 215L371 216L371 215L370 216L371 215L370 213L365 208L365 207L360 201L356 191L356 188L355 187L355 184L353 180L353 177L351 174L351 172L347 166L338 157L332 153L321 148L315 147L314 146L299 146L297 145L296 146L289 146L284 148L284 149L285 148L282 145L279 145L278 146L271 147L268 149L266 149L265 150L263 150L250 155L246 155L245 156L225 156L221 154L212 154L211 153L210 154L208 154L209 154L208 155L209 156L208 157L210 154L210 155L209 154L210 155L209 156L208 156L209 156L208 155L211 153L212 154L219 154L220 153L220 154L220 153L219 154L221 154L216 148L212 141L212 131L216 123L221 116L222 105L221 104L221 101L214 94L210 92L204 92L196 96L190 103L186 113L186 128L191 139L198 146L200 147L201 146L201 131L206 120L208 118L206 120L201 131L201 147L201 146L200 147L201 147L208 154L208 158L215 165L221 169L222 171L221 170L221 171L221 170L220 171L227 171L228 172L232 172L233 171L247 170L247 173L244 177L241 178L236 183L236 185L234 187L232 187L233 187L233 188L233 187L234 187L233 188L230 185L228 185L227 184L218 184L216 185L215 187L215 186L214 187L215 188L215 187L204 187L200 191L195 193L182 203L181 202L177 205L178 204L177 204L181 202L183 202L184 203L184 206L181 209L180 208L181 209L182 208L181 208L184 206L182 202L183 204L185 201L185 202L184 201L185 202L183 204L184 204L183 204L184 205L184 203L183 202L181 202L182 203L189 197L195 193L200 191L203 188L203 186L203 187L204 187L203 187L203 188L204 187L202 185L198 185L185 190L168 190L165 193L177 204L177 206L173 209L167 219L167 221L165 224L165 226L164 228L162 229L163 229L163 230L169 215L174 208L178 207L177 207L177 206L177 207L176 207L177 206L179 208L181 208L181 216L178 218L178 221L177 222L177 229L178 230L178 233L180 238L188 246L190 247L199 248L200 247L207 246L214 240L216 236L216 228L216 229L215 228L216 229L216 236L214 240L210 244L204 247L194 248L191 252L188 253L181 258L177 258L178 258L177 259L178 258L181 258L183 256L191 252L194 248L193 247L190 247L188 246L180 238L178 233L178 230L177 229L177 222L178 221L178 218L181 216L183 218L183 220L186 227L193 234L195 234L196 235L201 235L202 234L204 234L208 232L212 227L214 227L213 227L213 226L213 227L212 227L213 226L215 228L217 227L216 219L218 215L219 208L222 202L228 195L228 193L230 191L233 191L236 194L236 203L235 204L235 206L232 212L232 215L230 219L230 231L231 232L232 238L236 245L244 253L251 256L257 256L258 257L261 257L262 256L268 256L269 257L268 258L268 264L267 264L271 264L273 266L273 267L272 267L274 267L276 269L276 272L278 277L278 284L279 286L278 287L277 297L273 305L263 315L253 321L245 323L242 326L241 330L236 336L232 344L231 351L229 355L229 360L230 362L229 360L229 355L231 351L232 344L236 336L241 330L243 325L242 324L238 324L234 326L229 326L226 323L225 323L220 328L218 332L214 336L211 341L208 341L206 342L199 348L192 352L189 355L185 357L180 362L179 362L175 367L175 371L177 373L182 373L188 370L195 364L196 364L205 354L211 345L211 341L211 342L210 341L209 342L208 341L211 344L210 343L211 343L210 343L211 342L210 343L209 341L209 342L210 341L211 342L211 345L208 350L201 358L201 359L191 368L182 373L177 373L174 370L172 370L170 372L167 379L167 389L170 392L170 395L173 399L173 402L167 406L164 406L163 407L153 407L152 406L149 406L145 404L141 400L137 394L137 392L135 388L135 380L140 368L147 360L147 359L153 355L156 355L158 352L173 338L181 333L184 330L184 328L183 327L180 327L177 329L175 329L174 330L154 336L151 338L146 339L144 341L142 340L137 340L136 341L135 340L129 340L127 339L122 333L122 327L121 326L120 327L118 327L115 330L110 341L110 349L111 350L111 352L117 359L121 359L122 360L124 359L128 359L131 357L142 344L142 342L143 341L142 342L142 344L131 357L128 359L124 359L123 360L121 359L117 359L113 355L110 349L110 341L115 330L118 327L120 327L122 325L122 322L123 320L129 315L126 313L131 305L131 302L131 303L130 302L129 303L131 305L130 304L131 304L130 304L131 303L130 304L129 302L129 303L130 302L131 303L131 305L126 313L127 314L127 316L126 316L126 317L128 314L127 315L128 316L127 315L126 316L127 316L127 314L129 315L127 316L122 322L122 325L121 326L122 327L122 333L124 336L129 340L135 340L136 341L137 340L142 340L144 341L146 339L148 339L154 336L156 336L157 335L177 329L180 327L183 327L185 328L193 324L195 324L206 319L208 319L218 314L224 309L228 307L232 303L236 301L239 301L238 305L229 316L226 321L226 323L226 322L225 323L227 319L238 305L238 303L239 302L238 301L241 298L241 296L241 297L242 296L239 301L239 300L238 301L239 302L239 301L236 301L232 303L228 307L224 309L218 314L208 319L206 319L198 323L188 326L184 329L185 328L184 328L184 330L181 333L173 338L158 352L156 355L156 359L153 365L153 368L152 369L152 375L155 382L161 388L163 389L167 389L166 389L167 388L166 389L163 389L161 388L155 382L152 375L152 369L156 358L153 355L154 356L154 355L154 356L155 355L156 356L155 357L156 357L155 357L156 356L155 355L154 356L156 358L156 355L153 355L148 358L140 368L135 380L135 388L136 389L137 394L141 400L145 404L149 406L152 406L153 407L163 407L164 406L167 406L173 402L177 402L177 403L181 406L188 406L190 404L190 401L188 397L184 397L181 399L179 399L176 402L177 403L176 402L177 401L177 402L179 399L181 399L188 395L192 391L193 389L193 385L189 385L181 389L177 389L176 390L171 390L169 391L170 391L170 392L171 390L181 389L189 385L192 385L193 386L196 383L196 382L205 373L206 370L213 361L219 348L219 346L220 345L222 337L224 334L224 332L230 326L229 327L229 326L227 329L222 326L224 327L226 330L226 329L227 329L224 332L224 334L222 337L219 348L213 361L206 370L205 373L196 382L196 383L193 385L194 385L193 386L192 385L193 385L193 389L188 395L188 397L188 396L187 397L186 396L186 397L186 396L187 397L188 396L187 395L188 396L188 395L187 395L185 397L188 397L189 398L190 405L191 406L191 408L193 410L193 416L190 418L188 423L188 431L189 432L189 434L195 440L202 442L195 440L189 434L189 432L188 431L188 423L190 418L193 415L196 418L198 423L201 426L204 427L209 432L209 436L210 437L211 442L213 444L214 448L217 451L221 449L223 450L222 449L227 443L232 443L233 452L235 454L236 462L238 466L238 471L241 475L243 490L245 492L246 501L248 504L249 523L253 529L253 546L252 546L245 553L241 555L229 555L222 552L210 540L209 537L207 535L205 531L205 529L203 526L203 524L202 523L201 518L199 515L199 513L196 509L189 495L189 493L187 489L186 480L185 479L185 472L186 471L187 465L192 456L197 452L199 452L202 450L205 450L206 449L208 449L209 450L216 450L215 450L215 449L214 450L215 449L215 450L209 450L208 449L202 450L199 452L197 452L194 455L193 455L187 465L186 471L185 472L186 485L187 486L187 489L188 490L189 495L196 509L199 513L199 515L201 518L201 520L202 521L203 526L205 529L205 531L209 537L210 540L222 552L229 555L241 555L245 553L253 545L255 547L255 549L258 551L258 553L256 555L256 557L258 561L260 561L261 560L261 555L258 552L257 553L257 554L257 553L259 553L257 553L258 552L261 555L260 567L261 568L262 575L264 579L270 584L271 590L274 597L278 601L280 601L287 605L289 605L294 611L294 615L295 616L295 623L296 624L296 630L297 631L297 637L298 638L299 656L300 657L300 682L299 683L299 688L298 689L297 700L295 701L295 703L293 707L285 717L280 720L276 720L273 717L273 712L276 706L280 702L289 698L295 698L296 700L296 699L297 699L300 701L307 708L315 720L316 723L322 732L326 736L326 737L338 748L348 752L352 752L354 753L342 750L334 745L322 732L307 708L300 701L297 700L298 700L296 699L297 698L296 699L295 698L289 698L280 702L276 706L273 712L273 717L276 720L280 720L285 717L293 707L295 703L295 701L297 700L297 695L298 694L298 689L299 688L299 683L300 682L300 657L299 656L298 638L297 637L297 631L296 630L296 624L295 623L295 616L294 615L294 612L295 611L297 612L304 612L312 619L314 620L317 620L318 619L318 614L317 612L318 611L321 611L329 621L328 623L338 633L351 640L353 640L356 642L370 642L386 649L390 649L391 648L390 642L391 641L393 641L398 646L398 649L400 653L407 661L409 662L419 662L423 660L434 648L437 648L440 645L442 645L443 644L447 644L464 634L471 627L471 626L477 619L480 619L483 622L486 622L493 618L502 609L506 603L508 598L510 598L514 600L517 600L519 598L519 597L525 591L528 585L529 579L530 578L535 579L536 581L539 581L546 573L551 564L550 552L549 551L547 551L545 554L538 554L537 555L537 572L536 573L535 579L535 578L534 579L535 580L534 579L536 576L536 573L537 572L537 555L538 553L536 549L535 543L532 537L529 534L527 534L525 536L525 544L526 545L526 548L527 549L527 551L529 555L529 558L530 559L530 566L531 567L531 569L530 570L530 578L530 577L531 578L530 577L530 570L531 569L531 567L530 566L530 559L529 558L529 555L528 554L528 552L526 548L526 545L525 544L525 536L527 534L529 534L532 537L535 543L537 552L539 554L538 553L538 554L545 554L546 552L549 550L549 541L554 535L554 529L556 526L562 526L563 525L563 521L561 518L561 515L560 514L560 510L562 508L564 508L566 511L566 519L563 522L564 521L563 521L566 519L566 511L564 508L564 494L560 491L559 489L559 486L558 485L558 484L563 479L563 472L562 471L562 463L561 462L561 459L560 457L557 454L556 454L553 458L553 463L552 464L550 464L544 457L542 457L541 458L542 464L543 465L543 468L544 469L544 480L543 481L541 481L539 479L532 479L531 480L531 485L530 486L530 495L523 495L523 506L522 507L520 507L514 500L511 500L509 498L507 493L507 490L503 485L503 479L499 475L499 471L495 468L494 461L492 457L484 449L479 447L475 447L465 443L461 443L458 445L449 437L447 437L444 439L436 434L433 436L434 439L444 449L447 449L449 448L451 445L456 443L455 443L455 442L455 443L453 444L452 446L462 461L462 470L460 472L460 475L459 476L452 476L434 469L422 469L421 470L418 470L415 472L413 472L409 474L406 474L405 475L392 475L391 476L385 477L377 481L368 488L364 490L361 493L357 495L350 494L349 496L345 497L342 493L340 489L340 486L339 485L340 478L341 477L341 473L340 472L336 472L334 470L332 471L326 471L325 472L323 472L320 475L317 482L314 485L311 492L311 504L310 505L311 511L319 523L316 526L316 528L315 529L315 542L314 543L313 548L310 550L312 553L311 555L307 558L304 558L301 555L299 551L298 544L297 543L297 528L296 527L294 527L293 528L289 541L288 542L285 542L282 538L282 532L281 531L281 520L280 519L278 519L276 522L276 525L273 528L271 528L269 525L269 508L268 507L266 507L264 509L263 513L261 515L259 515L257 513L257 511L256 510L256 503L253 501L248 504L254 500L254 497L254 501L254 500L253 501L256 503L256 510L257 511L257 513L259 515L261 515L263 513L264 509L266 507L268 507L269 508L269 525L271 528L273 528L276 525L276 522L278 519L280 519L281 520L281 531L282 532L282 538L285 542L288 542L289 541L291 536L292 530L294 527L296 527L297 528L297 543L298 544L298 548L301 555L304 558L307 558L309 557L312 553L312 549L312 550L311 549L312 550L311 551L312 551L311 551L312 550L312 552L310 550L313 548L313 546L315 542L315 529L318 523L323 518L323 516L317 510L316 507L309 501L311 499L310 500L311 500L310 500L311 501L310 502L312 503L311 504L312 503L310 502L311 501L310 500L309 501L316 507L317 510L323 516L329 516L331 518L330 520L325 520L323 518L323 519L322 519L324 519L323 519L323 518L325 520L325 522L323 524L320 524L318 523L320 524L323 524L326 520L325 521L325 520L327 520L330 523L330 525L329 526L329 531L330 532L333 532L334 533L333 535L335 537L335 539L331 547L331 553L333 555L336 555L343 548L348 548L354 545L357 545L359 544L357 545L357 549L354 553L348 566L348 571L350 573L353 573L369 556L374 554L377 556L373 562L368 574L368 583L369 584L369 586L371 590L379 598L383 600L386 600L387 601L392 602L404 610L406 613L404 615L403 614L405 615L414 624L417 631L417 643L413 649L410 649L408 650L406 649L402 644L400 644L398 646L398 645L397 645L399 645L398 645L398 646L403 642L406 642L409 645L410 649L410 648L411 649L409 645L406 642L403 642L402 644L402 643L401 644L402 644L406 649L409 650L410 649L413 649L417 643L417 631L416 630L416 628L414 624L405 615L405 614L405 615L404 615L407 612L413 612L415 607L406 596L401 588L401 586L399 583L399 580L398 579L398 570L403 558L409 550L413 541L413 532L411 530L410 524L414 520L418 519L422 523L424 523L427 525L431 525L432 526L432 528L439 535L439 539L445 544L445 547L448 554L449 555L445 547L445 545L446 544L450 544L453 546L457 547L462 554L464 559L464 562L462 564L464 561L467 563L469 567L470 576L471 577L470 588L469 589L467 596L463 602L456 609L450 621L447 632L443 639L443 644L443 643L444 644L445 643L443 641L444 642L443 642L444 642L443 643L444 642L446 644L445 643L445 644L445 643L444 644L443 643L443 639L447 632L450 621L456 609L463 602L467 596L469 589L470 588L470 583L471 582L471 577L470 576L469 567L466 562L463 562L465 562L464 561L463 563L464 562L464 559L462 554L458 549L457 545L455 544L453 546L454 545L454 546L454 545L455 546L456 545L458 545L461 543L465 544L468 546L471 546L472 545L472 541L470 539L470 537L468 534L469 535L474 535L475 536L481 536L483 537L489 546L494 556L495 562L496 563L496 568L497 569L497 579L496 580L496 586L495 587L495 590L493 594L490 597L488 597L484 602L482 607L480 609L480 612L478 613L477 619L477 618L478 619L483 615L483 614L480 611L479 612L480 611L481 612L480 612L483 614L486 611L492 601L492 595L492 596L491 596L492 597L491 598L490 597L492 599L491 598L492 598L491 598L492 597L491 596L492 596L492 601L489 605L486 611L481 617L478 614L477 615L479 619L478 617L477 618L478 617L477 617L478 617L477 615L479 615L477 615L478 614L481 617L480 619L480 618L478 619L477 618L478 613L480 612L480 609L482 607L484 602L488 597L490 597L493 594L495 590L495 587L496 586L496 580L497 579L497 569L496 568L496 563L495 562L494 556L489 546L483 537L482 537L479 534L477 536L478 535L478 536L478 535L479 536L480 535L480 533L470 523L469 521L471 519L473 519L477 521L480 521L486 524L490 523L494 526L498 526L499 525L499 521L491 509L491 507L492 506L492 501L483 492L482 490L482 487L476 482L475 478L473 476L460 475L461 475L460 474L461 475L464 475L465 474L465 472L462 469L463 470L462 470L465 472L465 474L466 475L465 474L465 475L465 474L464 475L472 476L474 474L475 464L471 456L460 445L459 445L460 445L460 444L463 447L463 448L464 446L461 443L462 444L463 441L464 443L460 445L462 446L463 445L463 442L463 445L462 446L462 447L463 447L462 447L461 445L464 443L463 442L462 443L464 446L463 447L460 444L460 445L473 459L475 464L475 469L474 470L474 474L473 476L473 475L472 476L475 478L476 482L477 483L479 483L481 485L481 486L481 485L480 486L484 483L487 483L492 479L494 475L494 471L496 469L495 469L495 470L495 468L495 469L496 469L494 471L494 475L490 481L487 483L484 483L479 485L480 484L481 484L481 485L481 484L482 484L481 485L479 483L478 484L478 483L478 484L479 483L477 483L483 488L486 488L489 490L492 490L497 485L499 480L499 477L500 476L499 478L500 477L499 477L501 477L500 477L500 476L499 477L499 480L497 485L492 490L493 493L495 495L498 496L501 492L501 489L503 485L502 487L503 486L502 486L504 486L503 486L503 485L502 486L501 492L498 496L495 495L491 490L492 491L492 490L489 490L486 488L483 488L482 489L483 488L482 488L483 488L482 487L482 490L483 492L492 501L492 506L491 507L491 509L493 513L497 517L499 521L499 525L498 526L494 526L489 523L486 519L483 519L482 518L479 521L480 520L480 521L482 518L483 519L486 519L488 521L488 523L488 522L489 523L486 524L480 521L477 521L476 520L471 519L469 521L470 523L480 533L479 534L480 534L479 534L480 533L480 536L480 535L479 536L478 535L479 534L481 536L475 536L474 535L472 535L470 537L471 536L470 535L469 536L470 535L471 536L471 535L471 536L472 535L469 535L470 539L472 541L472 545L471 546L468 546L465 544L461 543L456 547L457 546L455 544L456 543L455 542L453 542L451 545L452 544L452 545L454 542L452 540L447 540L444 543L441 542L441 543L442 544L443 543L443 542L441 543L442 541L441 542L442 541L442 542L443 542L442 544L441 542L446 544L445 544L445 542L445 544L446 544L444 543L447 540L452 540L453 542L453 541L454 542L453 543L453 542L455 542L456 543L456 545L456 543L455 544L457 546L458 545L456 545L455 546L454 545L456 544L457 545L457 547L453 546L450 544L446 544L445 545L445 544L441 540L437 538L433 538L426 535L415 525L414 525L411 529L412 528L411 528L416 526L415 526L415 524L412 522L413 522L413 520L415 518L417 519L416 518L416 519L415 518L413 518L410 514L407 513L406 515L406 525L402 528L402 530L394 538L393 540L393 544L395 547L395 550L392 554L391 557L388 559L386 559L382 554L380 554L377 556L381 554L388 548L390 548L396 544L399 544L407 537L409 532L411 530L411 531L410 531L412 531L411 531L411 530L409 532L407 537L403 541L402 541L399 544L396 544L395 545L395 547L395 546L393 546L395 546L395 545L394 545L392 547L388 548L382 553L382 554L382 553L381 554L382 554L386 559L390 558L395 550L395 547L393 544L393 540L394 538L405 527L405 526L405 527L404 526L405 527L404 528L403 527L404 528L403 529L402 528L403 529L402 529L403 529L402 530L402 528L407 524L410 524L409 524L410 525L406 523L407 524L406 524L407 524L406 525L406 515L408 513L408 511L409 510L409 505L401 504L398 506L392 512L392 514L385 520L385 523L386 524L388 524L390 520L389 519L386 519L387 519L387 518L388 519L389 517L389 518L388 517L389 519L389 518L388 519L387 518L387 519L389 519L390 520L388 524L386 524L385 523L385 520L392 514L392 512L388 509L388 506L387 505L386 505L383 509L380 509L379 510L381 512L379 515L381 513L381 509L381 510L380 509L381 510L382 509L380 511L381 511L380 511L381 510L381 512L379 510L380 509L383 509L385 507L388 507L390 510L390 509L389 510L390 509L389 508L388 509L389 508L387 507L387 505L393 500L395 500L399 498L411 497L412 496L415 496L420 494L424 494L425 493L429 493L431 495L437 496L441 500L439 503L441 505L441 508L442 509L445 507L445 502L442 499L440 499L439 500L439 502L439 501L440 501L438 499L438 497L438 498L439 498L438 499L439 498L438 498L438 499L440 501L439 501L440 499L441 499L441 500L442 499L441 500L441 499L442 499L445 502L445 507L441 510L436 510L436 513L435 514L431 514L426 511L421 511L420 512L420 514L429 523L429 525L432 528L431 527L432 527L431 527L432 526L431 527L430 526L431 525L430 526L429 524L428 525L429 524L430 526L429 525L429 523L431 521L431 519L432 518L432 514L432 515L431 514L432 515L433 514L432 515L431 521L429 523L426 520L423 523L424 522L424 523L425 519L425 520L426 520L425 520L425 521L426 520L420 514L420 512L421 511L423 511L425 508L422 504L421 501L420 500L417 500L419 499L424 499L425 500L427 500L430 503L431 503L437 510L436 511L437 510L436 509L436 510L434 506L427 500L425 500L424 499L421 499L420 500L420 499L420 500L421 499L419 499L417 497L417 495L417 496L416 495L417 496L418 495L417 496L419 499L419 500L419 499L418 500L420 500L421 501L422 504L426 510L426 511L426 510L425 511L424 510L424 511L424 510L425 511L426 510L425 509L423 511L426 511L431 514L435 514L436 513L436 510L441 510L442 509L441 508L441 505L439 503L441 500L437 496L431 495L429 493L425 493L424 494L420 494L419 495L416 495L411 497L399 498L398 499L396 499L394 501L394 503L393 504L390 504L389 503L391 504L390 503L388 506L386 505L387 506L386 507L385 506L386 507L389 505L388 504L389 505L390 504L390 502L390 503L389 503L390 504L393 504L394 503L394 501L393 500L394 501L394 500L394 501L395 500L391 501L387 505L387 507L389 508L388 507L385 507L385 506L387 505L388 506L388 509L392 512L398 506L402 504L405 507L405 509L408 512L407 513L408 512L407 511L408 511L405 509L405 505L404 506L406 505L404 506L405 505L405 507L403 505L404 504L403 505L403 504L403 505L402 504L408 505L409 506L411 505L413 502L412 504L414 506L414 508L415 509L415 518L415 517L414 518L414 520L413 520L414 520L414 519L415 520L413 518L414 519L415 517L416 518L415 517L415 509L414 508L414 506L412 504L411 505L409 505L410 505L409 506L408 505L409 505L409 510L407 514L407 513L410 514L413 518L415 518L416 519L416 518L413 520L413 522L415 524L414 525L415 526L414 525L415 524L415 526L414 527L413 526L414 527L413 527L413 526L415 525L423 533L433 538L437 538L438 539L439 538L438 539L439 539L439 535L432 528L432 526L431 525L427 525L424 523L422 523L418 519L414 520L410 524L411 530L413 532L413 541L409 550L403 558L398 570L398 579L399 580L399 583L401 586L402 590L409 600L413 604L413 605L428 619L433 628L433 632L434 633L434 643L433 644L433 649L433 648L434 648L433 647L434 648L433 648L433 644L434 643L434 633L433 632L433 628L428 619L417 608L414 608L415 608L414 609L415 607L415 608L416 608L415 607L414 608L414 611L413 612L406 612L407 612L406 613L404 610L400 608L394 603L387 601L386 600L383 600L379 598L371 590L368 583L368 574L369 573L370 568L377 556L374 554L369 556L353 573L350 573L348 571L348 566L354 553L357 549L357 548L354 545L355 546L355 545L355 546L356 545L357 546L356 547L357 547L356 547L357 546L356 545L355 546L357 548L357 545L354 545L348 548L347 547L348 545L346 548L347 547L347 548L347 547L348 548L343 548L336 555L333 555L331 553L331 547L335 539L335 535L333 534L333 535L334 533L333 534L335 535L334 536L335 536L334 536L335 535L335 537L333 535L334 534L333 532L333 527L335 524L335 521L332 518L331 518L332 518L331 519L334 516L334 513L338 509L339 505L338 504L332 504L326 499L325 493L328 486L328 483L327 482L324 482L325 482L328 485L327 484L329 483L332 485L332 491L333 492L333 494L337 499L344 499L346 497L345 498L345 497L344 501L339 506L340 505L339 505L340 505L344 501L343 499L344 500L344 499L337 499L333 494L333 492L332 491L332 485L328 481L328 480L331 477L328 475L330 473L332 473L335 476L332 478L329 476L331 474L333 474L332 475L330 475L329 474L331 479L326 483L326 482L326 483L329 481L329 483L327 484L329 482L328 483L329 483L329 481L328 480L329 481L330 480L329 479L330 480L332 478L331 479L330 478L331 473L329 471L330 472L330 471L330 472L331 471L332 472L332 475L334 477L334 475L333 476L335 476L337 474L337 472L338 471L341 471L342 472L340 474L338 472L338 470L339 469L341 469L346 466L348 466L350 464L350 458L348 456L349 455L348 456L348 458L347 459L345 459L343 461L342 465L339 468L336 466L334 470L335 469L338 471L337 470L340 470L341 471L339 473L339 468L341 469L340 470L340 472L340 466L337 465L335 468L336 469L335 468L336 467L335 467L337 467L336 467L337 465L340 467L339 466L341 466L340 466L340 470L341 469L340 468L339 468L339 469L338 468L339 469L339 473L341 471L340 470L337 470L335 469L335 467L336 466L339 468L342 465L342 463L343 462L347 466L346 465L346 466L344 463L342 463L344 463L343 462L342 464L343 463L343 461L345 459L350 460L364 447L366 447L371 452L370 453L370 455L372 457L373 462L376 464L383 462L386 458L389 458L390 457L393 457L395 460L403 460L404 459L406 459L410 455L405 451L404 451L400 455L397 455L389 448L389 441L391 439L394 441L394 453L393 454L393 457L393 456L392 457L393 458L392 457L394 452L393 452L394 451L395 453L397 450L397 448L396 447L394 447L395 447L394 446L398 443L401 443L402 442L404 442L404 445L406 449L406 452L408 450L410 450L411 451L416 451L416 454L412 456L408 456L408 457L408 454L408 455L409 454L408 455L409 456L408 455L408 456L410 456L410 455L411 456L410 455L410 456L412 456L416 453L417 454L420 454L425 456L426 455L428 455L430 453L429 451L429 444L426 440L425 437L421 433L418 433L416 431L416 429L417 428L421 428L426 433L430 435L434 435L433 435L433 436L432 435L433 436L433 435L430 435L426 433L423 435L424 435L424 436L425 432L425 433L426 433L425 433L425 434L426 433L421 428L419 428L414 433L412 433L410 431L407 432L404 436L404 442L404 441L403 442L404 443L403 442L405 438L413 438L414 439L414 441L416 443L416 451L416 450L415 451L416 452L415 451L416 450L416 443L414 441L414 439L411 436L409 438L410 437L410 438L410 437L411 438L414 434L414 432L411 430L410 431L411 430L412 431L411 432L412 431L413 432L412 433L413 432L414 434L413 432L417 432L416 433L415 432L417 434L418 433L417 434L416 433L416 431L416 433L417 432L414 432L414 434L411 436L412 436L412 438L412 437L411 438L410 437L411 436L413 438L405 438L404 437L405 438L404 438L405 438L404 439L404 436L407 432L410 431L412 433L414 433L417 430L416 430L417 430L416 429L417 430L418 429L417 428L418 429L418 428L418 429L419 428L417 428L416 429L416 431L418 433L421 433L425 437L426 440L429 444L429 451L430 452L429 454L430 455L433 455L440 461L445 461L446 462L446 464L445 465L443 465L442 464L442 461L442 462L441 461L442 462L443 461L442 462L442 464L443 465L445 465L452 468L455 468L458 466L454 469L453 468L456 471L461 471L460 471L460 472L459 471L460 472L460 471L456 471L454 469L454 468L454 469L455 468L452 468L451 467L452 465L452 460L447 454L447 447L448 446L450 446L449 446L450 447L448 445L448 443L452 439L451 440L451 439L451 440L448 443L446 442L446 438L446 439L445 439L446 440L445 439L446 439L446 442L448 444L447 443L448 443L448 448L446 447L444 449L445 448L445 449L445 448L447 450L446 449L447 448L446 449L445 448L446 447L448 447L449 448L448 447L449 446L448 447L446 447L448 448L448 445L449 446L447 447L447 455L445 458L445 461L445 460L444 461L446 456L448 455L447 455L447 454L450 458L446 463L447 462L446 462L447 462L449 459L451 459L450 459L450 458L450 459L449 459L450 458L452 460L452 465L450 467L451 466L451 467L449 467L445 465L446 464L446 462L445 461L440 461L433 455L430 455L429 454L425 456L420 454L416 454L417 454L416 453L415 454L416 454L416 451L411 451L406 449L407 449L405 451L407 451L406 450L407 451L405 451L407 449L408 450L406 452L406 449L404 445L404 442L402 442L401 441L399 443L400 442L400 443L400 442L401 443L400 442L401 441L402 442L401 443L398 443L396 445L396 447L396 446L394 448L396 446L394 444L395 445L394 445L396 446L396 445L394 446L397 448L397 450L395 452L394 452L395 452L394 451L393 452L394 452L394 441L392 439L388 439L386 436L378 435L374 437L366 445L365 445L364 447L364 446L365 447L366 445L366 446L365 445L366 447L366 446L365 447L364 446L369 442L369 441L366 438L364 438L363 439L357 439L356 438L354 438L350 434L347 428L348 416L351 413L352 410L357 404L359 399L361 397L361 395L366 384L366 381L368 376L368 367L369 366L369 359L367 357L366 351L364 347L358 341L357 341L355 338L329 338L328 339L323 339L322 340L317 340L316 341L307 342L306 343L303 343L302 344L291 346L284 349L281 349L274 352L271 352L264 355L257 356L251 361L247 360L244 362L239 363L232 367L230 375L227 377L226 384L225 385L224 391L223 392L223 395L222 396L223 405L220 408L220 412L221 413L221 417L220 418L220 442L221 443L221 446L223 448L220 448L219 450L219 449L220 450L219 449L220 448L221 449L222 447L222 449L222 447L221 449L220 448L223 448L221 446L221 443L220 442L220 418L221 417L221 413L220 412L219 402L222 399L221 400L222 400L219 402L219 406L221 407L220 407L220 408L223 405L222 396L223 395L224 388L226 384L227 377L230 375L233 377L233 380L236 384L242 384L243 385L243 387L242 388L240 388L238 386L238 384L238 385L237 384L238 385L239 384L238 386L240 388L236 393L236 396L235 397L235 404L233 407L233 409L231 413L231 416L230 417L230 420L229 421L229 432L227 434L227 443L227 442L228 443L227 442L227 434L229 431L228 432L231 433L233 435L233 441L231 443L232 444L231 443L232 442L232 443L233 441L233 435L229 432L228 432L228 433L229 432L229 421L230 420L231 413L232 412L233 407L235 404L235 402L239 398L241 394L242 388L241 387L240 388L243 385L242 386L243 386L244 388L242 390L243 389L242 389L241 387L242 389L243 389L242 388L243 389L244 388L242 386L243 387L246 387L249 390L249 393L250 394L253 405L259 417L264 423L264 425L261 426L264 424L271 431L275 433L278 433L279 434L292 434L293 433L299 433L300 432L303 432L304 431L307 431L308 430L319 428L320 427L331 424L345 417L348 417L347 417L348 418L347 417L348 416L336 422L334 422L331 424L329 424L319 428L316 428L315 429L312 429L311 430L308 430L307 431L304 431L299 433L293 433L292 434L279 434L278 433L275 433L271 431L265 425L264 425L265 425L264 424L263 425L264 425L264 423L286 396L286 395L290 391L290 390L313 363L313 362L324 349L324 348L326 347L324 348L324 349L316 358L313 363L290 390L290 391L286 395L286 396L264 423L259 417L253 405L253 403L249 393L249 390L248 389L248 371L251 365L251 361L251 362L250 361L249 362L251 364L250 363L251 363L250 363L251 362L250 363L249 361L249 362L250 361L251 362L251 365L248 371L248 387L247 388L248 388L247 388L248 387L248 389L246 387L244 388L245 387L243 387L244 388L244 387L242 386L241 387L242 388L242 391L241 392L238 390L237 392L238 391L237 391L239 391L238 391L238 390L241 393L240 392L241 392L241 394L239 397L236 395L235 396L235 397L235 396L237 396L235 396L236 395L239 398L238 397L239 397L239 398L236 401L235 400L236 401L235 401L236 401L235 402L236 393L240 388L242 388L243 387L243 385L242 384L236 384L233 380L233 377L230 375L232 367L239 363L244 362L247 360L249 361L253 360L257 356L258 350L260 346L271 335L272 335L278 328L280 328L284 326L294 326L295 325L298 325L307 337L314 336L316 334L316 332L314 331L311 331L310 330L307 330L306 329L301 329L302 329L302 330L303 329L304 330L303 331L305 329L304 330L304 329L304 330L303 329L302 330L302 329L306 329L307 330L307 331L304 333L305 333L304 335L298 335L297 334L293 334L292 333L286 333L281 335L276 335L274 333L276 335L281 335L286 333L292 333L293 334L297 334L298 335L305 335L304 335L308 330L307 331L307 330L314 331L316 333L317 332L318 333L323 333L325 331L330 331L332 327L336 328L338 330L341 331L338 330L336 328L332 327L330 325L325 325L323 324L321 327L320 326L320 322L315 320L314 321L312 320L303 320L297 325L298 324L298 325L298 324L303 320L312 320L314 321L318 315L324 314L325 313L327 313L328 314L333 314L334 315L335 314L338 314L340 313L343 317L341 320L338 316L338 313L337 312L335 313L335 314L335 313L336 314L337 313L339 313L342 316L341 315L345 313L346 314L348 314L352 318L353 321L354 322L356 322L358 325L359 336L357 336L355 338L359 335L360 336L366 335L380 329L383 329L384 328L401 328L405 326L411 326L413 324L416 324L428 319L431 319L436 317L440 317L441 316L445 316L446 315L450 315L451 314L463 313L464 312L471 312L472 311L479 311L480 310L488 310L489 309L512 309L521 320L523 324L524 331L525 332L527 332L531 328L533 328L534 327L534 320L535 319L538 319L540 321L545 331L545 333L549 343L551 345L553 345L553 349L552 350L550 350L551 358L550 359L547 358L546 357L546 355L543 352L534 338L531 335L528 335L526 334L526 349L525 350L525 363L524 364L523 377L522 378L520 385L513 392L504 396L501 396L500 397L497 397L492 399L480 400L479 401L459 402L458 401L448 401L447 400L443 400L441 399L440 400L440 403L442 407L442 412L443 413L442 414L442 418L437 424L433 426L427 426L433 426L437 424L442 418L442 414L443 413L442 412L442 407L440 403L440 400L429 390L427 390L419 382L413 373L412 370L410 368L409 365L407 363L403 354L403 345L402 344L402 342L403 341L405 334L410 329L410 326L410 327L409 326L408 327L407 326L410 329L409 328L410 328L409 328L411 326L409 328L408 326L408 327L409 326L410 327L410 329L404 336L404 338L402 342L403 349L400 352L394 345L390 343L383 343L377 346L375 348L372 356L369 359L372 356L375 348L377 346L383 343L390 343L394 345L400 352L403 352L402 352L403 353L402 352L403 351L402 350L403 350L402 350L403 351L402 352L401 351L401 352L401 351L402 352L400 352L403 349L403 354L404 355L404 357L410 368L412 370L413 373L419 382L427 390L429 390L430 391L436 385L436 384L440 380L440 379L444 375L444 374L448 370L452 364L458 358L458 357L462 353L462 352L466 348L470 342L475 337L478 332L484 326L484 325L489 320L489 319L491 318L489 319L489 320L478 332L475 337L470 342L470 343L466 347L466 348L462 352L458 358L452 364L452 365L448 369L448 370L444 374L444 375L440 379L436 385L431 390L431 392L431 391L430 391L431 391L431 390L430 391L437 398L440 400L442 399L443 400L447 400L448 401L468 402L469 401L479 401L480 400L492 399L493 398L504 396L513 392L520 385L522 378L523 377L524 364L525 363L525 350L526 349L526 335L527 334L527 332L527 333L526 332L527 333L526 335L526 334L528 335L531 335L534 338L535 338L536 339L536 341L536 340L535 340L536 339L535 340L536 340L536 339L535 338L534 339L535 338L534 338L534 339L537 342L543 352L546 355L548 355L550 353L549 354L550 354L546 356L547 355L546 355L546 357L551 361L551 364L553 368L552 377L554 379L554 387L556 392L556 403L557 404L557 411L558 412L558 422L560 427L559 436L558 437L556 437L558 441L559 448L557 451L555 451L552 448L552 447L552 448L557 452L557 454L557 453L556 454L557 453L557 451L557 452L556 451L558 450L559 446L562 443L562 441L561 440L558 442L559 441L558 441L561 439L561 437L559 435L558 435L556 438L557 436L558 437L557 436L558 435L560 436L558 435L559 434L558 435L561 437L561 440L561 439L560 440L562 441L562 443L559 445L560 445L559 446L558 444L558 441L556 438L556 437L558 437L559 436L559 433L560 432L560 427L558 422L557 404L556 403L556 393L557 392L562 394L565 394L567 392L570 392L573 389L576 391L583 387L592 387L597 390L602 395L607 405L607 408L608 409L608 412L610 417L610 421L611 422L611 426L612 427L612 432L613 433L613 444L612 445L612 450L611 451L610 460L609 461L607 472L606 473L603 484L599 492L588 502L584 502L583 503L576 502L564 494L565 493L565 491L564 490L564 482L561 479L563 477L562 478L563 478L562 478L563 479L563 481L563 480L561 480L561 483L560 484L558 484L559 484L558 485L559 484L559 481L558 479L558 480L561 483L560 482L561 482L559 482L560 482L559 481L559 483L560 484L559 483L559 484L561 483L561 479L561 480L563 480L562 478L561 479L564 482L564 490L565 491L565 495L564 496L565 495L564 495L566 495L565 495L565 493L564 494L576 502L580 502L581 503L588 502L599 492L603 484L603 482L607 472L607 469L608 468L608 465L610 460L610 456L611 455L611 451L612 450L612 445L613 444L613 433L612 432L612 427L611 426L610 417L609 416L609 413L608 412L608 409L607 408L607 405L605 402L605 400L602 395L597 390L592 387L583 387L576 391L571 391L572 391L572 389L571 388L572 386L572 363L568 362L563 358L560 358L560 364L561 365L562 374L563 375L563 383L565 386L565 389L567 392L565 389L565 386L563 383L563 381L561 380L553 371L554 372L553 372L554 372L557 375L560 375L562 373L561 374L562 374L558 375L554 379L554 378L553 378L555 378L554 378L554 379L556 377L558 377L557 377L557 376L557 377L556 377L558 375L557 375L557 376L561 380L563 379L562 380L563 380L562 380L563 381L562 369L560 364L560 359L561 358L558 354L555 347L553 347L550 350L551 349L550 351L551 349L552 350L551 349L552 348L553 349L552 348L554 347L552 345L553 344L552 342L554 340L553 334L541 311L535 303L534 300L525 288L523 284L522 274L516 267L516 265L498 250L494 251L489 246L486 245L477 237L475 239L473 239L454 229L452 229L448 227L446 224L444 224L443 225L444 224L446 224L448 222L454 222L455 223L458 223L468 227L478 236L478 239L475 239L476 239L476 238L477 239L478 238L477 239L476 238L476 239L479 239L478 239L478 237L477 237L478 236L477 237L478 237L478 236L472 230L464 225L462 225L458 223L455 223L454 222L448 222L446 224L448 227L452 229L454 229L473 239L475 239L477 237L482 242L483 242L486 245L489 246L494 251L496 257L501 262L501 263L506 268L508 268L513 274L519 278L520 277L522 277L521 277L522 278L521 277L522 276L521 275L520 276L520 277L520 276L521 277L520 276L522 274L521 275L522 275L521 275L522 276L519 278L511 272L510 268L508 266L506 268L507 267L507 268L507 267L508 268L509 267L509 262L511 261L510 261L510 260L509 262L509 265L508 266L509 266L508 266L509 265L509 267L508 268L507 267L508 266L510 268L509 269L510 269L509 269L510 268L510 270L508 268L506 268L501 263L501 262L495 255L496 251L496 252L495 251L494 252L495 251L496 252L495 253L494 251L498 250L504 255L505 255L512 262L515 262L517 264L516 265L519 263L524 267L527 268L533 272L535 272L539 274L542 274L543 275L556 275L557 274L563 273L565 271L568 270L575 263L577 259L577 255L578 254L578 251L577 250L577 246L576 244L570 238L568 238L565 236L559 236L553 242L550 243L548 245L546 245L543 247L540 247L539 248L533 247L532 248L529 248L527 249L526 248L519 248L518 247L514 247L505 243L499 238L499 235L500 234L505 234L506 233L504 229L494 230L492 229L489 226L489 225L479 216L477 217L470 213L467 213L463 211L453 211L452 212L447 212L446 213L443 213L441 212L439 214L437 214L435 216L431 217L422 222L414 222L410 224L400 224L399 223L396 223L393 219L384 218L385 218L385 216L388 213L389 213L392 216L394 220L394 218L395 217L398 217L399 218L398 217L395 217L392 219L394 218L394 219L393 219L392 216L389 213L388 213L383 207L383 205L381 201L381 195L386 184L405 166L410 158L410 156L411 155L411 150L412 149L412 142L411 141L411 137L408 130L395 117L393 114L390 114L389 113L374 113L369 115L360 115L347 120L344 118L331 118L330 117L326 117L318 113L313 108L309 101L309 93L310 92L310 90L312 86L312 83L313 82L313 72L310 67L310 59L308 55L302 49L297 46L291 45L290 44L284 44L283 45L276 46L267 51L261 57L257 64L257 66L255 69L254 75L253 76L253 89L254 90L255 96L258 100L260 100L261 106L266 115L277 126L277 128L281 130L284 134L283 133L283 134L283 133L282 134L283 133L282 131L277 128L277 126L279 124L291 129L295 129L296 130L307 130L310 133L309 132L309 133L307 130L296 130L295 129L288 128L280 124L275 124L276 124L276 125L277 124L278 125L278 124L278 125L277 124L276 125L276 124L279 124L277 126L266 115L261 106L261 104L259 100L260 99L260 93L261 92L262 85L268 74L274 68L285 62L296 60L297 61L300 61L305 64L308 64L310 66L309 65L310 65L309 65L310 64L309 65L308 64L305 64L300 61L293 60L292 61L285 62L274 68L266 77L261 88L261 92L260 93L260 100L260 99L259 100L260 101L260 100L258 100L255 96L254 90L253 89L253 76L254 75L254 72L257 66L257 64L261 57L267 51L276 46L283 45L284 44L290 44L291 45L297 46L302 49L308 55L310 59L310 67L313 72L313 75L302 80L297 85L293 94L293 102L298 112L307 120L316 124L324 125L326 127L328 127L329 126L335 126L339 124L342 124L344 123L346 120L345 122L342 124L339 124L335 126L329 126L328 127L326 127L323 130L314 130L311 133L314 130L323 130L325 128L325 126L325 127L326 127L325 127L325 128L326 127L324 125L313 123L304 118L298 112L293 102L293 94L297 85L302 80L308 77L310 77L311 76L313 77L314 76L318 76L323 78L331 86L333 90L337 104L342 109L346 109L353 102L356 101L360 97L367 87L367 84L366 83L364 83L361 85L354 95L353 102L353 101L354 102L353 101L354 100L353 99L354 97L357 100L355 98L353 98L355 98L354 97L353 98L355 101L354 100L353 100L354 100L353 101L354 95L361 85L364 83L367 86L366 85L367 85L366 85L368 82L381 69L383 69L384 68L404 68L414 72L420 77L421 77L428 84L428 85L441 97L441 102L444 109L444 117L443 118L442 118L439 114L437 106L435 103L435 101L433 98L433 95L431 92L431 88L431 89L432 89L431 90L432 91L431 92L433 90L431 91L432 91L431 90L432 89L431 89L431 92L432 93L435 91L434 92L435 92L432 94L433 93L432 93L433 95L436 93L436 94L435 94L437 94L436 94L436 93L433 96L434 95L433 95L433 98L437 106L440 116L443 118L444 117L444 109L441 102L442 89L443 88L444 80L445 79L445 73L446 72L451 72L459 80L463 86L462 87L462 89L465 95L468 98L468 120L467 121L467 126L465 130L466 134L461 144L447 164L448 168L443 172L440 172L439 171L439 166L440 165L440 148L437 145L435 133L429 124L418 114L410 109L408 109L405 107L403 107L399 105L396 105L395 104L381 104L380 105L377 105L376 106L371 107L365 110L361 115L362 114L362 115L362 114L363 115L364 114L363 113L365 115L364 114L364 115L364 114L363 115L362 114L365 110L377 105L380 105L381 104L395 104L396 105L399 105L412 110L422 117L433 129L435 133L437 145L435 148L435 154L434 155L434 157L432 159L431 162L427 166L426 166L424 164L424 162L426 158L426 141L422 132L408 119L398 114L393 114L394 114L394 115L395 114L394 115L394 114L398 114L399 115L399 117L397 119L398 119L398 120L398 118L398 119L397 119L400 115L399 116L399 115L403 116L405 118L411 121L422 132L426 141L426 158L424 162L428 165L426 163L424 164L424 167L421 172L414 179L408 188L403 192L401 197L401 204L405 208L405 211L409 214L414 214L417 212L423 211L425 210L430 205L430 204L435 200L433 198L433 196L435 193L436 187L438 183L438 178L442 172L441 173L441 172L441 173L440 172L441 173L438 179L433 182L433 184L432 184L429 187L420 208L420 211L421 212L420 216L418 218L417 222L417 221L416 222L417 221L418 222L417 220L420 216L420 214L422 211L421 212L420 210L421 212L420 211L420 208L429 187L433 183L435 185L437 185L436 185L437 186L436 185L437 184L436 185L433 184L434 184L433 183L432 184L433 184L433 182L436 180L438 181L437 180L438 180L437 180L438 179L438 183L436 187L435 193L433 196L433 200L432 202L432 201L433 202L432 201L433 199L434 199L432 200L436 201L443 193L443 192L449 186L449 185L456 179L465 174L467 174L470 172L473 172L474 171L485 171L486 172L489 172L492 174L494 174L500 178L508 187L511 193L512 199L513 200L513 214L514 215L513 220L514 221L514 224L506 232L507 231L505 230L506 230L505 231L506 230L508 230L507 230L507 231L507 230L506 230L507 231L515 223L518 223L520 221L530 217L538 216L539 217L542 217L543 218L548 219L557 224L559 224L571 230L575 230L579 235L581 235L585 237L588 237L592 239L596 239L597 240L604 240L607 238L614 237L622 232L628 226L634 216L635 207L636 206L634 192L632 188L626 183L626 180L625 179L623 179L621 177L616 175L611 175L604 178L598 184L591 195L582 203L578 205L558 206L557 205L550 203L545 197L538 194L531 187L530 187L525 193L524 197L522 199L520 199L518 194L518 190L513 179L513 175L514 174L513 172L510 169L492 158L490 158L486 156L473 156L472 157L464 159L458 162L451 168L447 168L447 169L449 166L451 168L450 167L450 168L450 167L449 168L448 167L449 168L450 167L448 166L449 166L447 168L451 168L458 162L464 159L466 159L473 156L486 156L498 161L510 169L515 175L522 176L525 173L534 173L535 172L540 172L548 165L551 165L553 164L561 155L564 149L565 143L566 142L566 130L565 129L564 123L560 116L555 111L554 111L551 108L547 107L544 105L542 106L539 106L538 105L529 105L526 108L522 109L514 114L499 131L489 138L487 138L481 141L477 141L476 140L476 138L491 123L497 114L505 106L507 106L512 103L514 103L518 101L525 101L530 105L529 104L529 105L529 104L525 101L518 101L517 102L512 103L507 106L505 106L504 107L503 106L504 100L511 90L515 82L515 79L516 78L516 69L515 68L515 65L514 64L514 62L506 54L502 52L500 52L499 51L489 51L488 52L486 52L480 55L474 60L471 65L471 67L468 74L468 85L469 86L470 96L467 97L468 97L468 98L470 95L472 96L474 99L474 104L475 105L475 116L474 117L473 125L471 128L469 129L468 128L466 128L467 128L466 127L467 128L466 129L468 128L470 130L470 131L466 134L467 133L466 133L470 131L470 129L470 130L469 129L471 128L471 127L469 125L467 125L468 125L467 124L468 125L467 126L469 125L470 126L472 126L471 126L471 127L471 126L470 126L471 127L473 125L474 117L475 116L475 105L474 104L474 99L472 96L470 96L471 96L470 95L469 96L470 96L469 86L467 84L463 84L461 83L462 83L461 84L462 83L463 84L462 85L462 87L462 86L465 84L464 85L464 84L464 85L463 84L464 85L462 86L463 84L467 84L468 83L467 84L468 84L467 84L468 85L468 74L469 73L472 63L477 57L489 51L499 51L506 54L514 62L515 68L516 69L516 78L515 79L515 82L511 90L504 100L503 108L503 107L504 107L503 107L503 106L504 107L497 114L491 123L476 138L476 140L477 141L484 140L487 138L489 138L495 134L504 126L504 125L514 114L520 110L526 108L529 105L538 105L541 108L540 109L547 117L551 125L552 132L553 133L553 146L552 147L552 151L551 152L550 157L548 160L548 165L547 165L547 166L549 163L548 162L551 165L550 164L550 165L550 164L549 165L548 164L549 165L550 164L549 163L548 163L549 163L547 165L548 165L548 160L550 157L550 155L552 151L552 147L553 146L553 133L552 132L551 125L547 117L540 109L540 106L540 107L541 106L542 107L541 108L540 108L541 108L542 106L542 107L541 106L540 107L540 109L541 108L539 106L542 106L544 105L547 107L551 108L554 111L555 111L560 116L565 126L565 129L566 130L566 142L565 143L564 149L561 155L553 164L551 165L548 165L538 174L538 176L534 181L534 184L533 184L530 187L531 186L531 187L531 186L522 178L522 176L522 177L521 176L528 184L532 185L531 185L531 186L531 185L530 185L531 186L534 183L535 184L546 184L547 183L549 183L551 181L557 178L564 171L577 151L586 142L596 137L598 137L599 136L605 136L607 138L616 139L623 143L628 149L630 153L630 156L631 157L631 164L630 165L629 173L626 180L627 179L627 177L629 173L629 170L630 169L630 165L631 164L631 157L630 156L630 153L626 146L620 141L616 139L607 138L604 141L599 142L594 145L591 148L590 148L584 155L583 155L584 155L587 152L587 151L594 145L599 142L604 141L607 138L605 136L599 136L593 139L591 139L589 141L586 142L577 151L564 171L557 178L551 181L549 183L547 183L546 184L534 184L535 184L534 183L533 184L534 184L534 181L535 179L538 176L538 174L539 173L538 172L539 173L539 172L539 173L540 172L535 172L534 173L525 173L522 176L520 176L519 175L513 175L514 175L513 176L514 174L514 175L515 175L514 174L513 175L513 179L518 190L518 194L520 199L520 206L519 207L519 211L518 213L514 216L515 215L514 215L517 214L519 211L520 200L521 199L520 200L520 199L522 199L524 197L525 193L530 187L531 187L538 194L544 197L547 197L548 196L560 196L566 193L574 185L581 172L582 168L585 165L587 165L588 166L588 171L589 172L588 182L586 187L582 193L571 205L572 204L572 205L572 204L573 205L574 204L573 203L575 205L574 204L574 205L574 204L573 205L572 204L573 202L582 193L586 187L588 182L589 172L588 171L588 166L587 165L585 165L582 168L581 172L576 182L566 193L560 196L548 196L546 198L546 197L546 198L547 197L545 197L550 203L557 205L558 206L578 205L586 200L591 195L598 184L604 178L611 175L616 175L621 177L623 179L625 179L626 180L626 185L624 189L623 197L622 198L621 203L616 211L606 221L600 225L590 228L589 229L579 229L576 231L577 231L577 232L579 229L589 229L590 228L598 226L606 221L616 211L620 205L622 198L623 197L624 189L625 188L625 186L627 184L626 184L627 184L626 185L626 183L632 188L634 192L636 206L635 207L634 216L631 222L628 225L628 226L618 235L611 238L607 238L603 241L602 240L605 244L607 244L613 247L618 253L624 256L629 261L629 266L631 271L631 281L630 282L630 286L623 298L616 305L614 305L611 303L608 303L607 304L602 304L600 306L600 308L603 312L606 312L610 310L615 305L614 306L614 305L614 306L610 310L606 312L603 312L600 308L597 308L595 309L589 316L585 318L581 318L580 319L573 319L572 318L565 317L559 314L555 310L555 308L553 307L527 280L525 281L523 281L524 281L523 280L524 281L523 282L524 283L523 284L525 282L525 281L525 282L524 281L525 282L523 283L524 283L523 282L524 281L527 280L553 307L555 308L558 308L559 309L557 312L558 312L558 313L558 311L558 312L557 312L560 309L564 310L567 312L572 312L573 313L581 313L586 311L593 311L592 311L592 312L591 311L590 312L589 311L591 313L590 311L590 312L591 311L592 312L592 311L586 311L581 313L573 313L572 312L567 312L561 309L559 309L560 309L559 310L558 308L556 308L555 309L556 308L555 308L555 310L559 314L565 317L572 318L573 319L580 319L581 318L585 318L589 316L595 309L600 307L599 308L600 308L600 306L602 304L602 301L607 291L607 286L608 285L608 283L607 282L607 277L600 269L598 269L597 268L591 268L578 282L573 285L571 285L570 286L556 286L555 285L555 283L556 282L564 280L572 275L584 262L572 275L564 280L558 281L555 283L551 283L550 282L545 281L547 281L551 283L554 283L555 284L554 283L555 283L555 285L556 286L570 286L571 285L573 285L578 282L587 273L587 272L591 268L591 262L598 255L603 253L606 253L607 252L610 252L611 253L618 253L617 253L617 252L616 253L617 252L617 253L611 253L610 252L607 252L606 253L603 253L598 255L591 262L591 267L592 268L591 267L591 268L597 268L598 269L600 269L607 277L607 282L608 283L608 285L607 286L607 291L602 301L602 303L603 304L602 303L602 304L611 303L614 305L616 305L623 312L623 313L614 322L611 322L609 324L606 324L592 332L587 337L587 339L584 342L581 348L579 350L578 356L577 357L577 361L575 363L572 363L573 363L572 364L571 363L572 364L573 363L577 363L578 362L577 361L576 361L576 363L580 366L589 366L590 367L591 366L598 366L599 365L605 364L613 359L621 351L625 344L625 342L626 341L626 328L625 326L626 328L626 341L625 342L625 344L621 351L613 359L605 364L599 365L598 366L591 366L590 367L589 366L580 366L578 365L575 369L572 369L573 369L572 368L573 369L572 370L573 369L575 369L577 367L577 363L576 362L577 363L577 365L578 365L577 365L577 366L578 365L576 363L576 361L577 360L576 361L578 362L577 363L575 363L577 361L578 353L582 345L589 339L587 337L588 338L587 338L588 338L587 339L588 340L591 340L596 336L601 334L603 332L609 329L613 325L611 322L612 323L612 322L612 323L613 322L614 323L613 324L614 322L614 323L613 322L612 323L613 324L612 326L609 324L611 327L611 325L610 326L612 326L610 326L611 325L611 327L608 324L609 325L610 323L609 325L609 324L610 324L612 326L609 329L603 332L601 334L596 336L591 340L589 339L589 340L589 339L590 340L588 340L587 339L588 338L589 339L587 341L586 340L587 341L586 342L585 341L586 342L585 343L584 342L585 343L584 343L584 342L587 339L587 337L592 332L606 324L609 324L611 322L614 322L623 313L624 313L630 319L635 328L635 331L636 332L636 346L635 347L635 351L634 352L632 359L628 365L620 373L614 377L609 379L605 379L604 380L597 380L596 379L589 378L592 378L597 380L604 380L605 379L612 378L620 373L628 365L632 359L634 352L635 351L635 347L636 346L636 332L635 331L635 328L630 319L624 313L624 312L633 301L638 293L638 291L639 290L639 285L640 284L640 277L639 276L638 267L633 262L629 261L630 261L629 262L630 261L633 262L638 267L639 266L648 266L653 264L655 261L660 261L660 262L672 275L674 282L675 283L675 286L676 287L676 297L675 298L674 304L672 307L666 312L658 312L654 308L658 312L666 312L672 307L674 304L675 298L676 297L676 287L675 286L675 283L674 282L673 277L669 271L659 261L666 252L666 250L668 246L668 242L669 241L668 230L665 223L661 219L656 216L653 216L649 218L653 216L656 216L661 219L665 223L668 230L668 235L669 236L668 246L667 247L666 252L663 255L660 261L660 260L659 261L660 262L660 261L655 261L652 258L650 258L646 256L641 257L646 256L647 257L652 258L655 261L654 263L651 265L649 265L648 266L639 266L638 267L638 271L639 272L639 276L640 277L639 290L637 295L633 301L626 309L626 310L623 312L624 312L624 313L623 313L623 312L617 306L617 304L617 305L616 305L617 305L617 306L616 305L626 294L630 286L630 282L631 281L631 271L629 266L629 261L624 256L618 253L613 247L607 244L605 244L603 241L603 240L603 241L604 240L597 240L596 239L592 239L588 237L585 237L584 236L579 235L575 230L571 230L559 224L557 224L548 219L546 219L542 217L534 216L533 217L530 217L529 218L524 219L518 223L515 223L514 222L515 223L514 223L515 223L514 224L514 221L513 220L513 218L514 217L514 215L513 214L513 200L512 199L511 193L505 183L500 178L494 174L492 174L489 172L486 172L485 171L474 171L473 172L470 172L467 174L465 174L459 177L452 183L451 183L436 201L435 200L435 201L435 200L436 201L434 201L433 200L434 199L433 199L432 201L433 200L433 198L435 200L432 202L425 210L417 212L414 214L409 214L405 211L407 189L407 190L406 190L407 191L406 192L405 191L407 193L406 192L407 192L406 192L407 191L406 190L407 190L407 194L406 195L402 195L403 195L402 194L403 195L402 196L403 195L405 195L406 196L405 195L406 195L406 205L404 207L405 207L404 207L405 206L405 208L401 204L401 197L402 196L402 194L403 192L408 188L414 179L421 172L423 168L426 166L425 167L424 166L425 165L424 165L425 165L424 166L425 167L424 167L424 164L425 163L424 163L425 163L424 162L424 164L426 166L427 166L431 162L435 154L435 148L438 146L437 146L437 145L437 146L436 146L437 146L436 147L437 145L440 148L440 165L439 166L439 171L440 172L443 172L448 168L447 164L461 144L466 134L465 130L467 126L467 121L468 120L468 98L465 95L462 89L462 87L463 86L459 80L453 74L453 67L447 55L444 55L444 57L443 58L444 60L444 67L445 68L445 70L447 72L446 71L446 72L444 67L442 66L439 66L435 63L433 63L428 60L426 60L422 58L419 58L418 57L404 57L389 63L385 68L386 67L386 68L386 67L387 68L386 67L389 63L404 57L418 57L419 58L422 58L423 59L428 60L433 63L435 63L439 66L442 66L443 67L444 66L443 67L444 67L444 60L443 59L443 57L445 55L443 53L442 49L433 36L429 36L422 32L415 31L414 30L406 30L405 31L397 32L394 34L387 36L383 39L380 40L373 47L370 53L373 47L380 40L383 39L387 36L389 36L397 32L405 31L406 30L414 30L415 31L422 32L430 36L433 33L433 31L424 21L414 16L401 16L400 17L397 17L396 18L391 19L379 25L373 29L363 39L359 47L359 49L358 50L358 57L362 64L368 68L378 68L380 70L379 70L379 71L379 69L379 70L380 70L378 68L368 68L364 66L358 57L358 50L363 39L373 29L379 25L391 19L393 19L397 17L400 17L401 16L414 16L415 17L417 17L424 21L431 28L433 31L433 36L433 35L432 36L431 35L431 36L431 35L432 36L433 35L432 34L433 34L432 34L433 35L433 33L430 36L433 36L435 38L436 41L442 49L444 55L444 54L446 56L445 57L443 57L445 57L444 56L445 57L447 55L446 56L446 55L446 56L445 55L443 58L444 57L444 55L447 55L453 67L453 72L452 73L453 73L452 73L453 72L453 74L451 72L446 72L445 73L445 79L444 80L444 84L442 89L442 94L440 96L441 96L440 96L441 95L441 97L438 95L421 77L420 77L414 72L404 68L384 68L383 69L381 69L368 82L365 84L365 83L365 84L367 82L368 83L367 82L368 82L366 85L364 83L366 83L367 84L367 87L363 93L356 101L353 102L346 109L342 109L337 104L337 102L335 99L335 96L331 86L323 78L318 76L314 76L313 75L314 76L312 76L314 76L313 77L312 76L313 75L313 82L312 83L312 86L309 93L309 101L311 105L318 113L326 117L330 117L331 118L344 118L346 120L356 117L357 116L359 116L360 115L369 115L374 113L389 113L390 114L393 114L395 117L408 130L410 134L411 141L412 142L411 155L409 160L405 166L386 184L382 192L382 194L381 195L381 201L382 202L383 207L387 212L387 214L387 213L388 213L387 213L387 212L388 213L383 218L384 217L386 218L384 217L385 216L385 218L387 218L388 219L393 219L396 223L399 223L400 224L410 224L414 222L422 222L431 217L435 216L437 214L439 214L442 212L444 209L446 209L448 207L451 207L456 205L464 205L465 206L471 207L477 210L481 214L481 216L480 217L478 217L479 217L481 214L480 215L481 215L480 215L482 218L482 217L481 218L482 217L480 215L479 217L481 216L481 214L477 210L471 207L465 206L464 205L456 205L455 206L448 207L446 209L448 212L447 211L447 212L445 209L446 210L446 209L444 209L442 212L443 213L446 213L447 212L452 212L453 211L463 211L467 213L470 213L477 217L479 216L482 218L492 229L495 230L497 232L496 233L499 236L498 235L499 235L496 233L496 230L496 231L497 230L498 231L497 232L496 232L497 232L498 230L498 231L497 230L496 231L496 233L497 232L495 230L504 229L506 233L505 234L500 234L499 235L499 238L502 241L511 246L518 247L519 248L526 248L528 249L529 248L535 247L537 244L539 244L541 247L540 246L540 247L538 244L540 242L550 237L553 237L554 236L556 236L557 238L557 237L558 237L556 236L550 237L540 242L539 244L539 243L538 244L539 245L539 244L537 244L535 247L536 248L539 248L540 247L543 247L546 245L548 245L550 243L553 242L559 236L565 236L568 238L570 238L576 244L577 246L578 254L577 255L577 259L575 263L568 270L560 274L557 274L556 275L543 275L542 274L539 274L529 270L519 263L516 263L515 264L516 263L517 263L517 264L517 263L518 263L517 264L515 262L514 263L514 262L514 263L515 262L513 262L516 265L516 267L522 274L523 284L525 288L534 300L535 303L541 311L553 334L553 336L554 337L554 342L553 343L554 342L553 341L554 341L553 341L554 342L554 340L552 342L553 343L553 345L553 344L552 345L554 347L552 348L553 347L555 347L556 348L556 350L560 356L560 358L560 357L561 358L560 359L560 358L563 358L568 362L572 363L572 386L571 388L573 389L572 389L573 391L574 390L574 391L574 390L573 391L572 390L572 391L575 391L573 389L570 392L567 392L565 394L562 394L558 392L556 392L557 392L556 393L555 391L555 388L554 387L554 379L552 377L553 368L551 364L551 361L550 359L550 360L549 359L551 358L550 350L552 350L553 349L553 345L551 345L549 343L548 339L546 336L545 331L540 321L538 319L536 319L535 318L534 313L532 311L527 309L517 309L516 310L513 310L514 310L514 311L515 310L516 311L515 312L516 310L516 311L515 310L514 311L514 310L516 310L517 309L527 309L532 311L534 313L535 319L535 318L536 319L534 320L534 327L533 328L531 328L527 332L525 332L524 331L524 327L521 320L518 317L515 312L510 308L510 305L504 299L498 296L494 292L483 290L481 292L475 292L474 294L471 294L466 296L464 296L463 295L459 299L457 299L453 301L449 305L443 309L441 309L438 306L437 306L431 312L429 313L426 313L425 312L425 308L434 297L434 294L429 294L423 299L422 299L418 304L416 304L413 307L411 311L412 325L412 324L413 324L412 323L413 324L412 324L412 320L410 318L404 317L402 313L402 310L402 313L404 314L406 312L406 308L407 307L408 301L413 294L412 296L415 299L414 306L414 305L415 305L414 304L415 305L414 305L415 299L423 292L415 299L413 297L411 297L412 297L412 296L412 297L413 297L412 296L408 301L407 307L406 308L406 313L407 314L407 316L404 319L405 318L404 317L405 318L405 317L405 318L407 316L407 314L405 313L406 313L406 312L403 315L404 314L403 314L403 316L407 318L410 318L411 317L410 318L411 318L410 318L411 319L411 311L413 307L416 304L418 304L422 299L423 299L429 294L433 294L434 295L439 292L442 292L448 288L462 287L467 285L474 285L475 286L479 286L484 290L483 289L483 290L483 289L479 286L475 286L474 287L474 290L476 292L475 293L476 292L475 291L475 292L473 289L470 289L464 293L463 295L464 294L466 296L465 295L465 296L465 295L463 297L461 297L462 297L462 296L463 297L462 296L462 297L463 297L465 295L464 294L465 292L468 295L469 293L467 291L468 292L468 291L470 295L469 294L469 295L469 294L468 295L467 294L467 295L466 292L466 293L465 292L468 291L470 289L473 289L474 288L473 289L474 289L473 289L474 290L474 287L475 286L474 285L467 285L466 286L459 287L458 285L457 287L458 286L458 287L458 286L459 287L455 287L451 290L449 288L450 289L450 288L450 289L451 288L452 289L452 291L445 297L445 299L438 306L439 305L440 306L440 308L440 307L439 307L441 305L441 303L441 304L440 304L441 305L440 304L441 304L441 305L439 307L440 307L439 305L445 299L445 297L452 291L451 290L452 290L451 290L452 291L452 288L452 289L451 288L450 289L451 290L453 288L448 288L442 292L439 292L436 294L434 294L435 294L434 295L433 294L434 294L434 297L433 299L428 304L427 308L425 310L426 309L425 309L426 309L425 308L426 309L427 308L426 307L427 307L426 307L427 308L427 306L425 308L425 312L423 313L425 312L426 313L429 313L437 306L438 306L441 309L443 309L449 305L453 301L457 299L459 299L463 295L464 296L466 296L467 295L474 294L475 292L481 292L483 290L494 292L498 296L504 299L510 305L510 308L509 309L510 308L510 309L510 308L511 309L489 309L488 310L480 310L479 311L472 311L471 312L464 312L463 313L451 314L450 315L446 315L445 316L441 316L440 317L436 317L435 318L428 319L427 320L422 321L419 323L413 324L411 326L405 326L401 328L384 328L383 329L380 329L369 334L363 335L362 336L359 336L360 336L359 335L358 336L359 336L358 325L356 322L354 322L353 321L352 318L350 316L350 314L348 312L346 314L347 313L347 314L347 313L348 314L349 313L348 314L347 313L348 312L350 314L349 315L350 315L349 315L350 314L350 316L348 314L342 313L341 312L340 314L342 313L343 314L343 313L343 314L342 313L341 315L341 314L340 314L341 312L342 313L344 313L341 315L339 313L337 313L337 310L336 312L338 315L336 312L337 311L337 313L336 314L335 313L337 312L338 313L338 316L339 318L353 331L342 320L342 319L342 320L341 320L343 317L340 313L338 314L335 314L334 315L333 314L328 314L327 313L325 313L324 314L318 315L316 317L316 319L315 320L316 321L323 322L327 326L325 329L321 327L322 327L322 326L323 328L326 325L325 326L325 324L323 325L324 323L323 324L324 323L324 324L325 324L325 326L324 327L324 329L326 331L325 330L325 331L325 329L323 328L324 328L325 330L324 329L324 327L323 328L325 329L328 325L327 326L327 325L327 326L323 322L321 322L320 323L321 322L320 322L320 326L321 327L323 324L325 325L330 325L332 327L330 331L325 331L323 333L318 333L317 332L316 332L317 332L316 333L315 332L316 332L316 334L314 336L307 337L298 325L295 325L294 326L284 326L283 327L278 328L275 331L275 332L260 346L258 350L258 353L257 354L258 356L257 355L257 356L260 356L261 355L264 355L265 354L267 354L271 352L274 352L281 349L284 349L291 346L294 346L295 345L298 345L299 344L302 344L307 342L316 341L317 340L328 339L329 338L355 338L356 340L364 347L366 351L367 357L369 359L369 366L368 367L368 376L367 377L367 380L366 381L365 387L363 390L361 397L359 399L357 404L354 407L351 413L348 416L347 428L350 434L354 438L356 438L357 439L363 439L369 436L372 439L369 436L368 436L367 437L367 439L367 438L366 438L367 438L367 437L366 438L369 441L370 441L369 441L369 442L374 437L378 435L381 437L383 437L384 436L382 440L371 452L369 452L368 451L368 449L368 450L369 450L368 451L369 450L368 450L368 451L370 453L370 451L369 452L370 451L370 453L369 452L371 452L382 440L383 438L382 436L381 437L382 436L383 438L383 436L383 437L381 437L380 436L381 435L380 436L380 435L380 436L379 435L386 436L388 437L390 440L389 438L388 439L389 438L390 440L390 439L388 437L387 438L388 437L387 437L388 439L391 439L389 442L386 444L386 446L385 447L385 450L386 451L386 453L384 455L386 458L385 458L385 459L385 457L385 458L386 458L384 456L384 454L383 453L383 451L385 449L384 450L385 450L383 451L383 453L385 454L384 454L384 455L387 453L391 457L390 456L390 457L390 456L386 452L387 453L386 453L386 451L385 450L386 444L387 443L389 444L388 443L389 443L388 443L389 442L389 448L397 455L400 455L404 451L410 455L406 459L404 459L403 460L395 460L393 457L386 458L383 462L376 464L374 468L370 468L367 471L366 473L366 476L363 480L357 481L356 482L354 482L349 478L349 475L350 474L350 466L349 465L350 466L350 474L353 477L353 479L352 480L353 479L356 482L356 484L351 489L351 492L350 493L350 494L350 493L351 494L350 495L352 493L351 491L350 493L350 492L352 492L355 490L355 487L354 486L355 488L353 487L355 487L357 485L356 484L357 485L356 486L355 485L356 486L355 487L354 487L354 486L355 487L355 490L354 491L351 489L352 490L351 490L352 490L351 491L352 490L353 491L351 492L352 494L352 493L350 492L351 491L352 492L351 494L350 493L351 492L351 489L356 484L355 481L354 482L355 481L356 483L356 482L354 480L353 481L354 480L352 478L351 479L353 477L352 478L353 478L352 478L353 479L353 477L351 475L349 475L350 475L349 476L350 474L350 475L351 475L350 474L349 475L349 478L354 482L363 480L366 476L366 473L368 471L371 472L368 470L366 466L366 459L370 454L369 455L370 455L369 455L366 459L366 466L367 468L369 469L368 469L368 471L367 471L368 471L368 470L369 471L367 472L367 471L370 468L374 468L375 467L375 465L376 464L373 462L372 457L370 455L370 453L371 452L366 447L364 447L360 451L359 451L353 458L351 459L350 458L348 460L349 459L350 461L348 458L349 457L348 457L349 457L348 458L349 459L351 459L349 459L350 458L351 459L350 460L348 460L347 459L348 458L348 456L350 458L350 464L348 466L346 466L341 469L339 469L337 473L336 472L337 473L338 472L341 475L340 474L341 474L340 474L342 472L341 471L338 471L337 472L337 474L335 476L333 476L334 475L334 477L332 475L332 472L331 473L332 471L332 472L331 471L330 472L331 474L330 472L331 473L331 475L330 476L330 475L332 475L333 474L331 474L329 476L332 478L335 476L332 473L330 473L328 475L331 477L328 480L330 483L327 484L325 482L327 482L328 483L328 486L327 487L325 495L326 496L326 499L330 503L332 504L338 504L339 505L339 507L334 513L333 519L333 518L332 518L333 518L333 517L332 518L335 521L335 524L333 527L333 531L332 532L333 531L333 532L330 532L329 531L330 520L330 521L329 520L328 521L328 520L328 521L329 520L330 521L329 522L330 522L329 522L330 521L330 523L327 520L330 520L331 518L329 516L324 516L323 517L324 516L323 516L323 518L320 521L318 521L319 521L319 522L319 521L320 521L318 524L319 522L313 515L311 511L311 508L310 507L310 505L311 504L311 492L312 491L312 489L314 485L317 482L320 475L323 472L325 472L326 471L332 471L334 470L336 472L340 472L341 473L341 477L340 478L339 485L340 486L340 489L345 497L349 496L350 494L357 495L361 493L364 490L368 488L377 481L385 477L391 476L392 475L405 475L406 474L409 474L422 469L434 469L452 476L459 476L460 475L460 472L462 470L462 461L460 457L451 445L452 446L452 445L451 445L449 448L447 449L444 449L434 439L433 436L435 434L438 435L444 439L447 437L449 437L458 445L461 443L465 443L466 444L469 444L472 446L474 446L476 448L477 452L476 448L478 445L479 447L479 446L478 447L477 446L476 448L477 446L478 447L479 446L478 445L476 448L475 447L479 447L484 449L492 457L494 461L495 468L499 471L499 475L503 479L503 485L507 490L507 493L509 498L511 500L514 500L520 507L522 507L523 506L523 496L524 495L522 492L523 493L523 495L523 494L524 495L523 496L523 495L529 495L530 494L531 495L533 495L536 492L536 485L535 484L535 481L533 479L534 480L536 477L538 479L537 478L537 479L537 478L536 479L533 476L533 475L534 477L536 477L535 477L535 479L534 480L535 479L535 477L534 477L536 479L537 478L536 477L534 479L535 481L535 484L536 485L536 492L533 495L530 495L531 495L530 494L529 495L530 495L530 486L531 485L531 480L532 479L539 479L541 481L543 481L544 480L544 469L543 468L543 465L542 464L541 458L542 457L544 457L550 464L552 464L553 463L553 458L556 454L557 454L560 457L561 459L561 462L562 463L563 479L558 484L558 485L559 486L559 489L560 491L564 494L564 507L563 508L564 507L564 508L562 508L560 510L561 518L563 521L563 525L562 526L562 528L560 530L560 534L561 535L561 539L562 540L565 538L565 530L562 528L561 528L561 529L562 527L561 526L562 527L561 528L565 530L565 538L562 540L561 539L561 535L560 534L560 530L562 528L562 526L556 526L554 529L554 535L553 536L556 540L556 553L555 554L555 557L553 559L551 559L552 559L551 560L555 557L555 554L556 553L556 540L554 537L552 537L553 537L553 536L553 537L554 537L553 536L549 541L549 551L549 550L548 551L550 552L551 564L546 573L539 581L539 605L540 606L540 624L541 625L541 636L542 637L542 644L543 645L544 659L545 660L545 665L546 666L546 671L548 676L549 685L551 688L551 692L552 693L553 698L557 705L562 710L569 710L571 708L571 701L570 700L570 698L561 689L559 689L558 688L551 688L552 688L551 689L552 688L558 688L559 689L561 689L570 698L570 700L571 701L571 708L569 710L562 710L555 702L551 692L551 688L549 685L549 681L548 680L548 676L547 675L546 666L545 665L545 660L544 659L543 645L542 644L542 637L541 636L541 625L540 624L540 606L539 605L539 582L538 581L539 582L539 581L536 581L535 579L530 578L529 579L528 585L525 591L517 600L513 600L512 599L513 600L512 601L514 598L515 587L516 586L515 588L511 591L511 593L509 594L509 596L508 597L508 598L508 597L509 598L508 597L509 596L509 594L511 592L514 595L513 594L514 594L511 593L512 593L511 592L510 593L511 593L511 591L512 590L515 592L514 591L515 591L514 591L515 590L514 589L515 589L514 589L515 590L514 591L513 590L515 588L515 593L514 594L514 598L513 599L513 600L514 600L513 599L508 598L506 603L502 609L493 618L486 622L483 622L480 619L477 619L474 622L471 627L464 634L447 644L443 644L442 645L440 645L437 648L434 648L423 660L419 662L409 662L407 661L402 656L398 649L398 646L393 641L390 644L391 643L390 643L391 643L390 642L391 643L392 642L391 641L392 642L392 641L392 642L393 641L391 641L390 642L390 645L391 646L391 648L390 649L386 649L385 648L380 647L373 643L371 643L367 639L366 640L366 642L366 641L365 642L366 641L368 642L369 641L369 642L369 641L368 642L367 641L368 640L368 637L364 633L361 628L353 620L351 620L349 623L352 629L362 639L362 642L362 641L361 642L362 641L363 642L362 641L362 639L352 629L349 623L353 620L352 621L352 620L352 621L351 620L352 621L351 622L350 621L350 622L349 622L350 622L350 621L351 622L349 623L351 620L353 620L361 628L364 633L368 637L367 639L368 639L367 639L368 638L367 642L366 640L367 641L366 641L367 639L370 642L356 642L341 635L331 626L331 624L327 621L327 619L327 620L328 620L327 621L328 620L327 620L328 623L329 621L328 622L330 623L329 624L330 623L331 624L330 625L331 625L330 625L331 624L331 626L328 623L329 621L321 611L318 611L317 612L318 614L318 619L317 620L314 620L312 619L304 612L303 612L302 611L302 608L293 595L290 595L290 603L288 605L289 604L289 605L290 603L290 600L294 597L294 598L293 598L295 598L294 598L294 597L292 599L290 598L291 599L290 599L291 599L290 600L290 596L291 595L290 594L290 595L290 594L291 595L290 596L290 595L293 595L297 600L298 603L302 608L302 611L301 612L302 611L302 612L302 611L303 612L297 612L296 611L294 611L295 611L294 612L294 611L289 605L287 605L283 603L280 599L278 601L279 600L279 601L279 600L280 601L281 600L281 597L278 592L278 590L275 583L275 580L274 579L274 572L273 571L273 566L271 564L271 562L271 564L269 566L269 568L268 569L269 583L269 582L268 582L269 581L268 582L269 582L268 569L269 568L269 566L271 564L273 566L273 571L274 572L274 579L275 580L275 583L276 584L278 592L281 597L280 599L281 599L280 599L281 598L281 600L280 601L279 600L280 599L282 601L281 602L282 601L282 602L278 601L274 597L271 590L270 584L264 579L262 575L262 572L260 567L260 562L259 561L260 562L260 561L258 561L256 557L256 555L258 553L258 551L255 549L255 547L253 546L254 546L253 545L252 546L253 546L253 529L249 523L248 504L246 501L245 492L243 490L241 475L238 471L238 466L236 462L235 454L233 452L232 443L227 443L222 449L217 451L214 448L214 446L211 442L211 440L209 436L209 432L204 427L204 422L201 416L201 406L200 405L198 405L193 411L194 410L193 410L194 410L196 407L200 404L201 401L200 405L200 404L199 405L201 406L201 416L204 422L204 426L203 427L204 426L204 427L201 426L198 423L196 418L193 416L194 416L193 415L192 416L193 416L193 410L191 408L191 406L189 405L190 405L190 404L188 406L181 406L179 405L177 402L174 402L173 401L174 402L173 402L173 399L170 395L170 392L167 389L167 379L170 372L172 370L174 370L175 369L174 370L175 370L174 370L175 371L175 367L178 364L178 363L185 357L199 348L206 342L208 341L211 341L214 336L218 332L220 328L225 323L226 323L229 326L234 326L238 324L244 324L243 324L243 325L243 324L242 324L243 325L245 323L247 323L257 319L263 315L273 305L277 297L278 287L279 286L278 284L278 277L277 276L276 269L274 267L274 265L274 266L273 266L274 266L274 267L273 267L273 266L269 262L268 262L270 263L269 264L268 263L269 264L270 263L270 264L270 263L271 264L268 264L268 261L269 262L260 270L261 272L260 274L261 272L263 273L264 272L263 271L262 273L263 271L265 273L264 272L264 273L264 272L263 273L262 272L260 273L261 272L259 269L260 270L260 269L260 270L261 269L256 269L255 270L250 270L249 271L238 271L237 270L233 270L232 269L227 268L218 263L216 263L212 261L209 261L208 260L199 260L198 261L194 261L193 262L185 264L179 267L174 267L175 267L174 266L173 267L174 267L174 264L177 258L171 255L166 250L164 246L164 244L163 243L163 239L164 238L167 238L172 244L167 238L165 238L164 237L165 238L164 238L164 231L150 218L144 215L142 215L141 214L128 214L117 219L110 225L104 236L104 240L105 241L104 240L104 241L104 240L103 241L111 239L116 236L119 236L120 235L132 235L140 239L146 245L149 251L150 256L154 263L163 270L162 276L156 282L147 288L147 291L148 292L152 292L153 293L152 294L152 298L151 299L151 307L153 311L161 320L160 319L160 320L160 319L159 320L160 319L159 317L153 311L151 307L151 299L152 298L152 294L154 292L158 292L157 292L158 291L153 293L152 292L150 292L147 289L148 290L146 291L140 291L139 290L136 290L135 291L126 291L125 290L121 290L116 288L113 286L105 277L100 265L100 259L102 258L101 258L101 257L100 259L100 265L101 266L102 271L107 280L113 286L118 289L125 290L126 291L135 291L136 290L139 290L142 294L136 300L137 299L137 300L137 299L142 294L142 291L142 292L141 291L140 292L141 291L142 292L143 291L141 293L142 293L141 293L142 292L142 294L140 291L147 291L148 290L146 291L148 290L149 291L148 292L149 291L149 292L149 291L150 292L148 292L147 291L147 288L156 282L162 276L159 273L160 274L160 273L160 274L161 273L162 274L161 275L162 275L161 275L162 274L161 273L160 274L162 276L162 273L157 273L154 275L147 276L146 277L135 277L134 276L131 276L122 271L117 266L116 266L109 260L105 258L102 258L100 256L100 254L97 254L94 251L92 251L84 261L79 272L79 275L78 276L78 284L79 285L81 292L90 301L97 303L98 304L105 304L106 305L109 305L110 304L118 304L119 303L123 303L127 301L131 302L134 300L137 300L141 302L144 305L145 307L145 310L147 314L152 319L154 320L163 320L164 319L167 319L170 316L171 309L170 308L169 301L162 294L158 292L158 290L163 287L172 287L173 288L175 288L182 292L192 301L198 304L204 304L205 305L215 304L216 303L221 302L227 299L237 292L240 294L240 295L240 294L239 295L240 294L238 292L239 293L238 294L239 293L237 292L238 292L238 294L239 295L243 296L246 292L246 289L260 274L260 273L265 273L275 264L275 261L275 262L282 259L291 249L292 249L298 243L304 240L298 243L292 249L288 251L281 258L281 259L281 258L282 259L281 258L282 257L283 258L282 257L283 256L284 257L283 256L283 254L282 253L276 253L277 253L276 252L277 253L282 253L283 254L285 254L286 255L284 254L285 256L283 255L284 255L284 254L283 254L283 256L286 253L287 254L286 253L287 252L288 253L287 252L288 251L289 252L288 251L289 251L289 252L282 259L279 261L275 262L275 263L276 262L274 260L274 255L276 253L277 246L281 239L290 230L295 230L295 231L298 233L323 233L325 231L331 231L338 234L341 234L346 236L353 236L355 237L356 236L362 236L363 235L365 235L370 232L374 228L374 227L377 224L377 221L379 219L380 220L379 221L377 221L378 221L377 222L378 221L378 219L379 221L378 220L378 221L379 221L380 219L380 220L379 219L377 221L377 224L370 232L365 235L363 235L362 236L356 236L355 237L353 236L346 236L345 235L338 234L331 231L326 231L323 228L321 228L314 225L302 225L297 227L294 230L295 231L294 230L295 229L295 230L297 227L302 225L314 225L315 226L323 228L325 231L325 230L326 231L323 233L298 233L296 232L295 230L289 230L290 230L289 231L288 229L282 226L274 218L269 210L269 208L267 204L267 195L268 194L268 191L274 180L280 174L281 174L284 171L294 166L300 165L301 164L314 164L315 165L317 164L322 164L330 168L339 177L339 182L339 181L336 181L337 181L339 178L338 179L339 179L338 179L339 180L338 181L339 180L338 179L337 180L337 181L339 181L339 177L330 168L322 164L319 168L320 167L320 168L321 166L320 164L321 165L321 164L321 165L322 164L317 164L316 165L318 168L320 168L326 172L336 181L337 180L340 183L345 192L345 194L347 198L349 200L352 206L360 214L361 214L367 219L367 224L366 225L361 225L360 226L351 226L350 225L341 224L325 216L319 210L316 212L305 201L301 194L301 191L301 194L305 201L316 212L321 212L320 212L320 208L317 204L315 200L315 198L313 195L312 189L311 188L311 185L311 188L312 189L313 195L315 198L315 200L317 204L320 208L319 210L320 210L319 210L320 209L320 211L319 212L318 211L318 212L318 211L319 212L320 211L320 212L317 212L319 210L325 216L338 223L345 224L346 225L350 225L351 226L360 226L361 225L366 225L367 224L367 219L368 217L368 218L367 217L366 218L366 217L366 218L367 217L368 218L367 219L365 217L373 216L374 217L376 217L378 219L384 218L383 215L376 207L373 200L373 189L374 188L374 182L375 181L375 174L374 173L374 168L373 167L373 165L369 158L361 150L355 146L335 138L331 138L330 137L326 137L325 136L316 136L315 135L313 135L311 133L309 133L307 135L288 135L287 134L275 134L274 133L271 133L270 132L265 131L255 126L243 114L237 102L237 86L238 85L239 80L242 74"></path>
+            <circle id="about-pen-tip" cx="0" cy="0" r="4.8"></circle>
+          </svg>
+        </div>
+        <div class="about-portrait-controls">
+          <label class="about-portrait-slider-label" for="about-portrait-slider">
+            <span>SCRUB THE SKETCH</span>
+            <span id="about-portrait-slider-value">000%</span>
+          </label>
+          <div class="about-portrait-slider-row">
+            <input id="about-portrait-slider" class="about-portrait-slider" type="range" min="0" max="100" value="0" step="1" aria-label="Scrub through the line-art portrait animation">
+            <button id="about-portrait-play" class="about-portrait-play" type="button" aria-pressed="false" aria-label="Play the sketch animation">▶ Play</button>
+          </div>
+        </div>
+        <div class="about-portrait-footer">
+          <span>same human, different tabs ↗</span>
+          <div class="about-persona-tags" aria-label="Brand stories, useful tools and open roads"><span>BRAND STORIES</span><span>USEFUL TOOLS</span><span>OPEN ROADS</span></div>
+        </div>
+      </div>
+      <div class="about-persona-bottom"><span class="about-live-dot" aria-hidden="true"></span> CURRENT OPERATING MODE: CURIOUS</div>
+    </aside>
+    <div class="about-simple-content">
+      <article class="about-simple-card" aria-labelledby="about-me-title">
+        <div class="about-simple-top"><span class="about-new-label">01 / THE PERSON, NOT JUST THE PIXELS</span><span class="about-simple-stamp" aria-hidden="true">HI, I'M AJU ↗</span></div>
+        <h3 id="about-me-title">About <em>me.</em></h3>
+        <p class="about-simple-lead">Hi, I’m <strong>Aju Krishna M K.</strong> I turn ideas and messy briefs into brand stories, campaigns, and visuals that actually have something to say.</p>
+        <p>At <strong>Shadowfax</strong>, I work across brand design, visual storytelling, motion and performance creatives. I enjoy finding the clear idea first, then making every frame earn its place.</p>
+        <p>After hours, I’m usually testing AI, building tiny design tools, prototyping apps or planning the next motorcycle ride. My browser tabs have a browser tab problem.</p>
+        <div class="about-simple-tags" aria-label="Creative interests"><span>✎ BRAND & DESIGN</span><span>✳ AI EXPERIMENTS</span><span>⌘ USEFUL TOOLS</span><span>↗ OPEN ROADS</span></div>
+      </article>
+<div aria-labelledby="about-starter-title" class="about-starter">
+<div class="about-starter-heading">
+<div><span class="about-new-label">02 / CLICK A LITTLE CLOSER</span><h3 id="about-starter-title">The Aju starter pack<span aria-hidden="true"> ↘</span></h3></div>
+<span class="about-starter-aside">Four tabs. One person.</span>
+</div>
+<div aria-label="Explore what makes Aju tick" class="about-starter-tabs" role="group">
+<button aria-pressed="true" class="about-starter-tab is-active" data-about-tab="design" type="button"><span aria-hidden="true">✎</span><span>Design</span></button>
+<button aria-pressed="false" class="about-starter-tab" data-about-tab="build" type="button"><span aria-hidden="true">⌘</span><span>Build</span></button>
+<button aria-pressed="false" class="about-starter-tab" data-about-tab="ai" type="button"><span aria-hidden="true">✳</span><span>AI</span></button>
+<button aria-pressed="false" class="about-starter-tab" data-about-tab="ride" type="button"><span aria-hidden="true">↗</span><span>Ride</span></button>
+</div>
+<div class="about-starter-note" id="about-starter-note" aria-live="polite" aria-atomic="true">
+  <div class="about-starter-note-header">
+    <span class="about-starter-kicker" id="about-starter-kicker">01 / DESIGN THINKING</span>
+    <span class="about-starter-count" aria-hidden="true">01 — 04</span>
+  </div>
+  <div class="about-starter-note-body">
+    <span aria-hidden="true" class="about-starter-icon" id="about-starter-icon">✎</span>
+    <div class="about-starter-text">
+      <h4 id="about-starter-headline">The idea before the pixels.</h4>
+      <p id="about-starter-copy">Give me a visual problem and I’ll start with the idea, not a random font. Although I do have opinions about fonts.</p>
+    </div>
+  </div>
+  <a class="about-starter-cta" id="about-starter-cta" href="works.html">Explore selected work <span aria-hidden="true">↗</span></a>
+</div>
+</div>
+    </div>
+  </div>
+</section>
+
+<section id="hobbies" class="wrap after-hours-section" aria-labelledby="hobby-title">
+  <div class="section-head after-hours-heading"><div><div class="eyebrow"><span class="after-hours-led" aria-hidden="true"></span> After-hours / hobby mode <span class="hobby-side-quest">✳ detours still loading</span></div><h2 id="hobby-title">Off the clock.<br><em>On the workbench.</em></h2></div><p>This is where loose ideas stop behaving. A plugin, a prototype, an AI test or a ride plan usually starts here before it turns into a real page, file or side quest.</p></div>
+  <div class="after-hours-board">
+    <div class="hobby-console" aria-label="Aju's interactive after-hours idea desk">
+      <div class="hobby-console-top"><span class="hobby-live"><span aria-hidden="true"></span> AJU.EXE / OFF-CLOCK LAB</span><div class="hobby-console-actions"><button type="button" id="shuffle" class="hobby-shuffle">✦ Mix the board</button><span class="hobby-console-stamp">CURIOSITY STILL ON ↗</span></div></div>
+      <h3>AFTER HOURS,<br><em>I BUILD THE DETOUR.</em></h3>
+      <p class="hobby-console-lead">Pick a lane. The desk updates with the rabbit hole I'm currently exploring.</p>
+      <div class="hobby-tabs" role="group" aria-label="Explore Aju's hobbies">
+        <button class="hobby-tab" type="button" data-hobby="ai" aria-pressed="true"><span aria-hidden="true">✳</span> AI experiments</button>
+        <button class="hobby-tab" type="button" data-hobby="tools" aria-pressed="false"><span aria-hidden="true">⌘</span> Useful tools</button>
+        <button class="hobby-tab" type="button" data-hobby="apps" aria-pressed="false"><span aria-hidden="true">⌁</span> App ideas</button>
+        <button class="hobby-tab" type="button" data-hobby="ride" aria-pressed="false"><span aria-hidden="true">↗</span> Open roads</button>
+      </div>
+      <div class="hobby-output" aria-live="polite" aria-atomic="true">
+        <span class="hobby-output-kicker" id="hobby-output-kicker">01 / VISUAL EXPERIMENTS</span>
+        <div class="hobby-output-row"><span class="hobby-output-icon" id="hobby-output-icon" aria-hidden="true">✳</span><div><h4 id="hobby-output-title">What if I tried this?</h4><p id="hobby-output-copy">AI image experiments, visual concepts and figuring out where a good prompt meets actual design judgment.</p></div></div>
+        <a id="hobby-output-link" class="hobby-output-link" href="app-ideas.html#app-concepts">See the experiments <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="hobby-console-bottom"><span>STATUS: <strong id="hobby-status">CURIOSITY LOADING...</strong></span></div>
+    </div>
+    <div class="hobby-side">
+      <div class="hobby-quest"><div class="hobby-quest-top"><span>SIDE-QUEST GENERATOR</span><span aria-hidden="true">↻</span></div><h4>One tiny thought.<br>Many prototypes.</h4><p id="side-quest-line" aria-live="polite">“This could probably become a small tool...”</p><button type="button" class="hobby-quest-button" id="side-quest-button">Spin another detour <span aria-hidden="true">↻</span></button><div class="quest-counter" id="quest-counter">SIDE QUEST 001 / BROWSER TABS RISING</div></div>
+      <div class="hobby-download"><span class="hobby-download-kicker">FROM NOTE → DOWNLOAD</span><h4>Some detours<br>ship as files.</h4><p>A few after-hours experiments become actual utilities. Browse the Illustrator tools, tiny workflow helpers and other practical things that escaped the idea phase.</p><a href="app-ideas.html#tool-downloads">Browse useful downloads <span aria-hidden="true">↗</span></a><span class="hobby-download-mark" aria-hidden="true">⌘</span></div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="wrap">
+  <div class="ideas-teaser"><div><div class="eyebrow">Separate playground</div><h3>Useful tools. Unfinished ideas.</h3><p>Download my Illustrator utilities, explore two third-party tools I love, then browse the app ideas and creative experiments on my workbench.</p></div><a class="btn ideas-btn" href="app-ideas.html">Open the idea vault ↗</a></div>
+</section>
+
+<section id="contact" class="wrap">
+  <div class="contact">
+    <div class="eyebrow">Have a brief? Have a weird idea?</div>
+    <h2>Let's make<br>something worth scrolling.</h2>
+    <p>For freelance work, collaborations, brand projects or creative-tech experiments, drop me a line.</p>
+    <div class="cta-row"><a class="btn" href="mailto:ajukrishnamk@gmail.com">ajukrishnamk@gmail.com ↗</a><a class="btn" href="#top">Back to top ↑</a></div>
+    <div class="orbit" aria-hidden="true">
+      <svg viewBox="0 0 320 320" role="presentation">
+        <defs>
+          <path id="orbit-path" d="M160 160 m -104 0 a 104 104 0 1 1 208 0 a 104 104 0 1 1 -208 0"/>
+        </defs>
+        <circle cx="160" cy="160" r="104"></circle>
+        <g class="orbit-text">
+          <text>
+            <textPath href="#orbit-path" startOffset="0%">LET'S MAKE SOMETHING WEIRD • LET'S MAKE SOMETHING WEIRD • </textPath>
+          </text>
+        </g>
+        <path class="orbit-star" d="M267 146 274 161 290 167 274 173 267 188 260 173 244 167 260 161Z"></path>
+        <circle class="orbit-dot" cx="64" cy="108" r="4"></circle>
+      </svg>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap"><div>© 2026 AJU KRISHNA M K</div><div class="smalllinks"><a href="works.html">Work</a><a href="#about">About</a><a href="#hobbies">Playground</a><a href="app-ideas.html">App Ideas</a><a href="#contact">Contact</a></div></footer>
+
+<script>
+
+
+// A compact but functional vector playground: move, add, recolour and remix.
+(function(){
+ const lab=document.querySelector('.creative-lab');
+ if(!lab)return;
+ const artboard=lab.querySelector('#labArtboard');
+ const status=lab.querySelector('#labStatus');
+ const selectButton=lab.querySelector('#labSelect');
+ const swatches=[...lab.querySelectorAll('.lab-swatch')];
+ const colours={yellow:'#f6d954',blue:'#4165ee',coral:'#f27966',mint:'#a9dbd0'};
+ let selected=null,drag=null,remixIndex=0,shapeCounter=0;
+ const shapes=()=>[...artboard.querySelectorAll('.lab-shape')];
+ function clamp(n,lo,hi){return Math.max(lo,Math.min(hi,n));}
+ function normalized(el){const maxX=Math.max(0,artboard.clientWidth-el.offsetWidth),maxY=Math.max(0,artboard.clientHeight-el.offsetHeight);return {x:clamp(el.offsetLeft,0,maxX),y:clamp(el.offsetTop,0,maxY)};}
+ function setPosition(el,x,y){const maxX=Math.max(0,artboard.clientWidth-el.offsetWidth),maxY=Math.max(0,artboard.clientHeight-el.offsetHeight);el.style.left=clamp(x,0,maxX)+'px';el.style.top=clamp(y,0,maxY)+'px';}
+ function choose(el){selected=el;shapes().forEach(s=>s.classList.toggle('is-selected',s===el));status.firstChild.textContent=el?el.dataset.shapeName+' selected':'Drag anything on the canvas';swatches.forEach(s=>s.setAttribute('aria-pressed','false'));}
+ function wire(el){
+  el.addEventListener('pointerdown',e=>{if(e.button!==0)return;e.preventDefault();choose(el);const box=el.getBoundingClientRect();const board=artboard.getBoundingClientRect();drag={el,pointer:e.pointerId,dx:e.clientX-box.left,dy:e.clientY-box.top,board};el.setPointerCapture(e.pointerId);});
+  el.addEventListener('pointermove',e=>{if(!drag||drag.el!==el||drag.pointer!==e.pointerId)return;const r=drag;setPosition(el,e.clientX-r.board.left-r.dx,e.clientY-r.board.top-r.dy);});
+  const done=e=>{if(drag?.el===el&&drag.pointer===e.pointerId){drag=null;try{el.releasePointerCapture(e.pointerId);}catch(_){}}};
+  el.addEventListener('pointerup',done);el.addEventListener('pointercancel',done);el.addEventListener('lostpointercapture',()=>{drag=null;});
+  el.addEventListener('click',()=>choose(el));
+  el.addEventListener('keydown',e=>{if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();choose(el);const step=e.shiftKey?16:5;setPosition(el,el.offsetLeft+(e.key==='ArrowRight'?step:e.key==='ArrowLeft'?-step:0),el.offsetTop+(e.key==='ArrowDown'?step:e.key==='ArrowUp'?-step:0));}});
+ }
+ shapes().forEach(wire);
+ choose(null);
+ const layouts=[[[13,16],[67,19],[60,52],[12,81]],[[18,11],[65,14],[62,61],[11,76]],[[10,18],[72,17],[57,52],[40,79]],[[18,19],[71,51],[12,57],[57,14]]];
+ function remix(){const layout=layouts[++remixIndex%layouts.length];shapes().slice(0,4).forEach((el,i)=>{const [x,y]=layout[i];setPosition(el,artboard.clientWidth*x/100,artboard.clientHeight*y/100);});choose(null);status.firstChild.textContent='Composition remixed';}
+ lab.querySelector('#labRemix').addEventListener('click',remix);
+ function addShape(kind){shapeCounter++;const el=document.createElement('div');el.className='lab-shape lab-shape--'+kind;el.tabIndex=0;el.setAttribute('role','button');el.dataset.shapeName=kind==='circle'?'New circle':'New rectangle';el.setAttribute('aria-label','Move '+el.dataset.shapeName.toLowerCase());if(kind==='circle')el.textContent='✳';el.style.width=kind==='circle'?'70px':'110px';el.style.height=kind==='circle'?'70px':'75px';el.style.border='2px solid #242322';el.style.borderRadius=kind==='circle'?'50%':'12px';el.style.background=kind==='circle'?colours.mint:colours.yellow;el.style.boxShadow='5px 6px 0 rgba(23,23,23,.12)';el.style.display='grid';el.style.placeItems='center';el.style.fontSize='1.7rem';artboard.append(el);wire(el);setPosition(el,artboard.clientWidth*.32+(shapeCounter%3)*24,artboard.clientHeight*.29+(shapeCounter%4)*19);choose(el);selectButton.classList.add('is-active');status.firstChild.textContent=el.dataset.shapeName+' added';}
+ lab.querySelector('#labAddRect').addEventListener('click',()=>addShape('rect'));
+ lab.querySelector('#labAddCircle').addEventListener('click',()=>addShape('circle'));
+ selectButton.addEventListener('click',()=>{choose(null);selectButton.classList.add('is-active');});
+ swatches.forEach(s=>s.addEventListener('click',()=>{if(!selected){status.firstChild.textContent='Select a shape to colour';return;}const color=colours[s.dataset.color];selected.style.background=color;swatches.forEach(b=>b.setAttribute('aria-pressed',String(b===s)));status.firstChild.textContent=selected.dataset.shapeName+' recoloured';}));
+ // Keep objects within the artboard after a responsive layout change.
+ window.addEventListener('resize',()=>shapes().forEach(el=>{const pos=normalized(el);setPosition(el,pos.x,pos.y);}));
+})();
+
+const accents=['#8f1402','#3855ff','#5f2b84','#0f766e','#cf5c36','#d97706'];
+document.getElementById('shuffle').addEventListener('click',()=>{const c=accents[Math.floor(Math.random()*accents.length)];document.documentElement.style.setProperty('--accent',c);document.querySelector('.creative-lab')?.style.setProperty('--lab-coral',c)});
+
+
+// Starter Pack: a light, keyboard-accessible way to meet the person behind the work.
+const aboutNotes = {
+  design: {icon:'✎',kicker:'01 / DESIGN THINKING',headline:'The idea before the pixels.',copy:'Give me a visual problem and I’ll start with the idea, not a random font. Although I do have opinions about fonts.',cta:'Explore selected work',href:'works.html'},
+  build: {icon:'⌘',kicker:'02 / BUILDING USEFUL THINGS',headline:'Small tool. Big time saver.',copy:'An app idea usually begins with “this should exist.” Then comes a prototype, a bug, and approximately seventeen open tabs.',cta:'Explore downloadable tools',href:'app-ideas.html#tool-downloads'},
+  ai: {icon:'✳',kicker:'03 / CREATIVE EXPERIMENTS',headline:'What if I tried this?',copy:'I test AI images, prompts and creative workflows to push a good idea further — while keeping the design decisions human.',cta:'Explore app experiments',href:'app-ideas.html#app-concepts'},
+  ride: {icon:'↗',kicker:'04 / OFF-SCREEN MODE',headline:'Take the long way home.',copy:'I ride motorcycles to get away from screens. Somehow, the ride home often comes with another app idea.',cta:'Explore the playground',href:'#hobbies'}
+};
+const aboutButtons=[...document.querySelectorAll('[data-about-tab]')];
+const aboutIcon=document.getElementById('about-starter-icon');
+const aboutKicker=document.getElementById('about-starter-kicker');
+const aboutHeadline=document.getElementById('about-starter-headline');
+const aboutCopy=document.getElementById('about-starter-copy');
+const aboutCta=document.getElementById('about-starter-cta');
+aboutButtons.forEach(button=>button.addEventListener('click',()=>{
+  const note=aboutNotes[button.dataset.aboutTab];
+  if(!note)return;
+  aboutButtons.forEach(b=>{const active=b===button;b.classList.toggle('is-active',active);b.setAttribute('aria-pressed',String(active));});
+  aboutIcon.textContent=note.icon;
+  aboutKicker.textContent=note.kicker;
+  aboutHeadline.textContent=note.headline;
+  aboutCopy.textContent=note.copy;
+  aboutCta.setAttribute('href',note.href);
+  aboutCta.replaceChildren(document.createTextNode(note.cta+' '));
+  const arrow=document.createElement('span');arrow.setAttribute('aria-hidden','true');arrow.textContent='↗';aboutCta.append(arrow);
+}));
+
+</script>
+
+
+
+<script>
+(function(){
+  const aboutSection=document.getElementById('about');
+  const mainPath=document.getElementById('about-portrait-path');
+  const trailGroup=document.getElementById('about-trail-group');
+  const pen=document.getElementById('about-pen-tip');
+  const meter=document.getElementById('about-portrait-meter');
+  const slider=document.getElementById('about-portrait-slider');
+  const sliderValue=document.getElementById('about-portrait-slider-value');
+  const playButton=document.getElementById('about-portrait-play');
+  if(!aboutSection || !mainPath || !trailGroup || !pen || !meter || !slider || !sliderValue || !playButton) return;
+
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clamp=(n)=>Math.max(0,Math.min(1,n));
+  const ease=(a,b,t)=>a+(b-a)*t;
+  const length=mainPath.getTotalLength();
+  let currentProgress=0;
+  let targetProgress=0;
+  let isScrubbing=false;
+  let isPlaying=false;
+  let lastTime=0;
+  mainPath.style.strokeDasharray=String(length+1);
+  mainPath.style.strokeDashoffset=String(length+1);
+
+  const trailDefs=[
+    {cls:'about-portrait-trail',lag:0.000,seg:94,width:1.34,dx:0,dy:0},
+    {cls:'about-portrait-trail',lag:0.010,seg:88,width:1.28,dx:0.65,dy:-0.55},
+    {cls:'about-portrait-trail',lag:0.019,seg:82,width:1.23,dx:-0.65,dy:0.45},
+    {cls:'about-portrait-trail',lag:0.030,seg:74,width:1.18,dx:0.9,dy:0.25},
+    {cls:'about-portrait-trail',lag:0.044,seg:68,width:1.12,dx:-0.95,dy:-0.3},
+    {cls:'about-portrait-trail',lag:0.058,seg:62,width:1.08,dx:0.3,dy:0.95},
+    {cls:'about-portrait-trail faint',lag:0.074,seg:56,width:1.03,dx:-0.2,dy:-1.0},
+    {cls:'about-portrait-trail faint',lag:0.094,seg:50,width:0.98,dx:1.15,dy:-1.05},
+    {cls:'about-portrait-trail faint',lag:0.116,seg:46,width:0.95,dx:-1.05,dy:1.0},
+    {cls:'about-portrait-trail faint',lag:0.138,seg:42,width:0.9,dx:0.2,dy:-1.25},
+    {cls:'about-portrait-trail ghost',lag:0.162,seg:35,width:0.86,dx:1.45,dy:0.8},
+    {cls:'about-portrait-trail ghost',lag:0.188,seg:30,width:0.82,dx:-1.45,dy:-0.85},
+    {cls:'about-portrait-trail ghost',lag:0.216,seg:26,width:0.8,dx:0.8,dy:1.3},
+    {cls:'about-portrait-trail ghost',lag:0.246,seg:20,width:0.76,dx:-0.8,dy:-1.25},
+    {cls:'about-portrait-trail detail',lag:0.74,seg:52,width:0.92,dx:1.6,dy:-0.4,end:true},
+    {cls:'about-portrait-trail detail',lag:0.78,seg:44,width:0.88,dx:-1.6,dy:0.45,end:true},
+    {cls:'about-portrait-trail detail faint',lag:0.81,seg:36,width:0.84,dx:0.55,dy:1.4,end:true},
+    {cls:'about-portrait-trail detail faint',lag:0.84,seg:34,width:0.8,dx:-0.55,dy:-1.45,end:true},
+    {cls:'about-portrait-trail detail ghost',lag:0.87,seg:28,width:0.76,dx:2.05,dy:0.85,end:true},
+    {cls:'about-portrait-trail detail ghost',lag:0.90,seg:24,width:0.72,dx:-2.05,dy:-0.95,end:true}
+  ];
+
+  const trails=trailDefs.map(def=>{
+    const p=document.createElementNS('http://www.w3.org/2000/svg','path');
+    p.setAttribute('d',mainPath.getAttribute('d'));
+    p.setAttribute('class',def.cls);
+    p.setAttribute('stroke','#fffdf8');
+    p.setAttribute('stroke-width',String(def.width));
+    if(def.dx || def.dy) p.setAttribute('transform',`translate(${def.dx} ${def.dy})`);
+    trailGroup.appendChild(p);
+    return {...def,el:p};
+  });
+
+  function aboutProgress(){
+    const rect=aboutSection.getBoundingClientRect();
+    const start=window.innerHeight*0.76;
+    const distance=aboutSection.offsetHeight + window.innerHeight*0.18;
+    return clamp((start - rect.top) / distance);
+  }
+
+  function syncSlider(progress){
+    const percent=Math.round(progress*100);
+    slider.value=String(percent);
+    slider.style.setProperty('--about-slider-fill', percent + '%');
+    sliderValue.textContent=String(percent).padStart(3,'0') + '%';
+    meter.textContent=String(percent).padStart(3,'0') + ' / 100';
+  }
+
+  function setPlayState(playing){
+    isPlaying=playing;
+    playButton.classList.toggle('is-playing', playing);
+    playButton.setAttribute('aria-pressed', playing ? 'true' : 'false');
+    playButton.textContent = playing ? '❚❚ Pause' : '▶ Play';
+    playButton.setAttribute('aria-label', playing ? 'Pause the sketch animation' : 'Play the sketch animation');
+  }
+
+  function render(progress){
+    const p=reduced?1:clamp(progress);
+    const visible=length*p;
+    mainPath.style.strokeDashoffset=String(length+1-visible);
+    const densityBoost = clamp((p-0.76)/0.24);
+    for(const trail of trails){
+      const trailProgress=clamp(p-trail.lag);
+      const pos=trailProgress*length;
+      trail.el.style.strokeDasharray=`${trail.seg} ${length}`;
+      trail.el.style.strokeDashoffset=String(length-pos);
+      let opacityBase = trail.cls.includes('ghost') ? 0.22 : trail.cls.includes('faint') ? 0.52 : 0.9;
+      if(trail.end) opacityBase *= (0.25 + densityBoost * 1.8);
+      trail.el.style.opacity = trailProgress >= 0.999 ? '0' : String(opacityBase * Math.max(0, Math.min(1, trailProgress*1.6 + (trail.end ? densityBoost*0.45 : 0))));
+    }
+    if(p>0 && p<0.998){
+      const point=mainPath.getPointAtLength(Math.max(0,Math.min(visible,length)));
+      pen.setAttribute('cx',point.x.toFixed(2));
+      pen.setAttribute('cy',point.y.toFixed(2));
+      pen.style.opacity='1';
+      pen.setAttribute('r', String(4.5 + densityBoost*1.1));
+    } else {
+      pen.style.opacity='0';
+    }
+    currentProgress = p;
+    syncSlider(p);
+  }
+
+  function tick(ts){
+    if(!lastTime) lastTime=ts;
+    const dt=(ts-lastTime)/1000;
+    lastTime=ts;
+
+    if(isPlaying && !isScrubbing){
+      targetProgress += dt*0.24;
+      if(targetProgress >= 1){
+        currentProgress = 0;
+        targetProgress = 0;
+        render(0);
+      }
+    } else if(!isScrubbing) {
+      targetProgress = aboutProgress();
+    }
+
+    const smoothing = isScrubbing ? 1 : (isPlaying ? 0.2 : 0.12);
+    const next = reduced ? targetProgress : ease(currentProgress, targetProgress, smoothing);
+    const snap = Math.abs(next-targetProgress) < 0.0015 ? targetProgress : next;
+    render(snap);
+    requestAnimationFrame(tick);
+  }
+
+  slider.addEventListener('pointerdown',()=>{
+    isScrubbing=true;
+    setPlayState(false);
+  });
+  slider.addEventListener('input',e=>{
+    isScrubbing=true;
+    targetProgress=Number(e.target.value)/100;
+    render(targetProgress);
+  });
+  const stopScrub=()=>{isScrubbing=false;};
+  slider.addEventListener('pointerup',stopScrub);
+  slider.addEventListener('change',stopScrub);
+  slider.addEventListener('blur',stopScrub);
+  slider.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End','PageUp','PageDown'].includes(e.key)){isScrubbing=true; setPlayState(false);}});
+
+  playButton.addEventListener('click',()=>{
+    if(isPlaying){
+      setPlayState(false);
+      return;
+    }
+    if(currentProgress >= 0.995){
+      currentProgress = 0;
+      targetProgress = 0;
+      render(0);
+    }
+    isScrubbing=false;
+    setPlayState(true);
+  });
+
+  window.addEventListener('scroll',()=>{
+    if(!isScrubbing && !isPlaying) targetProgress = aboutProgress();
+  },{passive:true});
+  window.addEventListener('resize',()=>{ if(!isScrubbing && !isPlaying) targetProgress = aboutProgress(); });
+
+  targetProgress = aboutProgress();
+  render(targetProgress);
+  requestAnimationFrame(tick);
+})();
+</script>
+<script src="cursor.js" defer></script>
+<script>
+(function(){
+ const choices={
+  ai:{kicker:'01 / VISUAL EXPERIMENTS',icon:'✳',title:'What if I tried this?',copy:'AI image experiments, visual concepts and figuring out where a good prompt meets actual design judgment.',link:'app-ideas.html#app-concepts',cta:'Explore my AI experiments ↗',status:'PROMPTING SOMETHING ODD'},
+  tools:{kicker:'02 / USEFUL LITTLE SHORTCUTS',icon:'⌘',title:'Can this be one click?',copy:'Illustrator scripts and tiny utilities that turn a repetitive design chore into something less annoying.',link:'app-ideas.html#tool-downloads',cta:'Download Illustrator tools ↗',status:'AUTOMATING THE BORING BIT'},
+  apps:{kicker:'03 / IDEAS THAT ESCAPED THE NOTES APP',icon:'⌁',title:'One more prototype.',copy:'Trip journals, fitness trackers and app ideas that started as a shower thought and somehow became a project folder.',link:'app-ideas.html#app-concepts',cta:'Open the Idea Vault ↗',status:'OPENING TAB NUMBER 18'},
+  ride:{kicker:'04 / AWAY FROM THE SCREEN',icon:'↗',title:'Out for a ride.',copy:'A motorcycle, some open road and enough time to stop for a photograph. Good ideas sometimes need better scenery.',link:'app-ideas.html#app-concepts',cta:'See the motorcycle app ideas ↗',status:'PLANNING THE NEXT DETOUR'}
+ };
+ const tabs=[...document.querySelectorAll('[data-hobby]')];
+ const kicker=document.getElementById('hobby-output-kicker'),icon=document.getElementById('hobby-output-icon'),title=document.getElementById('hobby-output-title'),copy=document.getElementById('hobby-output-copy'),link=document.getElementById('hobby-output-link'),status=document.getElementById('hobby-status');
+ function activate(key){const x=choices[key];if(!x)return;tabs.forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset.hobby===key)));kicker.textContent=x.kicker;icon.textContent=x.icon;title.textContent=x.title;copy.textContent=x.copy;link.href=x.link;link.textContent=x.cta;status.textContent=x.status;}
+ tabs.forEach(btn=>btn.addEventListener('click',()=>activate(btn.dataset.hobby)));
+ activate('ai');
+ const lines=[
+  '“What if my motorcycle trips had a passport?”',
+  '“Could this Illustrator task be one click instead of thirty?”',
+  '“What if my workout plan could reschedule itself?”',
+  '“An AI assistant, but just for the part I actually need.”',
+  '“Could a boring spreadsheet become a useful little app?”',
+  '“What happens if I combine that with a completely unrelated idea?”',
+  '“This might have been easier as a note. Too late, I opened VS Code.”'
+ ];
+ const questBtn=document.getElementById('side-quest-button'),questLine=document.getElementById('side-quest-line'),counter=document.getElementById('quest-counter');let count=0,last=-1;
+ questBtn.addEventListener('click',()=>{let next=Math.floor(Math.random()*(lines.length-1));if(next>=last)next++;last=next;questLine.textContent=lines[next];count++;counter.textContent='SIDE QUEST '+String(count+1).padStart(3,'0')+' / MANY MORE TO GO';});
+ const menu=document.querySelector('.site-menu');if(menu){document.addEventListener('click',e=>{if(menu.open&&!menu.contains(e.target))menu.open=false;});menu.addEventListener('keydown',e=>{if(e.key==='Escape'){menu.open=false;menu.querySelector('summary').focus();}});}
+})();
+</script>
+</body>
+</html>

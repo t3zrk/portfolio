@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AJU KRISHNA M K — App Ideas</title>
+<meta content="The idea vault of Aju Krishna M K — app concepts, product experiments and things worth building." name="description"/>
+<style>
+  :root{--bg:#f4f0e8;--ink:#171717;--accent:#8f1402;--paper:#fffdf8;--line:rgba(23,23,23,.16);--shadow:10px 10px 0 rgba(23,23,23,.12);--radius:28px}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden;cursor:none}a{color:inherit;text-decoration:none}button{font:inherit}
+  .noise{position:fixed;inset:0;pointer-events:none;opacity:.055;background-image:url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"%3E%3Cfilter id="n"%3E%3CfeTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23n)" opacity=".35"/%3E%3C/svg%3E');z-index:30}
+  .wrap{width:min(1240px,92vw);margin:auto}
+  header{position:sticky;top:14px;z-index:40;padding:14px 0}.nav{display:flex;justify-content:space-between;align-items:center;background:rgba(244,240,232,.9);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:999px;padding:10px 12px 10px 18px;box-shadow:0 4px 0 rgba(23,23,23,.06)}.logo{font-weight:900;letter-spacing:-.04em}.navlinks{display:flex;gap:6px}.navlinks a{padding:10px 13px;border-radius:999px;font-weight:800}.navlinks a:hover,.navlinks a[aria-current="page"]{background:#171717;color:#fff}
+  .cursor{position:fixed;left:0;top:0;width:26px;height:26px;border:2px solid var(--ink);border-radius:50%;pointer-events:none;z-index:999;mix-blend-mode:difference;transform:translate(-50%,-50%);transition:width .18s,height .18s,background .18s,border-radius .18s}.cursor-dot{position:fixed;left:0;top:0;width:7px;height:7px;background:#fff;border-radius:50%;pointer-events:none;z-index:1000;mix-blend-mode:difference;transform:translate(-50%,-50%)}.cursor-label{position:fixed;left:0;top:0;pointer-events:none;z-index:998;font-size:10px;font-weight:900;letter-spacing:.06em;opacity:0;transform:translate(18px,18px) rotate(-8deg);transition:opacity .2s}.trail{position:fixed;width:8px;height:8px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:998;opacity:.55;mix-blend-mode:multiply}.hovering .cursor{width:56px;height:56px;background:#fff;border-radius:16px}.hovering .cursor-label{opacity:1}
+
+  /* Hero: editorial heading + a legible, tactile note. */
+  .hero{padding:clamp(58px,7vw,96px) 0 58px}
+  .eyebrow{font-size:.72rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px;display:block}
+  .hero-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,320px);align-items:center;gap:clamp(32px,5vw,80px)}
+  .hero-row>div:first-child{min-width:0}
+  .hero h1{font-size:clamp(3.7rem,8.3vw,7.5rem);line-height:.86;letter-spacing:-.083em;margin:0;max-width:860px}
+  .hero h1 span{color:var(--accent);font-style:italic}
+  .hero p{font-size:clamp(1rem,1.5vw,1.15rem);line-height:1.5;max-width:680px;margin:28px 0}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 18px;border:2px solid var(--ink);border-radius:999px;font-weight:900;box-shadow:5px 5px 0 var(--ink);background:var(--paper);transition:transform .18s,box-shadow .18s}.btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+  .hero-note{position:relative;isolation:isolate;max-width:320px;padding:34px 30px 32px;border:2px solid var(--ink);border-radius:8px 22px 8px 20px;background:#ffe9a7;color:var(--ink);box-shadow:8px 9px 0 var(--ink);transform:rotate(2.5deg)}
+  .hero-note::before{content:"";position:absolute;width:96px;height:29px;background:rgba(245,245,238,.72);border:1px solid rgba(23,23,23,.09);top:-15px;left:calc(50% - 48px);transform:rotate(-7deg);box-shadow:0 2px 4px rgba(0,0,0,.04)}
+  .note-kicker{display:flex;align-items:center;gap:9px;font-size:.71rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase;margin-bottom:21px}
+  .note-kicker::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(143,20,2,.1)}
+  .hero-note strong{display:block;font-size:clamp(1.35rem,2.1vw,1.9rem);letter-spacing:-.045em;line-height:1.13;max-width:270px}
+  .note-foot{display:block;margin-top:22px;font-size:.75rem;font-style:italic;letter-spacing:.01em;opacity:.7;transform:rotate(-3deg)}
+  .vault-tools{display:flex;justify-content:space-between;gap:16px;align-items:end;flex-wrap:wrap;padding:0 0 30px}
+  .filters{display:flex;gap:8px;flex-wrap:wrap}.filter{padding:9px 13px;border:1.7px solid var(--ink);border-radius:999px;background:rgba(255,255,255,.53);font-weight:900;font-size:.73rem}
+  .deal{padding:12px 18px;border:2px dashed var(--ink);border-radius:999px;background:#f3d34a;font-weight:900;transition:transform .18s,box-shadow .18s;box-shadow:4px 4px 0 var(--ink);cursor:pointer}.deal:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+  /* Stable-height interactive cards: details open in a dialog, never in the grid. */
+  .vault{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:22px;align-items:stretch;padding-bottom:90px}
+  .idea{grid-column:span 4;min-width:0;min-height:365px;position:relative;isolation:isolate;border:2px solid var(--ink);border-radius:27px;box-shadow:8px 8px 0 rgba(23,23,23,.13);overflow:hidden;transition:transform .23s cubic-bezier(.2,.8,.2,1),box-shadow .23s}
+  .idea:nth-child(-n+2){grid-column:span 6;min-height:390px}
+  .idea:hover,.idea:focus-within{transform:translateY(-5px);box-shadow:9px 13px 0 rgba(23,23,23,.15)}
+  .idea::before{content:"";position:absolute;right:-48px;top:-68px;width:184px;height:184px;border:2px dashed rgba(23,23,23,.16);border-radius:50%;pointer-events:none;transform:rotate(15deg);transition:transform .4s}
+  .idea:hover::before{transform:rotate(68deg)}
+  .idea::after{content:"";position:absolute;right:22px;bottom:17px;width:53px;height:6px;border-radius:999px;background:rgba(23,23,23,.13);pointer-events:none;transform:rotate(-16deg)}
+  .card-hit{border:0;background:transparent;color:inherit;display:flex;flex-direction:column;align-items:stretch;text-align:left;width:100%;height:100%;min-height:365px;padding:25px 25px 24px;position:relative;z-index:1;cursor:pointer}
+  .idea:nth-child(-n+2) .card-hit{min-height:390px}
+  .card-hit:focus-visible{outline:4px solid var(--accent);outline-offset:-7px;border-radius:25px}
+  .idea-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:15px;min-height:32px}
+  .num{font-size:.68rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase;line-height:1.4;max-width:64%}
+  .stamp{flex:0 0 auto;padding:8px 10px;border:1.5px solid var(--ink);border-radius:999px;background:rgba(255,255,255,.72);font-size:.64rem;font-weight:900;letter-spacing:.02em;white-space:nowrap;box-shadow:2px 2px 0 rgba(23,23,23,.09)}
+  .doodle{position:absolute;right:26px;top:69px;font-size:4.3rem;font-weight:900;line-height:1;opacity:.15;transform:rotate(-16deg);pointer-events:none;transition:transform .28s,opacity .28s}
+  .idea:hover .doodle{transform:rotate(6deg) scale(1.2);opacity:.22}
+  .idea h2{position:relative;z-index:1;max-width:calc(100% - 18px);font-size:clamp(1.95rem,3vw,3.3rem);line-height:.94;letter-spacing:-.068em;overflow-wrap:anywhere;margin:18px 0 13px}
+  .idea:nth-child(-n+2) h2{font-size:clamp(2.7rem,4.2vw,4.45rem)}
+  .idea p{position:relative;z-index:1;font-size:clamp(.88rem,1vw,.96rem);line-height:1.5;margin:0;max-width:100%}
+  .idea-bottom{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding-top:18px}
+  .chip{display:inline-flex;align-items:center;min-width:0;padding:8px 10px;border:1.6px solid var(--ink);border-radius:999px;background:rgba(255,255,255,.56);font-size:.65rem;font-weight:900;line-height:1.12}
+  .action{display:inline-flex;gap:6px;align-items:center;white-space:nowrap;font-size:.68rem;font-weight:900;letter-spacing:.04em;text-transform:uppercase}
+  .action .arrow{display:grid;place-items:center;width:27px;height:27px;border:1.5px solid var(--ink);border-radius:50%;background:var(--ink);color:white;font-size:1rem;transition:transform .2s,background .2s}
+  .idea:hover .action .arrow{transform:rotate(45deg);background:var(--accent)}
+  .mini{display:inline-flex;align-items:center;gap:8px;margin-top:16px;max-width:100%;width:max-content;padding:8px 11px;border:1px dashed rgba(23,23,23,.34);border-radius:999px;font-size:.69rem;font-weight:800;line-height:1.2;background:rgba(255,255,255,.42)}
+  .mini::before{content:"✳";font-size:.86rem}
+  .card-detail{display:none}
+  .idea-1{background:#cbe8ea}.idea-2{background:#f6db58}.idea-3{background:#e6dcff}.idea-4{background:#d3eaae}.idea-5{background:#ffd5cc}.idea-6{background:#e0ddd5}.idea-7{background:#cee7ff}.idea-8{background:#f1d8ef}.idea-9{background:#c5eade}.idea-10{background:#f6e6a6}.idea-11{background:#d8deff}.idea-12{background:#d8efd1}.idea-13{background:#f5dfcf}
+  /* A single standalone receipt overlay means opening one never stretches its neighbour. */
+  .idea-dialog{width:min(610px,calc(100vw - 34px));max-height:min(86dvh,860px);overflow:auto;padding:0;border:2px solid var(--ink);border-radius:27px;box-shadow:16px 18px 0 rgba(0,0,0,.22);background:var(--paper);color:var(--ink)}
+  .idea-dialog::backdrop{background:rgba(16,16,16,.67);backdrop-filter:blur(4px)}
+  .dialog-shell{padding:clamp(22px,4vw,34px)}
+  .dialog-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px}
+  .dialog-kicker{font-size:.7rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
+  .dialog-close{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;border:2px solid var(--ink);background:white;color:var(--ink);font-size:1.55rem;line-height:1;cursor:pointer;flex:none}
+  .dialog-close:hover{background:var(--ink);color:white}.dialog-close:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .dialog-title{font-size:clamp(2.4rem,6vw,4.3rem);line-height:.94;letter-spacing:-.07em;margin:0 0 12px;overflow-wrap:anywhere}
+  .dialog-description{font-size:1rem;line-height:1.5;max-width:52ch;margin:0 0 22px}
+  .dialog-status{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--ink);border-radius:999px;padding:7px 11px;font-size:.72rem;font-weight:900;margin-bottom:18px;background:rgba(255,255,255,.55)}
+  .dialog-receipt{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:0}
+  .dialog-receipt>div{padding:15px 16px;border:1.5px solid rgba(23,23,23,.19);border-radius:16px;background:rgba(255,255,255,.66);min-width:0}
+  .dialog-receipt dt{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;font-weight:900;margin-bottom:7px}.dialog-receipt dd{margin:0;line-height:1.42;font-weight:600;overflow-wrap:anywhere}
+  .dialog-receipt .wide{grid-column:1/-1}
+  .dialog-footer{margin-top:21px;font-size:.8rem;font-weight:900;opacity:.7}
+  .closing{background:#171717;color:#fff;border-radius:42px;padding:40px 42px;margin-bottom:70px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end}.closing h3{font-size:clamp(2.8rem,6vw,5.4rem);line-height:.9;letter-spacing:-.08em;margin:0 0 10px}.closing p{max-width:640px;color:#ddd;line-height:1.45;margin:0}.closing .btn{background:#fff;color:#111;box-shadow:5px 5px 0 rgba(255,255,255,.22)}
+  @media(max-width:1060px){.vault .idea,.vault .idea:nth-child(-n+2){grid-column:span 6;min-height:365px}.vault .card-hit,.vault .idea:nth-child(-n+2) .card-hit{min-height:365px}.idea h2,.idea:nth-child(-n+2) h2{font-size:clamp(2.2rem,4vw,3.1rem)}.closing{grid-template-columns:1fr}.hero-row{grid-template-columns:minmax(0,1fr) minmax(230px,280px);gap:30px}}
+  @media(max-width:760px){body{cursor:auto}.cursor,.cursor-dot,.cursor-label,.trail{display:none}header{top:8px}.navlinks a:not(:last-child){display:none}.hero{padding-top:58px}.hero-row{display:flex;flex-direction:column;align-items:flex-start}.hero h1{font-size:clamp(3.6rem,12vw,6rem)}.hero-note{max-width:min(380px,90%);margin:10px 6px 0;transform:rotate(-1.4deg)}.vault-tools{align-items:flex-start}.filters{gap:8px}.filter,.deal{font-size:.74rem;padding:9px 12px}.vault .idea,.vault .idea:nth-child(-n+2){grid-column:span 12;min-height:345px}.vault .card-hit,.vault .idea:nth-child(-n+2) .card-hit{min-height:345px;cursor:pointer}.idea h2,.idea:nth-child(-n+2) h2{font-size:clamp(2.3rem,9vw,3.7rem)}.closing{padding:30px 24px;border-radius:30px}}
+  @media(max-width:420px){.card-hit{padding:21px}.idea h2,.idea:nth-child(-n+2) h2{font-size:clamp(2.15rem,9.4vw,3rem)}.dialog-receipt{grid-template-columns:1fr}.dialog-receipt .wide{grid-column:1}.hero-note{max-width:100%}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.idea,.idea:hover,.idea:focus-within,.idea::before,.idea:hover::before,.doodle,.idea:hover .doodle,.action .arrow,.idea:hover .action .arrow{transition:none;transform:none}.btn,.deal{transition:none}}
+
+
+
+
+
+
+/* DOWNLOADABLE ILLUSTRATOR TOOLS — separate from idea cards */
+.plugin-lab{padding:0 0 108px;scroll-margin-top:110px}
+.plugin-lab-head{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(240px,.7fr);gap:32px;align-items:end;margin:0 0 30px}
+.plugin-lab-head h2{font-size:clamp(3.3rem,7.5vw,6.7rem);line-height:.86;letter-spacing:-.078em;margin:10px 0 0}
+.plugin-lab-head h2 em{font-style:italic;color:var(--accent)}
+.plugin-lab-head p{line-height:1.55;font-size:1rem;max-width:36ch}
+.plugin-lab-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px}
+.plugin-tool{grid-column:span 4;min-width:0;display:flex;flex-direction:column;gap:0;overflow:hidden;background:var(--paper);border:2px solid var(--ink);border-radius:27px;box-shadow:8px 8px 0 rgba(23,23,23,.12);transition:transform .2s,box-shadow .2s}
+.plugin-tool:hover{transform:translateY(-5px);box-shadow:9px 13px 0 rgba(23,23,23,.16)}
+.plugin-art{height:155px;display:flex;justify-content:space-between;align-items:center;padding:22px 24px;position:relative;background:var(--tile-color)}
+.plugin-art:after{content:"↗";font-size:5.6rem;opacity:.13;font-weight:900;position:absolute;right:25px;bottom:-20px;transform:rotate(-17deg)}
+.plugin-art img{width:75px;height:75px;object-fit:contain;position:relative;z-index:1;filter:drop-shadow(3px 4px 0 rgba(0,0,0,.08))}
+.plugin-art b{font-size:.65rem;letter-spacing:.12em;z-index:1;background:rgba(255,255,255,.72);border:1.6px solid var(--ink);border-radius:999px;padding:8px 11px}
+.plugin-body{display:flex;flex-direction:column;flex:1;padding:18px 24px 24px}.plugin-preview{padding:16px 16px 6px;background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,.65))}.plugin-preview img{width:100%;display:block;border:2px solid rgba(23,23,23,.12);border-radius:18px;background:#fff}.plugin-preview-label{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 10px;font-size:.72rem;font-weight:900;letter-spacing:.09em;text-transform:uppercase;color:#3f3a33}.plugin-preview-label span:last-child{font-size:.68rem;letter-spacing:.05em;padding:6px 9px;border:1.6px solid rgba(23,23,23,.18);border-radius:999px;background:rgba(255,255,255,.9)}
+.plugin-tag{font-size:.67rem;font-weight:900;letter-spacing:.12em}
+.plugin-body h3{font-size:clamp(1.55rem,2.3vw,2rem);letter-spacing:-.06em;line-height:1.02;margin:14px 0 15px}
+.plugin-body p{font-size:.89rem;line-height:1.5;margin:0 0 15px}
+.plugin-body .plugin-impact{border-left:3px solid var(--accent);padding-left:11px;margin-bottom:22px}
+.plugin-body .plugin-provenance{margin-top:auto;font-size:.69rem;font-weight:800;color:#4a4741;margin-bottom:12px}
+.plugin-link{display:flex;justify-content:space-between;align-items:center;gap:10px;border:2px solid var(--ink);border-radius:999px;background:var(--ink);color:#fff;padding:12px 15px;font-size:.77rem;font-weight:900;letter-spacing:.04em;transition:background .2s,transform .2s}
+.plugin-link:hover{background:var(--accent);transform:translateY(-2px)}
+.plugin-license{margin:20px 0 0;max-width:95ch;color:#504d48;font-size:.8rem;line-height:1.5}
+.plugin-license a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:1050px){.plugin-tool{grid-column:span 6}.plugin-lab-head{grid-template-columns:1fr}}
+@media(max-width:700px){.plugin-tool{grid-column:span 12}.plugin-art{height:140px}.plugin-preview{padding:14px 14px 4px}.plugin-lab{padding-bottom:70px}}
+@media(prefers-reduced-motion:reduce){.plugin-tool,.plugin-link{transition:none}.plugin-tool:hover,.plugin-link:hover{transform:none}}
+
+
+/* Tools first / app concepts second */
+.vault-hero-links{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:4px}
+.vault-hero-links .vault-hero-secondary{background:#f3d34a}
+.vault-home-link{font-size:.86rem;font-weight:900;text-decoration:underline;text-underline-offset:4px;padding:10px}
+.plugin-lab{padding:20px 0 88px}
+.plugin-lab-head{align-items:start}
+.plugin-lab-intro{display:grid;gap:12px}
+.plugin-lab-intro p{max-width:55ch;margin:0}
+.plugin-inspiration{border-left:4px solid var(--accent);padding:13px 16px;background:rgba(255,255,255,.65);border-radius:0 13px 13px 0}
+.plugin-next{font-size:.82rem;font-weight:900;text-decoration:underline;text-underline-offset:4px;max-width:max-content}
+.plugin-group{grid-column:1/-1;border-top:2px solid var(--ink);padding:16px 0 4px}
+.plugin-group .eyebrow{margin-bottom:8px}
+.plugin-group p{max-width:86ch;margin:0;font-size:.91rem;line-height:1.5}
+.plugin-group-community{margin-top:14px}
+#app-concepts{scroll-margin-top:125px;border-top:2px solid var(--ink);padding-top:50px;margin-top:8px}
+#app-concepts .eyebrow{margin-bottom:12px}
+@media(max-width:700px){.vault-hero-links{align-items:stretch}.vault-hero-links .btn{justify-content:center}.vault-home-link{width:100%;text-align:center}.plugin-lab-head{gap:20px}#app-concepts{padding-top:35px}}
+
+
+/* A single illustration system: all five matched 8:5 vector diagrams. */
+.plugin-tool{position:relative;isolation:isolate;overflow:visible;transform-origin:center center;transition:transform .24s cubic-bezier(.22,.75,.25,1),box-shadow .24s;}
+.plugin-tool:hover,.plugin-tool:focus-within{transform:translateY(-7px) scale(1.035);box-shadow:12px 16px 0 rgba(23,23,23,.15);z-index:10;}
+.plugin-preview{padding:14px;background:#f8f6ef;position:relative;border-top:2px solid rgba(23,23,23,.08);border-bottom:2px solid rgba(23,23,23,.08);}
+.plugin-preview img{display:block;width:100%;height:auto;aspect-ratio:8/5;object-fit:contain;border:0;border-radius:13px;background:#fffdf8;}
+.plugin-preview-label{font-size:.7rem;margin-bottom:9px;}
+.plugin-hover-demo{position:absolute;z-index:8;left:10px;right:10px;top:10px;padding:12px 12px 7px;border:2px solid var(--ink);border-radius:21px;background:#fffdf8;box-shadow:6px 6px 0 rgba(23,23,23,.18);opacity:0;visibility:hidden;transform:translateY(8px) scale(.97);pointer-events:none;transition:opacity .2s,transform .2s,visibility .2s;}
+.plugin-hover-demo img{width:100%;aspect-ratio:8/5;object-fit:contain;display:block;border-radius:12px;}
+.plugin-hover-demo-label{display:block;padding:8px 4px 4px;font-weight:900;font-size:.72rem;letter-spacing:.12em;text-align:center;}
+@media(hover:hover) and (pointer:fine){.plugin-tool:hover .plugin-hover-demo{opacity:1;visibility:visible;transform:translateY(0) scale(1);}}
+.plugin-demo-button{display:flex;justify-content:center;align-items:center;min-height:42px;width:100%;margin-bottom:11px;border:2px solid var(--ink);border-radius:999px;background:var(--tile-color);color:var(--ink);font-weight:900;font-size:.76rem;letter-spacing:.04em;cursor:pointer;transition:transform .17s,background .17s;}
+.plugin-demo-button:hover{background:#fff;transform:translateY(-2px)}
+.plugin-demo-button:focus-visible,.plugin-demo-close:focus-visible{outline:3px solid #3855ff;outline-offset:3px;}
+.plugin-tool .plugin-link{position:relative;z-index:12;}
+.plugin-demo-dialog{width:min(940px,calc(100vw - 32px));max-height:min(92vh,1050px);padding:24px;background:#fffdf8;color:var(--ink);border:3px solid var(--ink);border-radius:28px;box-shadow:12px 12px 0 rgba(23,23,23,.32);overflow-y:auto;overscroll-behavior:contain;}
+.plugin-demo-dialog::backdrop{background:rgba(10,10,10,.7);backdrop-filter:blur(3px);}
+.plugin-demo-header{display:flex;justify-content:space-between;gap:14px;align-items:start;margin-bottom:14px;}
+.plugin-demo-header h2{font-size:clamp(1.4rem,4vw,2.5rem);line-height:1;letter-spacing:-.055em;margin:8px 0 0;}
+.plugin-demo-eyebrow{font-size:.7rem;font-weight:900;letter-spacing:.12em;}
+.plugin-demo-close{border:2px solid var(--ink);background:#f8d55a;border-radius:50%;width:44px;height:44px;flex:0 0 44px;font-weight:900;cursor:pointer;}
+.plugin-demo-visual{background:#f5f2e9;border:2px solid var(--ink);border-radius:20px;overflow:hidden;}
+.plugin-demo-visual img{display:block;width:100%;height:auto;aspect-ratio:8/5;object-fit:contain;}
+.plugin-demo-dialog p{font-size:clamp(.87rem,1.5vw,1.03rem);line-height:1.5;max-width:75ch;}
+.plugin-demo-disclaimer{font-size:.76rem!important;color:#625d54;}
+@media (hover:none),(pointer:coarse){.plugin-hover-demo{display:none;}.plugin-tool:hover{transform:none;box-shadow:8px 8px 0 rgba(23,23,23,.12);}}
+@media(max-width:700px){.plugin-demo-dialog{padding:14px;border-radius:20px;}.plugin-demo-header{gap:8px;}.plugin-demo-close{width:40px;height:40px;flex-basis:40px;}.plugin-preview{padding:12px;}}
+@media(prefers-reduced-motion:reduce){.plugin-tool,.plugin-hover-demo,.plugin-demo-button{transition:none!important;}.plugin-tool:hover,.plugin-tool:focus-within{transform:none!important;}}
+
+
+/* Hover demo cards: above the plugin cards, not embedded inside them */
+.plugin-tool{overflow:visible;display:flex;flex-direction:column;border-radius:28px}
+.plugin-art{border-radius:28px 28px 0 0}
+.plugin-preview{display:none!important}
+.plugin-body{padding:22px 24px 24px;border-radius:0 0 28px 28px;background:var(--paper)}
+.plugin-hover-demo{left:16px;right:16px;top:auto;bottom:calc(100% - 24px);padding:12px 12px 8px;border:2px solid var(--ink);border-radius:24px;background:#fffdf8;box-shadow:9px 9px 0 rgba(23,23,23,.18);opacity:0;visibility:hidden;transform:translateY(14px) scale(.96);pointer-events:none;overflow:hidden}
+.plugin-hover-demo img{width:100%;display:block;aspect-ratio:8/5;object-fit:contain;border-radius:16px;background:#fffdf8}
+.plugin-hover-demo-label{display:flex;align-items:center;justify-content:center;min-height:38px;padding:10px 8px 4px;font-weight:900;font-size:.72rem;letter-spacing:.12em;text-align:center}
+@media(hover:hover) and (pointer:fine){.plugin-tool:hover .plugin-hover-demo,.plugin-tool:focus-within .plugin-hover-demo{opacity:1;visibility:visible;transform:translateY(0) scale(1)}}
+@media(max-width:700px){.plugin-body{padding:20px 20px 22px}.plugin-art{border-radius:24px 24px 0 0}.plugin-body{border-radius:0 0 24px 24px}}
+
+
+/* Final demo interaction: a stable rounded card and an explicit View Larger Demo button only. */
+.plugin-tool,.plugin-tool:hover,.plugin-tool:focus-within{transform:none!important;box-shadow:8px 8px 0 rgba(23,23,23,.12)!important;z-index:auto!important;overflow:hidden!important;border-radius:28px!important;}
+.plugin-tool .plugin-art{border-radius:26px 26px 0 0;}
+.plugin-tool .plugin-body{border-radius:0 0 26px 26px;}
+.plugin-hover-demo{display:none!important;}
+
+/* Scroll entrance for plugin cards (separate from the click-only demo dialog). */
+.plugin-scroll-ready .plugin-tool{
+  transition: opacity .48s ease, transform .64s cubic-bezier(.18,.82,.24,1), box-shadow .22s ease!important;
+  transition-delay:var(--scroll-delay,0ms)!important;
+}
+.plugin-scroll-ready .plugin-tool:not(.is-in-view){
+  opacity:0;
+  transform:translateY(42px) scale(.955)!important;
+}
+.plugin-scroll-ready .plugin-tool.is-in-view{opacity:1;transform:translateY(0) scale(1)!important;}
+/* The older hover-preview markup remains non-interactive and never displays. */
+.plugin-hover-demo{display:none!important;}
+@media(prefers-reduced-motion:reduce){
+  .plugin-scroll-ready .plugin-tool, .plugin-scroll-ready .plugin-tool:not(.is-in-view){
+    opacity:1!important;transform:none!important;transition:none!important;
+  }
+}
+
+
+/* Click-to-preview cards: no embedded or hovering demo, only the existing modal. */
+.plugin-lab-grid .plugin-tool{position:relative;isolation:isolate;overflow:hidden!important;border-radius:28px!important;cursor:none;}
+.plugin-lab-grid .plugin-tool .plugin-card-trigger{position:absolute;inset:0;z-index:3;display:block;width:100%;height:100%;padding:0;margin:0;border:0;background:transparent;border-radius:inherit;cursor:none;}
+.plugin-lab-grid .plugin-tool .plugin-link{position:relative;z-index:5;margin-top:auto;}
+.plugin-lab-grid .plugin-tool .plugin-art,.plugin-lab-grid .plugin-tool .plugin-body{pointer-events:none;}
+.plugin-lab-grid .plugin-tool .plugin-link{pointer-events:auto;}
+.plugin-lab-grid .plugin-tool:has(.plugin-card-trigger:focus-visible){outline:3px solid #3855ff;outline-offset:5px;}
+.plugin-lab-grid .plugin-tool .plugin-demo-button{display:none!important;}
+.plugin-lab-grid .plugin-tool .plugin-art:after{content:"CLICK TO PREVIEW ↗";position:absolute;right:20px;bottom:12px;font-size:.55rem;letter-spacing:.08em;font-weight:900;color:rgba(23,23,23,.56);pointer-events:none;}
+@media(hover:hover) and (pointer:fine){.plugin-scroll-ready .plugin-tool.is-in-view:hover{transform:translateY(-5px) scale(1.012)!important;box-shadow:10px 14px 0 rgba(23,23,23,.15)!important;}}
+@media(hover:none),(pointer:coarse){.plugin-lab-grid .plugin-tool,.plugin-lab-grid .plugin-tool .plugin-card-trigger{cursor:pointer;}.plugin-lab-grid .plugin-tool .plugin-art:after{content:"TAP TO PREVIEW ↗";}}
+@media(prefers-reduced-motion:reduce){.plugin-scroll-ready .plugin-tool.is-in-view:hover{transform:none!important;}}
+
+</style>
+<link href="cursor.css" rel="stylesheet"/><link rel="stylesheet" href="site-nav.css"></head>
+<body><svg aria-hidden="true" focusable="false" id="wavy-cursor">
+<path class="ink-path" d=""></path>
+<g class="ink-head"><circle class="head-ring" r="9"></circle><circle class="head-dot" r="2.7"></circle>
+<g class="hover-marks"><path d="M0 -37V-31 M0 31V37 M-37 0H-31 M31 0H37"></path></g>
+<text class="hover-action" x="34" y="-30">VIEW ↗</text>
+</g>
+</svg>
+<div class="noise"></div>
+<header class="site-header"><div class="site-container"><nav class="site-nav" aria-label="Main navigation"><a class="site-brand" href="index.html">AJU<span class="brand-mark">✦</span> KRISHNA M K</a><div class="site-links"><a href="index.html">Home</a><a href="works.html">Work</a><a href="app-ideas.html" aria-current="page">App Ideas</a><a href="index.html#about">About</a><a href="index.html#hobbies">Playground</a><a href="index.html#contact">Contact</a></div><details class="site-menu"><summary>Menu +</summary><div class="site-mobile-links"><a href="index.html">Home</a><a href="works.html">Work</a><a href="app-ideas.html" aria-current="page">App Ideas</a><a href="index.html#about">About</a><a href="index.html#hobbies">Playground</a><a href="index.html#contact">Contact</a></div></details></nav></div></header>
+<main>
+<section class="hero wrap"><span class="eyebrow">The idea vault / an ongoing collection</span><div class="hero-row"><div><h1>Things I <span>couldn't</span> stop thinking about.</h1><p>First, a few practical Illustrator tools you can download and use. Then, the app ideas, prototypes and experiments that keep coming back until I build a version of them.</p><div class="vault-hero-links"><a class="btn" href="#tool-downloads">Download the tools ↓</a><a class="btn vault-hero-secondary" href="#app-concepts">Explore app ideas ↗</a><a class="vault-home-link" href="index.html">← Back to portfolio</a></div></div><div class="hero-note"><span class="note-kicker">CURRENTLY TRUE</span><strong>Some ideas stay in notes. The annoying ones become prototypes.</strong><span class="note-foot">— a note from the workbench ↗</span></div></div></section>
+<section aria-labelledby="plugin-lab-title" class="wrap plugin-lab" id="tool-downloads">
+<div class="plugin-lab-head"><div><span class="eyebrow">01 / DOWNLOADABLE TOOLS · ADOBE ILLUSTRATOR</span><h2 id="plugin-lab-title">Fewer clicks.<br/><em>More making.</em></h2></div><div class="plugin-lab-intro"><p>Practical Illustrator scripts you can download and use in your own workflow. Each ZIP includes the script, an icon, setup instructions and licensing details.</p><p class="plugin-inspiration">Two of my favourite, easy-to-use Illustrator tools are <strong>Contrast Checker</strong> and <strong>Convert to Gradient</strong>. They make everyday design work easier with simple, useful actions. Their approach inspired me to create my own small utilities for repetitive text and layout tasks.</p><a class="plugin-next" href="#app-concepts">Or explore my app ideas ↓</a></div></div>
+<div class="plugin-lab-grid"><div class="plugin-group"><span class="eyebrow">TOOLS I MADE / INSPIRED BY SIMPLE, USEFUL UTILITIES</span><p>Three small scripts for text and layout tasks — built to remove those repetitive Illustrator steps that add up over a busy design day.</p></div>
+<article class="plugin-tool" style="--tile-color:#cce8e7"><button class="plugin-card-trigger" type="button" data-plugin-demo="column-to-row" aria-haspopup="dialog" aria-label="View demo for Column ↔ Row"></button>
+<div class="plugin-art"><img alt="" height="75" loading="lazy" src="media/plugin-icons/column-to-row.svg" width="75"/><b>Ready to download</b></div><div class="plugin-preview" data-demo-card="column-to-row"><div class="plugin-preview-label"><span>What it does</span><span>Before → After</span></div><img alt="Simple illustration showing list items changing from vertical columns to horizontal rows." decoding="async" height="400" loading="lazy" src="media/plugin-previews/column-to-row.svg" width="640"/></div>
+<div class="plugin-body"><div class="plugin-tag">TEXT · LAYOUT</div><h3>Column ↔ Row</h3><p>Turn one-column lists into rows, split comma-separated content into a column or reorganise a list into N rows.</p><p class="plugin-impact"><strong>Why it helps:</strong> Reformat product names, menu items, pricing lists and campaign copy without retyping line breaks.</p><span class="plugin-provenance">t3zrk · Original script supplied</span><a aria-label="Download Column ↔ Row script package" class="plugin-link" download="column-to-row.zip" href="downloads/illustrator-scripts/column-to-row.zip">DOWNLOAD PACKAGE <span aria-hidden="true">↓</span></a></div>
+</article>
+<article class="plugin-tool" style="--tile-color:#f8dd65"><button class="plugin-card-trigger" type="button" data-plugin-demo="batch-text-replace" aria-haspopup="dialog" aria-label="View demo for Batch Text Replace"></button>
+<div class="plugin-art"><img alt="" height="75" loading="lazy" src="media/plugin-icons/batch-text-replace.svg" width="75"/><b>Ready to download</b></div><div class="plugin-preview" data-demo-card="batch-text-replace"><div class="plugin-preview-label"><span>What it does</span><span>Find → Replace</span></div><img alt="Simple illustration of a find and replace dialog changing repeated text across multiple documents." decoding="async" height="400" loading="lazy" src="media/plugin-previews/batch-text-replace.svg" width="640"/></div>
+<div class="plugin-body"><div class="plugin-tag">COPY · AUTOMATION</div><h3>Batch Text Replace</h3><p>Replace up to five word or phrase pairs across selected Illustrator text frames in one pass.</p><p class="plugin-impact"><strong>Why it helps:</strong> Useful for fast campaign variants: change recurring product labels, disclaimers or wording across multiple frames.</p><span class="plugin-provenance">t3zrk · Original script supplied</span><a aria-label="Download Batch Text Replace script package" class="plugin-link" download="batch-text-replace.zip" href="downloads/illustrator-scripts/batch-text-replace.zip">DOWNLOAD PACKAGE <span aria-hidden="true">↓</span></a></div>
+</article>
+<article class="plugin-tool" style="--tile-color:#e4d9fc"><button class="plugin-card-trigger" type="button" data-plugin-demo="reverse-text-lines" aria-haspopup="dialog" aria-label="View demo for Reverse Text Lines"></button>
+<div class="plugin-art"><img alt="" height="75" loading="lazy" src="media/plugin-icons/reverse-text-lines.svg" width="75"/><b>Ready to download</b></div><div class="plugin-preview" data-demo-card="reverse-text-lines"><div class="plugin-preview-label"><span>What it does</span><span>Reorders copy</span></div><img alt="Simple illustration showing three text lines reversing order." decoding="async" height="400" loading="lazy" src="media/plugin-previews/reverse-text-lines.svg" width="640"/></div>
+<div class="plugin-body"><div class="plugin-tag">TYPE · ARRANGEMENT</div><h3>Reverse Text Lines</h3><p>Reverse the order of paragraphs or list items inside one selected text frame.</p><p class="plugin-impact"><strong>Why it helps:</strong> Flip sequences, feature lists, schedules or ordered copy without rebuilding the text block by hand.</p><span class="plugin-provenance">t3zrk · Original script supplied</span><a aria-label="Download Reverse Text Lines script package" class="plugin-link" download="reverse-text-lines.zip" href="downloads/illustrator-scripts/reverse-text-lines.zip">DOWNLOAD PACKAGE <span aria-hidden="true">↓</span></a></div>
+</article>
+<div class="plugin-group plugin-group-community"><span class="eyebrow">TWO OF MY FAVOURITES / THIRD-PARTY SCRIPTS</span><p>Contrast Checker and Convert to Gradient are two easy-to-use tools I keep coming back to. One helps check whether colour pairs are readable; the other makes gradient experiments quicker. Their simplicity inspired the three scripts above. These are third-party works, shared here with their original attribution and license notices intact.</p></div>
+<article class="plugin-tool" style="--tile-color:#cfe9b9"><button class="plugin-card-trigger" type="button" data-plugin-demo="contrast-checker" aria-haspopup="dialog" aria-label="View demo for Contrast Checker"></button>
+<div class="plugin-art"><img alt="" height="75" loading="lazy" src="media/plugin-icons/contrast-checker.svg" width="75"/><b>MIT · Attribution preserved</b></div><div class="plugin-preview" data-demo-card="contrast-checker"><div class="plugin-preview-label"><span>What it does</span><span>Checks readability</span></div><img alt="Simple illustration of a contrast check panel comparing two colors and showing a passing ratio." decoding="async" height="400" loading="lazy" src="media/plugin-previews/contrast-checker.svg" width="640"/></div>
+<div class="plugin-body"><div class="plugin-tag">COLOUR · ACCESSIBILITY · FAVOURITE</div><h3>Contrast Checker</h3><p>Compare two solid fills, view WCAG-oriented contrast thresholds and explore adjusted colour pairings.</p><p class="plugin-impact"><strong>Why it helps:</strong> A quick design-stage preflight for text, icons and campaign contrast before final accessibility review.</p><span class="plugin-provenance">A personal favourite · Third-party original · Curated by t3zrk</span><a aria-label="Download Contrast Checker script package" class="plugin-link" download="contrast-checker.zip" href="downloads/illustrator-scripts/contrast-checker.zip">DOWNLOAD PACKAGE <span aria-hidden="true">↓</span></a></div>
+</article>
+<article class="plugin-tool" style="--tile-color:#f9cfbd"><button class="plugin-card-trigger" type="button" data-plugin-demo="convert-to-gradient" aria-haspopup="dialog" aria-label="View demo for Convert to Gradient"></button>
+<div class="plugin-art"><img alt="" height="75" loading="lazy" src="media/plugin-icons/convert-to-gradient.svg" width="75"/><b>MIT · Attribution preserved</b></div><div class="plugin-preview" data-demo-card="convert-to-gradient"><div class="plugin-preview-label"><span>What it does</span><span>Flat → Gradient</span></div><img alt="Simple illustration showing flat colored shapes transforming into gradient shapes." decoding="async" height="400" loading="lazy" src="media/plugin-previews/convert-to-gradient.svg" width="640"/></div>
+<div class="plugin-body"><div class="plugin-tag">COLOUR · EXPLORATION · FAVOURITE</div><h3>Convert to Gradient</h3><p>Turn supported solid-filled Illustrator objects into linear gradients using shift, contrast and angle controls.</p><p class="plugin-impact"><strong>Why it helps:</strong> Try gradient treatments across a set of vector assets without rebuilding a gradient for every shape.</p><span class="plugin-provenance">A personal favourite · Apparent third-party adaptation · Curated by t3zrk</span><a aria-label="Download Convert to Gradient script package" class="plugin-link" download="convert-to-gradient.zip" href="downloads/illustrator-scripts/convert-to-gradient.zip">DOWNLOAD PACKAGE <span aria-hidden="true">↓</span></a></div>
+</article>
+</div><p class="plugin-license">Each ZIP includes a <code>.jsx</code> script, SVG icon, README, MIT license and third-party notices where applicable. Open the README before running; test on a duplicate file. The last two scripts have upstream attribution that must remain intact; <strong>they are not claimed as exclusive t3zrk creations.</strong> Illustrator runtime testing was not available in this environment.</p></section>
+<section class="wrap vault-tools" id="app-concepts"><div><div class="eyebrow">02 / APP IDEAS · CONTENTS OF THE NOTEBOOK</div><div class="filters"><span class="filter">13 ideas</span><a class="filter" href="#tool-downloads">↑ Downloadable tools</a><span class="filter">Personal tools</span><span class="filter">AI &amp; plugins</span><span class="filter">Just because</span></div></div><button class="deal" id="dealIdea" type="button">Deal me an idea ↗</button></section>
+<section class="vault wrap">
+<article class="idea idea-1" data-idea-num="01">
+<button aria-haspopup="dialog" aria-label="Read about OPEN ROAD" class="card-hit" type="button">
+<div class="idea-top"><div class="num">01 / motorcycles + memories</div><span class="stamp">BUILDING</span></div>
+<div class="doodle">✦</div>
+<h2>OPEN<br/>ROAD</h2>
+<p>A personal motorcycle passport. A place for journeys, verified distance, trip history and the little stories between the start and finish.</p>
+<div class="mini">The detour is the point.</div>
+<div class="idea-bottom"><span class="chip">Ride journal</span><span class="action">VIEW IDEA <span aria-hidden="true" class="arrow">↗</span></span></div>
+</button>
+<div class="card-detail" hidden=""><dl class="receipt">
+<div><dt>Idea</dt><dd>OPEN ROAD</dd></div>
+<div><dt>Current status</dt><dd>BUILDING</dd></div>
+<div class="wide"><dt>Started because</dt><dd>“My rides deserved more than a camera roll and a vague memory.”</dd></div>
+<div><dt>On the workbench</dt><dd>A journey log, rider passport and a home for ride memories.</dd></div>
+<div><dt>Likely distraction</dt><dd>Planning the next ride.</dd></div>
+</dl><div class="footnote">Open, close, rethink, repeat.</div></div></article>
+<article class="idea idea-2" data-idea-num="02">
+<button aria-haspopup="dialog" aria-label="Read about STOCK LENS" class="card-hit" type="button">
+<div class="idea-top"><div class="num">02 / signals + questions</div><span class="stamp">PROTOTYPE</span></div>
+<div class="doodle">↗</div>
+<h2>STOCK<br/>LENS</h2>
+<p>An AI-assisted intraday scanner concept, connecting technical signals with historical evidence and explanations you can actually follow.</p>
+<div class="mini">A question, then evidence.</div>
+<div class="idea-bottom"><span class="chip">Concept / data + AI</span><span class="action">VIEW IDEA <span aria-hidden="true" class="arrow">↗</span></span></div>
+</button>
+<div class="card-detail" hidden=""><dl class="receipt">
+<div><dt>Idea</dt><dd>STOCK LENS</dd></div>
+<div><dt>Current status</dt><dd>PROTOTYPE</dd></div>
+<div class="wide"><dt>Started because</dt><dd>“An interesting signal should come with a better answer to why?”</dd></div>
+<div><dt>On the workbench</dt><dd>Market scanning, evidence views and plain-language AI explanations.</dd></div>
+<div><dt>Most used feature</dt><dd>Asking another question.</dd></div>
+</dl><div class="footnote">Open, close, rethink, repeat.</div></div></article>
+<article class="idea idea-3" data-idea-num="03">
+<button aria-haspopup="dialog" aria-label="Read about PERSONAL FITNESS TRACKER" class="card-hit" type="button">
+<div class="idea-top"><div class="num">03 / one more rep</div><span class="stamp">SKETCHING</span></div>
+<div class="doodle">⊕</div>
+<h2>PERSONAL<br/>FITNESS TRACKER</h2>
+<p>A workout and food journal built around an actual routine. Exercise planning, protein, progress and a little AI assistance in one place.</p>
+<div class="mini">Move / Eat / Repeat</div>
+<div class="idea-bottom"><span class="chip">Personal concept / daily habits</span><span class="action">VIEW IDEA <span aria-hidden="true" class="arrow">↗</span></span></div>
+</button>
+<div class="card-detail" hidden=""><dl class="receipt">
+<div><dt>Idea</dt><dd>PERSONAL FITNESS TRACKER</dd></div>
+<div><dt>Current status</dt><dd>SKETCHING</dd></div>
+<div class="wide"><dt>Started because</dt><dd>“Remembering last week's weights shouldn't be its own exercise.”</dd></div>
+<div><dt>On the workbench</dt><dd>Workout logs, food and protein tracking, progress and AI assistance.</dd></div>
+<div><dt>Hardest dependency</dt><dd>Actually going to the gym.</dd></div>
+</dl><div class="footnote">Open, close, rethink, repeat.</div></div></article>
+<article class="idea idea-4" data-idea-num="04">
+<button aria-haspopup="dialog" aria-label="Read about AI CHAT HUB" class="card-hit" type="button">
+<div class="idea-top"><div class="num">04 / too many tabs</div><span class="stamp">EXPERIMENTING</span></div>
+<div class="doodle">⌘</div>
+<h2>AI CHAT<br/>HUB</h2>
+<p>Different AI assistants. One workspace. An interface experiment for comparing models, following a thought and keeping the context together.</p>
+<div class="mini">Model A / Model B / You</div>
+<div class="idea-bottom"><span class="chip">Interface experiment / AI</span><span class="action">VIEW IDEA <span aria-hidden="true" class="arrow">↗</span></span></div>
+</button>
+<div class="card-detail" hidden=""><dl class="receipt">
+<div><dt>Idea</dt><dd>AI CHAT HUB</dd></div>
+<div><dt>Current status</dt><dd>EXPERIMENTING</dd></div>
+<div class="wide"><dt>Started because</dt><dd>“I was spending a suspicious amount of time finding the right tab.”</dd></div>
+<div><dt>On the workbench</dt><dd>A shared workspace for multiple AI assistants and parallel conversations.</dd></div>
+<div><dt>Open questions</dt><dd>Several. They each have a tab.</dd></div>
+</dl><div class="footnote">Open, close, rethink, repeat.</div></div></article>
+<article class="idea idea-5" data-idea-num="05">
+<button aria-haspopup="dialog" aria-label="Read about NANO BANANA" class="card-hit" type="button">
+<div class="idea-top"><div class="num">05 / closer to the canvas</div><span class="stamp">REBUILDING</span></div>
+<div class="doodle">✦</div>
+<h2>NANO<br/>BANANA</h2>
+<p>A creative AI plugin experiment for image generation, edits and workflow automation inside familiar tools like Photoshop and Figma.</p>
+<div class="mini">Less tab. More canvas.</div>
+<div class="idea-bottom"><span class="chip">Plugin concept / creative AI</span><span class="action">VIEW IDEA <span aria-hidden="true" class="arrow">↗</span></span></div>
+</button>
+<div class="card-detail" hidden=""><dl class="receipt">
+<div><dt>Idea</dt><dd>NANO BANANA</dd></div>
+<div><dt>Current status</dt><dd>REBUILDING</dd></div>
+<div class="wide"><dt>Started because</dt><dd>“What if the useful AI bits lived next to the actual design?”</dd></div>
+<div><dt>On the workbench</dt><dd>Generation, editing and small automations close to the canvas.</dd></div>
+<div><dt>Version philosophy</dt><dd>The next one will be simpler. Allegedly.</dd></div>
+</dl><div class="footnote">Open, close, rethink, repeat.</div></div></article>
+<article class="idea idea-6" data-idea-num="06">
+<button aria-haspopup="dialog" aria-label="Read about PERSONAL FINANCE COMMAND CENTER" class="card-hit" type="button">
+<div class="idea-top"><div class="num">06 / making sense of money</div><span class="stamp">PAUSED</span></div>
+<div class="doodle">₹</div>
+<h2>PERSONAL FINANCE<br/>COMMAND CENTER</h2>
+<p>A personal planning dashboard for salary, expenses, investments, debt and goals. The month's moving parts, finally in the same place.</p>
+<div class="mini">In / Out / Future</div>
+<div class="idea-bottom"><span class="chip">Personal concept / monthly planning</span><span class="action">VIEW IDEA <span aria-hidden="true" class="arrow">↗</span></span></div>
+</button>
+<div class="card-detail" hidden=""><dl class="receipt">
+<div><dt>Idea</dt><dd>PERSONAL FINANCE COMMAND CENTER</dd></div>
+<div><dt>Current status</dt><dd>PAUSED</dd></div>
+<div class="wide"><dt>Started because</dt><dd>“The spreadsheet was becoming a small country.”</dd></div>
+<div><dt>On the workbench</dt><dd>A monthly overview of expenses, salary, investments, goals and debt.</dd></div>
+<div><dt>Current budget</dt><dd>Mostly time. Currently over budget.</dd></div>
+</dl><div class="footnote">Open, close, rethink, repeat.</div></div></article>
+<article class="idea idea-7" data-idea-num="07">
+<button aria-haspopup="dialog" aria-label="Read about CREATIVE TOOLKIT" class="card-hit" type="button">
+<div class="idea-top"><div class="num">07 / the plugin lab</div><span class="stamp">EXPERIMENTING</span></div>
+<div class="doodle">⌁</div>
+<h2>CREATIVE<br/>TOOLKIT</h2>
+<p>Photoshop plugins, Figma experiments, Illustrator scripts and tiny utilities. Finding better ways to do the repetitive bits of a creative day.</p>
+<div class="mini">Less clicking, more making.</div>
+<div class="idea-bottom"><span class="chip">Plugins / scripts / small fixes</span><span class="action">VIEW IDEA <span aria-hidden="true" class="arrow">↗</span></span></div>
+</button>
+<div class="card-detail" hidden=""><dl class="receipt">
+<div><dt>Idea</dt><dd>CREATIVE TOOLKIT</dd></div>
+<div><dt>Current status</dt><dd>EXPERIMENTING</dd></div>
+<div class="wide"><dt>Started because</dt><dd>“Surely I don't need to click this button forty more times.”</dd></div>
+<div><dt>On the workbench</dt><dd>Creative plugins, Illustrator scripts, AI workflows and small utilities.</dd></div>
+<div><dt>Project ingredients</dt><dd>A repetitive task + a little code + “there has to be a way.”</dd></div>
+</dl><div class="footnote">Open, close, rethink, repeat.</div></div></article>
+<article class="idea idea-8" data-idea-num="08">
+<button aria-haspopup="dialog" aria-label="Read about CARD GAME EXPERIMENT" class="card-hit" type="button">
+<div class="idea-top"><div class="num">08 / just one more round</div><span class="stamp">BRAINWORM</span></div>
+<div class="doodle">♣</div>
+<h2>CARD GAME<br/>EXPERIMENT</h2>
+<p>A digital multiplayer card-game concept. An excuse to explore shared play, thoughtful interactions and the delightful chaos of a game night.</p>
+<div class="mini">House rules still under negotiation.</div>
+<div class="idea-bottom"><span class="chip">Playful concept / multiplayer</span><span class="action">VIEW IDEA <span aria-hidden="true" class="arrow">↗</span></span></div>
+</button>
+<div class="card-detail" hidden=""><dl class="receipt">
+<div><dt>Idea</dt><dd>CARD GAME EXPERIMENT</dd></div>
+<div><dt>Current status</dt><dd>BRAINWORM</dd></div>
+<div class="wide"><dt>Started because</dt><dd>“A game night shouldn't need everyone in the same room.”</dd></div>
+<div><dt>On the workbench</dt><dd>Digital cards, multiplayer interactions and the feeling of playing together.</dd></div>
+<div><dt>Scope creep</dt><dd>Someone always suggests another rule.</dd></div>
+</dl><div class="footnote">Open, close, rethink, repeat.</div></div></article>
+<article class="idea idea-9" data-idea-num="09">
+<button aria-haspopup="dialog" aria-label="Read about MYRIDE" class="card-hit" type="button">
+<div class="idea-top"><div class="num">09 / personal rides</div><span class="stamp">BUILDING</span></div>
+<div class="doodle">↗</div>
+<h2>MYRIDE</h2>
+<p>A private, single-rider motorcycle trip recorder: checkpoint notes, odometer photos, fuel and expense logs, and a journal of the road. Not a navigation app—just a place to remember the journey.</p>
+<div class="mini">Small stops. Big memories.</div>
+<div class="idea-bottom"><span class="chip">Ride recorder</span><span class="action">VIEW IDEA <span aria-hidden="true" class="arrow">↗</span></span></div>
+</button>
+<div class="card-detail" hidden=""><dl class="receipt">
+<div><dt>Idea</dt><dd>MYRIDE</dd></div>
+<div><dt>Current status</dt><dd>BUILDING</dd></div>
+<div class="wide"><dt>Started because</dt><dd>“I wanted a cleaner way to record rides without turning it into social media.”</dd></div>
+<div><dt>On the workbench</dt><dd>Trip logs, checkpoints, expenses, odometer history and ride notes.</dd></div>
+<div><dt>Most important rule</dt><dd>Record the ride, don't interrupt it.</dd></div>
+</dl><div class="footnote">Open, close, rethink, repeat.</div></div></article>
+<article class="idea idea-10" data-idea-num="10">
+<button aria-haspopup="dialog" aria-label="Read about TRIP PLANNER" class="card-hit" type="button">
+<div class="idea-top"><div class="num">10 / travel tool</div><span class="stamp">SKETCHING</span></div>
+<div class="doodle">⌖</div>
+<h2>TRIP PLANNER</h2>
+<p>A practical motorcycle-trip planning experiment for daily ride windows, rest stops, fuel planning, safe parking and trip budgets. Enough structure to enjoy the road, not just finish the route.</p>
+<div class="mini">Plan. Ride. Document. Repeat.</div>
+<div class="idea-bottom"><span class="chip">Travel tool</span><span class="action">VIEW IDEA <span aria-hidden="true" class="arrow">↗</span></span></div>
+</button>
+<div class="card-detail" hidden=""><dl class="receipt">
+<div><dt>Idea</dt><dd>TRIP PLANNER</dd></div>
+<div><dt>Current status</dt><dd>SKETCHING</dd></div>
+<div class="wide"><dt>Started because</dt><dd>“A good trip should feel relaxed on paper before it starts on the road.”</dd></div>
+<div><dt>On the workbench</dt><dd>Ride windows, stay planning, stop strategy, budgets and safety notes.</dd></div>
+<div><dt>Main obsession</dt><dd>Avoiding stupidly long ride days.</dd></div>
+</dl><div class="footnote">Open, close, rethink, repeat.</div></div></article>
+<article class="idea idea-11" data-idea-num="11">
+<button aria-haspopup="dialog" aria-label="Read about WORKOUT AUTOPILOT" class="card-hit" type="button">
+<div class="idea-top"><div class="num">11 / habits + scheduling</div><span class="stamp">CONCEPT</span></div>
+<div class="doodle">↻</div>
+<h2>WORKOUT<br/>AUTOPILOT</h2>
+<p>A workout calendar that adjusts when a session gets skipped instead of letting the whole weekly plan fall apart. A small experiment in keeping real-life routines flexible.</p>
+<div class="mini">If skipped, shift—don't quit.</div>
+<div class="idea-bottom"><span class="chip">Scheduling tool</span><span class="action">VIEW IDEA <span aria-hidden="true" class="arrow">↗</span></span></div>
+</button>
+<div class="card-detail" hidden=""><dl class="receipt">
+<div><dt>Idea</dt><dd>WORKOUT AUTOPILOT</dd></div>
+<div><dt>Current status</dt><dd>CONCEPT</dd></div>
+<div class="wide"><dt>Started because</dt><dd>“Missing one workout shouldn't break the whole week.”</dd></div>
+<div><dt>On the workbench</dt><dd>Rescheduling logic, flexible weekly plans and calendar-based training structure.</dd></div>
+<div><dt>Most realistic feature</dt><dd>Life happens. The plan should know that.</dd></div>
+</dl><div class="footnote">Open, close, rethink, repeat.</div></div></article>
+<article class="idea idea-12" data-idea-num="12">
+<button aria-haspopup="dialog" aria-label="Read about PORTFOLIO STUDIO" class="card-hit" type="button">
+<div class="idea-top"><div class="num">12 / design + web</div><span class="stamp">CONCEPT</span></div>
+<div class="doodle">✳</div>
+<h2>PORTFOLIO<br/>STUDIO</h2>
+<p>An editable portfolio workspace for turning brand projects, motion pieces and creative experiments into polished case-study pages without rebuilding the website every time.</p>
+<div class="mini">Make the case study easier than procrastinating it.</div>
+<div class="idea-bottom"><span class="chip">Design system</span><span class="action">VIEW IDEA <span aria-hidden="true" class="arrow">↗</span></span></div>
+</button>
+<div class="card-detail" hidden=""><dl class="receipt">
+<div><dt>Idea</dt><dd>PORTFOLIO STUDIO</dd></div>
+<div><dt>Current status</dt><dd>CONCEPT</dd></div>
+<div class="wide"><dt>Started because</dt><dd>“Updating a portfolio should not feel like another portfolio project.”</dd></div>
+<div><dt>On the workbench</dt><dd>Reusable case-study blocks, project structure and a more editable publishing flow.</dd></div>
+<div><dt>Main goal</dt><dd>Less fiddling, more showing the work.</dd></div>
+</dl><div class="footnote">Open, close, rethink, repeat.</div></div></article>
+<article class="idea idea-13" data-idea-num="13">
+<button aria-haspopup="dialog" aria-label="Read about BOOK BOT" class="card-hit" type="button">
+<div class="idea-top"><div class="num">13 / reading + ai</div><span class="stamp">BRAINSTORM</span></div>
+<div class="doodle">✎</div>
+<h2>BOOK BOT</h2>
+<p>A reading-companion concept for collecting book notes, asking questions about what I am reading and finding useful ideas again later. Another attempt to make the 17 open tabs productive.</p>
+<div class="mini">Read now. Find it later.</div>
+<div class="idea-bottom"><span class="chip">Personal tool</span><span class="action">VIEW IDEA <span aria-hidden="true" class="arrow">↗</span></span></div>
+</button>
+<div class="card-detail" hidden=""><dl class="receipt">
+<div><dt>Idea</dt><dd>BOOK BOT</dd></div>
+<div><dt>Current status</dt><dd>BRAINSTORM</dd></div>
+<div class="wide"><dt>Started because</dt><dd>“If I highlight something useful, I want it to show up when I actually need it.”</dd></div>
+<div><dt>On the workbench</dt><dd>Reading notes, smart retrieval, question prompts and memory-friendly summaries.</dd></div>
+<div><dt>Current struggle</dt><dd>Too many good notes hiding in too many places.</dd></div>
+</dl><div class="footnote">Open, close, rethink, repeat.</div></div></article>
+</section><dialog aria-describedby="dialog-description" aria-labelledby="dialog-title" class="idea-dialog" id="idea-dialog"><div class="dialog-shell"></div></dialog>
+<section class="wrap"><div class="closing"><div><div class="eyebrow">Back to the day job</div><h3>The ideas keep coming.<br/>The design comes first.</h3><p>This page is where the side-quests live. The portfolio is where the finished work lives.</p></div><a class="btn" href="works.html">Explore the work ↗</a></div></section>
+</main><dialog aria-describedby="plugin-demo-description" aria-labelledby="plugin-demo-title" class="plugin-demo-dialog" id="plugin-demo-dialog"><div class="plugin-demo-header"><div><span class="plugin-demo-eyebrow">ILLUSTRATED WORKFLOW / BEFORE → AFTER</span><h2 id="plugin-demo-title"></h2></div><button aria-label="Close larger illustration" class="plugin-demo-close" type="button">✕</button></div><div class="plugin-demo-visual"><img alt="" height="400" id="plugin-demo-image" width="640"/></div><p id="plugin-demo-description"></p><p class="plugin-demo-disclaimer">Illustration only — this is a visual explanation of what the script does, not an interactive Illustrator simulation.</p></dialog>
+<script>
+const ideaCards=[...document.querySelectorAll('article.idea')];
+const ideaDialog=document.getElementById('idea-dialog');
+const dialogShell=ideaDialog.querySelector('.dialog-shell');
+function openIdea(card){
+  if(ideaDialog.open)ideaDialog.close();
+  const heading=card.querySelector('h2').textContent.trim();
+  const desc=card.querySelector('.card-hit > p').textContent.trim();
+  const status=card.querySelector('.stamp').textContent.trim();
+  const number=card.getAttribute('data-idea-num');
+  dialogShell.replaceChildren();
+  const top=document.createElement('div');top.className='dialog-top';
+  const kicker=document.createElement('span');kicker.className='dialog-kicker';kicker.textContent=`IDEA RECEIPT / NO. ${number}`;
+  const close=document.createElement('button');close.className='dialog-close';close.type='button';close.setAttribute('aria-label','Close idea receipt');close.textContent='×';close.addEventListener('click',()=>ideaDialog.close());
+  top.append(kicker,close);dialogShell.append(top);
+  const title=document.createElement('h2');title.id='dialog-title';title.className='dialog-title';title.textContent=heading;
+  const description=document.createElement('p');description.id='dialog-description';description.className='dialog-description';description.textContent=desc;
+  const badge=document.createElement('span');badge.className='dialog-status';badge.textContent=`✳ ${status}`;
+  const receipt=card.querySelector('.card-detail dl').cloneNode(true);receipt.className='dialog-receipt';
+  const footer=document.createElement('div');footer.className='dialog-footer';footer.textContent=card.querySelector('.footnote').textContent.trim();
+  dialogShell.append(title,description,badge,receipt,footer);
+  dialogShell.className='dialog-shell '+[...card.classList].find(c=>/^idea-\d+$/.test(c));
+  ideaDialog.showModal();close.focus();
+}
+ideaCards.forEach(card=>card.querySelector('.card-hit').addEventListener('click',()=>openIdea(card)));
+ideaDialog.addEventListener('click',event=>{if(event.target===ideaDialog)ideaDialog.close()});
+document.getElementById('dealIdea').addEventListener('click',()=>openIdea(ideaCards[Math.floor(Math.random()*ideaCards.length)]));
+</script>
+<script defer="" src="cursor.js"></script>
+
+<script>
+(function(){
+  const dialog=document.getElementById('plugin-demo-dialog');
+  const image=document.getElementById('plugin-demo-image');
+  const title=document.getElementById('plugin-demo-title');
+  const description=document.getElementById('plugin-demo-description');
+  const close=dialog.querySelector('.plugin-demo-close');
+  const demos={
+    'column-to-row':['COLUMN ↔ ROW','Rearrange selected text from columns into rows, or from rows into columns. Useful for SKU lists, labels and layouts.'],
+    'batch-text-replace':['BATCH TEXT REPLACE','Replace repeated words or phrases across selected text frames. Update variants without opening every text box.'],
+    'reverse-text-lines':['REVERSE TEXT LINES','Flip the order of selected text lines while keeping the words intact. Reorder lists without retyping.'],
+    'contrast-checker':['CONTRAST CHECKER','Compare colours for readable combinations using a contrast check. Illustrative preview only; the script performs the actual check.'],
+    'convert-to-gradient':['CONVERT TO GRADIENT','Turn supported solid-colour vector shapes into editable gradients, making colour exploration less repetitive.']
+  };
+  let opener=null;
+  document.querySelectorAll('[data-plugin-demo]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const id=btn.dataset.pluginDemo;
+      if(!Object.prototype.hasOwnProperty.call(demos,id))return;
+      opener=btn;
+      title.textContent=demos[id][0];
+      description.textContent=demos[id][1];
+      image.src='media/plugin-previews/'+id+'.svg';
+      image.alt='Before and after diagram for '+demos[id][0];
+      dialog.showModal();
+    });
+  });
+  close.addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close();});
+  dialog.addEventListener('close',()=>{if(opener&&opener.isConnected)opener.focus({preventScroll:true});});
+})();
+</script>
+
+<script>(function(){const m=document.querySelector('.site-menu');if(!m)return;document.addEventListener('click',e=>{if(m.open&&!m.contains(e.target))m.open=false;});m.addEventListener('keydown',e=>{if(e.key==='Escape'){m.open=false;m.querySelector('summary').focus();}});})();</script>
+<script>
+(()=>{
+  const cards=[...document.querySelectorAll('.plugin-lab-grid .plugin-tool')];
+  const grid=document.querySelector('.plugin-lab-grid');
+  if(!grid || !cards.length || !('IntersectionObserver' in window) ||
+     window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  cards.forEach((card,i)=>card.style.setProperty('--scroll-delay',`${(i%3)*65}ms`));
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      entry.target.classList.add('is-in-view');
+      observer.unobserve(entry.target);
+    });
+  },{threshold:.12,rootMargin:'0px 0px -20px 0px'});
+  grid.classList.add('plugin-scroll-ready');
+  cards.forEach(card=>{
+    /* Already-visible cards should never flash away at page load. */
+    const bounds=card.getBoundingClientRect();
+    if(bounds.top < innerHeight*.84 && bounds.bottom>0)card.classList.add('is-in-view');
+    else observer.observe(card);
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+
+/* Universal portfolio navigation. This file is shared verbatim by ALL pages. */
+.site-header{position:sticky!important;top:0!important;z-index:110!important;padding:14px 0!important;margin:0!important;pointer-events:none!important;isolation:isolate}
+.site-header .site-container{width:min(1240px,92vw)!important;margin:0 auto!important;max-width:none!important;pointer-events:auto!important}
+.site-header .site-nav{position:relative;display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:space-between!important;gap:22px!important;min-height:62px!important;padding:8px 12px 8px 19px!important;border:1px solid rgba(23,23,23,.17)!important;border-radius:999px!important;background:rgba(250,248,242,.96)!important;color:#171717!important;box-shadow:0 5px 0 rgba(23,23,23,.07)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);text-align:left!important}
+.site-header .site-brand{display:inline-flex!important;align-items:center!important;white-space:nowrap!important;flex:0 0 auto!important;color:#171717!important;background:none!important;letter-spacing:-.045em!important;line-height:1.2!important;font:900 14px/1.2 Arial,Helvetica,sans-serif!important;padding:9px 7px!important;text-transform:none!important;border:0!important;text-decoration:none!important}
+.site-header .site-brand .brand-mark{margin:0 4px;color:#8f1402}
+.site-header .site-links{display:flex!important;align-items:center!important;justify-content:flex-end!important;flex:1 1 auto!important;gap:3px!important;min-width:0!important;margin:0!important}
+.site-header .site-links a{display:inline-flex!important;align-items:center!important;justify-content:center!important;flex:0 0 auto!important;padding:10px 12px!important;min-height:40px!important;border-radius:999px!important;white-space:nowrap!important;text-align:center!important;text-decoration:none!important;background:transparent!important;color:#171717!important;font:900 12px/1.1 Arial,Helvetica,sans-serif!important;letter-spacing:0!important;box-shadow:none!important;border:0!important;transition:background .17s,color .17s,transform .17s}
+.site-header .site-links a:hover,.site-header .site-links a[aria-current="page"]{background:#171717!important;color:#fff!important;transform:none!important}
+.site-header .site-links a:focus-visible,.site-header .site-brand:focus-visible,.site-header .site-menu summary:focus-visible,.site-header .site-menu a:focus-visible{outline:3px solid #8f1402!important;outline-offset:3px!important}
+.site-header .site-menu{display:none!important;position:relative;margin-left:auto}
+.site-header .site-menu summary{list-style:none;cursor:pointer!important;background:#171717;color:#fff;border-radius:999px;padding:12px 16px;font:900 12px/1 Arial,Helvetica,sans-serif}
+.site-header .site-menu summary::-webkit-details-marker{display:none}
+.site-header .site-menu[open] summary{background:#8f1402}
+.site-header .site-mobile-links{display:flex;position:absolute;right:0;top:calc(100% + 11px);flex-direction:column;gap:4px;min-width:min(240px,calc(100vw - 34px));padding:10px;border:1.5px solid #171717;border-radius:20px;background:#fffdf8;box-shadow:6px 7px 0 rgba(23,23,23,.17);z-index:120}
+.site-header .site-mobile-links a{padding:11px 14px;color:#171717;border-radius:12px;font:900 13px/1.2 Arial,Helvetica,sans-serif!important;text-decoration:none;white-space:nowrap}
+.site-header .site-mobile-links a:hover,.site-header .site-mobile-links a[aria-current="page"]{background:#171717;color:#fff}
+@media(max-width:850px){.site-header{padding:10px 0!important}.site-header .site-nav{min-height:58px!important;padding:7px 10px 7px 14px!important;border-radius:999px!important;flex-wrap:nowrap!important;align-items:center!important}.site-header .site-links{display:none!important}.site-header .site-menu{display:block!important}.site-header .site-brand{font-size:13px!important}}
+@media(max-width:380px){.site-header .site-brand{font-size:11.4px!important;letter-spacing:-.055em!important}.site-header .site-menu summary{padding:11px 12px}}
+@media(prefers-reduced-motion:reduce){.site-header .site-links a{transition:none!important}}
