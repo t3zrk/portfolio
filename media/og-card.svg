@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Aju Krishna M K portfolio</title>
+  <desc id="desc">Graphic designer creating campaigns, brand stories, motion and useful creative tools.</desc>
+  <rect width="1200" height="630" fill="#f4f0e8"/>
+  <rect x="34" y="34" width="1132" height="562" rx="34" fill="#fffdf8" stroke="#171717" stroke-width="4"/>
+  <circle cx="1035" cy="135" r="82" fill="#f3d34a" stroke="#171717" stroke-width="4"/>
+  <path d="M1035 72l14 49 49 14-49 14-14 49-14-49-49-14 49-14 14-49z" fill="#8f1402"/>
+  <rect x="900" y="365" width="188" height="136" rx="28" fill="#3855ff" stroke="#171717" stroke-width="4" transform="rotate(7 994 433)"/>
+  <path d="M931 408h122M931 438h85M931 468h108" stroke="#fff" stroke-width="11" stroke-linecap="round" transform="rotate(7 994 433)"/>
+  <text x="88" y="114" fill="#761000" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="900" letter-spacing="3">AJU KRISHNA M K / PORTFOLIO</text>
+  <text x="82" y="256" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="900" letter-spacing="-7">MAKE IT LOOK</text>
+  <text x="82" y="346" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="900" letter-spacing="-7">LIKE YOU</text>
+  <text x="82" y="436" fill="#8f1402" font-family="Georgia, Times New Roman, serif" font-size="96" font-style="italic" font-weight="700" letter-spacing="-5">MEAN IT.</text>
+  <text x="88" y="527" fill="#514d47" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">CAMPAIGNS · BRAND STORIES · MOTION · CREATIVE TOOLS</text>
+</svg>
