@@ -93,6 +93,14 @@
   .dialog-receipt>div{padding:15px 16px;border:1.5px solid rgba(23,23,23,.19);border-radius:16px;background:rgba(255,255,255,.66);min-width:0}
   .dialog-receipt dt{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;font-weight:900;margin-bottom:7px}.dialog-receipt dd{margin:0;line-height:1.42;font-weight:600;overflow-wrap:anywhere}
   .dialog-receipt .wide{grid-column:1/-1}
+  .project-showcase{margin-top:26px;padding-top:24px;border-top:2px dashed var(--line)}
+  .project-showcase h3{font-size:1.5rem;letter-spacing:-.04em;margin:28px 0 8px}
+  .project-note{font-size:.85rem;line-height:1.5;margin:0 0 18px}
+  .project-screens{display:grid;gap:20px}.project-screens figure{margin:0;min-width:0}
+  .project-screens a{display:block;border:2px solid var(--ink);border-radius:16px;overflow:hidden;background:var(--paper);box-shadow:4px 4px 0 rgba(23,23,23,.12)}
+  .project-screens a:focus-visible,.project-showcase .btn:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+  .project-screens img{display:block;width:100%;height:auto}.project-screens figcaption{font-size:.78rem;font-weight:800;line-height:1.5;margin-top:10px}
+  .project-mobile{width:min(100%,280px);justify-self:center}.project-mobile a{max-height:460px;overflow-y:auto}
   .dialog-footer{margin-top:21px;font-size:.8rem;font-weight:900;opacity:.7}
   .closing{background:#171717;color:#fff;border-radius:42px;padding:40px 42px;margin-bottom:70px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end}.closing h3{font-size:clamp(2.8rem,6vw,5.4rem);line-height:.9;letter-spacing:-.08em;margin:0 0 10px}.closing p{max-width:640px;color:#ddd;line-height:1.45;margin:0}.closing .btn{background:#fff;color:#111;box-shadow:5px 5px 0 rgba(255,255,255,.22)}
   @media(max-width:1060px){.vault .idea,.vault .idea:nth-child(-n+2){grid-column:span 6;min-height:365px}.vault .card-hit,.vault .idea:nth-child(-n+2) .card-hit{min-height:365px}.idea h2,.idea:nth-child(-n+2) h2{font-size:clamp(2.2rem,4vw,3.1rem)}.closing{grid-template-columns:1fr}.hero-row{grid-template-columns:minmax(0,1fr) minmax(230px,280px);gap:30px}}
@@ -398,17 +406,26 @@
 <div class="idea-top"><div class="num">09 / personal rides</div><span class="stamp">PROTOTYPE</span></div>
 <div class="doodle">↗</div>
 <h2>MYRIDE</h2>
-<p>A private, single-rider motorcycle trip recorder: checkpoint notes, odometer photos, fuel and expense logs, and a journal of the road. Not a navigation app:just a place to remember the journey.</p>
-<div class="mini">Small stops. Big memories.</div>
-<div class="idea-bottom"><span class="chip">Ride recorder</span><span class="action">VIEW IDEA <span aria-hidden="true" class="arrow">↗</span></span></div>
+<p>An offline-first motorcycle journal that connects GPS routes, fuel, expenses, maintenance and memories to the bike and journey behind them. Core journaling works locally, without an account.</p>
+<div class="mini">Record the ride. Preserve the journey.</div>
+<div class="idea-bottom"><span class="chip">Offline-first / motorcycle journal</span><span class="action">VIEW PROJECT <span aria-hidden="true" class="arrow">↗</span></span></div>
 </button>
 <div class="card-detail" hidden=""><dl class="receipt">
 <div><dt>Idea</dt><dd>MYRIDE</dd></div>
 <div><dt>Current status</dt><dd>PROTOTYPE</dd></div>
 <div class="wide"><dt>Started because</dt><dd>“I wanted a cleaner way to record rides without turning it into social media.”</dd></div>
-<div><dt>On the workbench</dt><dd>Trip logs, checkpoints, expenses, odometer history and ride notes.</dd></div>
+<div><dt>Built around</dt><dd>Journey dossiers, GPS capture and replay, fuel analytics, motorcycle history and ride notes.</dd></div>
 <div><dt>Most important rule</dt><dd>Record the ride, don't interrupt it.</dd></div>
-</dl><div class="footnote">Open, close, rethink, repeat.</div></div></article>
+<div class="wide"><dt>Local by default</dt><dd>An installable web app with optional cloud sync. Routes are recorded while the app is open; maps and fresh weather need a connection.</dd></div></dl>
+<div class="project-showcase">
+<a class="btn" href="https://github.com/t3zrk/myride-journal" target="_blank" rel="noopener noreferrer">View MYRIDE on GitHub <span aria-hidden="true">↗</span></a>
+<h3>Inside the journal</h3>
+<p class="project-note">Repository screenshots use isolated sample records to show the experience.</p>
+<div class="project-screens">
+<figure><a href="media/myride/dashboard.png" target="_blank" rel="noopener noreferrer" aria-label="Open MYRIDE desktop dashboard screenshot at full size"><img src="media/myride/dashboard.png" alt="MYRIDE desktop dashboard showing the latest journey, motorcycle status and lifetime riding record" width="1440" height="1000" loading="lazy" decoding="async"/></a><figcaption>01 / Dashboard — the journey and the bike, together.</figcaption></figure>
+<figure><a href="media/myride/trip-detail.png" target="_blank" rel="noopener noreferrer" aria-label="Open MYRIDE journey dossier screenshot at full size"><img src="media/myride/trip-detail.png" alt="Completed MYRIDE journey with distance, duration, costs and tabs for GPS, journal, fuel and weather" width="1440" height="1000" loading="lazy" decoding="async"/></a><figcaption>02 / Journey dossier — a ride preserved in detail.</figcaption></figure>
+<figure class="project-mobile"><a href="media/myride/dashboard-mobile.png" target="_blank" rel="noopener noreferrer" aria-label="Open MYRIDE mobile dashboard screenshot at full size"><img src="media/myride/dashboard-mobile.png" alt="MYRIDE mobile dashboard with journey summary, motorcycle readiness, recent activity and quick actions" width="390" height="3181" loading="lazy" decoding="async"/></a><figcaption>03 / Mobile — the journal in your pocket.</figcaption></figure>
+</div></div><div class="footnote">Record the ride, preserve the journey.</div></div></article>
 <article class="idea idea-10" data-idea-num="10">
 <button aria-haspopup="dialog" aria-label="Read about TRIP PLANNER" class="card-hit" type="button">
 <div class="idea-top"><div class="num">10 / travel tool</div><span class="stamp">CONCEPT</span></div>
@@ -498,7 +515,10 @@ function openIdea(card,trigger){
   const badge=document.createElement('span');badge.className='dialog-status';badge.textContent=`✳ ${status}`;
   const receipt=card.querySelector('.card-detail dl').cloneNode(true);receipt.className='dialog-receipt';
   const footer=document.createElement('div');footer.className='dialog-footer';footer.textContent=card.querySelector('.footnote').textContent.trim();
-  dialogShell.append(title,description,badge,receipt,footer);
+  dialogShell.append(title,description,badge,receipt);
+  const showcase=card.querySelector('.project-showcase');
+  if(showcase)dialogShell.append(showcase.cloneNode(true));
+  dialogShell.append(footer);
   dialogShell.className='dialog-shell '+[...card.classList].find(c=>/^idea-\d+$/.test(c));
   ideaDialog.showModal();close.focus();
 }
