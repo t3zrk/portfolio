@@ -92,7 +92,7 @@
   .dialog-receipt{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:0}
   .dialog-receipt>div{padding:15px 16px;border:1.5px solid rgba(23,23,23,.19);border-radius:16px;background:rgba(255,255,255,.66);min-width:0}
   .dialog-receipt dt{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;font-weight:900;margin-bottom:7px}.dialog-receipt dd{margin:0;line-height:1.42;font-weight:600;overflow-wrap:anywhere}
-  .dialog-receipt .wide{grid-column:1/-1}
+  .dialog-receipt .wide{grid-column:1/-1}.dialog-receipt .repo-link{font-weight:900;text-decoration:underline;text-underline-offset:4px}.dialog-receipt .repo-link:hover{color:var(--accent)}
   .dialog-footer{margin-top:21px;font-size:.8rem;font-weight:900;opacity:.7}
   .closing{background:#171717;color:#fff;border-radius:42px;padding:40px 42px;margin-bottom:70px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end}.closing h3{font-size:clamp(2.8rem,6vw,5.4rem);line-height:.9;letter-spacing:-.08em;margin:0 0 10px}.closing p{max-width:640px;color:#ddd;line-height:1.45;margin:0}.closing .btn{background:#fff;color:#111;box-shadow:5px 5px 0 rgba(255,255,255,.22)}
   @media(max-width:1060px){.vault .idea,.vault .idea:nth-child(-n+2){grid-column:span 6;min-height:365px}.vault .card-hit,.vault .idea:nth-child(-n+2) .card-hit{min-height:365px}.idea h2,.idea:nth-child(-n+2) h2{font-size:clamp(2.2rem,4vw,3.1rem)}.closing{grid-template-columns:1fr}.hero-row{grid-template-columns:minmax(0,1fr) minmax(230px,280px);gap:30px}}
@@ -265,6 +265,21 @@
 </div><p class="plugin-license">Each ZIP includes a <code>.jsx</code> script, SVG icon, README, MIT license and third-party notices where applicable. Open the README before running; test on a duplicate file. The last two scripts have upstream attribution that must remain intact; <strong>they are not claimed as exclusive t3zrk creations.</strong> Illustrator runtime testing was not available in this environment.</p></section>
 <section class="wrap vault-tools" id="app-concepts"><div><div class="eyebrow">PROTOTYPES + CONCEPT ARCHIVE</div><div class="filters"><span class="filter">6 prototypes</span><span class="filter">6 concepts</span><span class="filter">1 paused</span><a class="filter" href="#tool-downloads">↑ Shipped tools</a></div></div><button class="deal" id="dealIdea" type="button">Deal me an idea ↗</button></section>
 <section class="vault wrap">
+<article class="idea idea-9" data-idea-num="MYRIDE">
+<button aria-haspopup="dialog" aria-label="Read about MYRIDE" class="card-hit" type="button">
+<div class="idea-top"><div class="num">FINISHED / MOTORCYCLE JOURNAL</div><span class="stamp">FINISHED</span></div>
+<div class="doodle">↗</div>
+<h2>MYRIDE</h2>
+<p>Offline-first ride journal for routes, fuel, expenses, maintenance and memories.</p>
+<div class="mini">Record the ride. Keep the journey.</div>
+<div class="idea-bottom"><span class="chip">Finished product</span><span class="action">VIEW PROJECT <span aria-hidden="true" class="arrow">↗</span></span></div>
+</button>
+<div class="card-detail" hidden=""><dl class="receipt">
+<div><dt>Project</dt><dd>MYRIDE</dd></div>
+<div><dt>Status</dt><dd>FINISHED</dd></div>
+<div class="wide"><dt>What it does</dt><dd>Logs rides, routes, fuel, expenses, maintenance, photos, weather and riding history.</dd></div>
+<div class="wide"><dt>Project link</dt><dd><a class="repo-link" href="https://github.com/t3zrk/myride-journal" target="_blank" rel="noopener noreferrer">View GitHub project ↗</a></dd></div>
+</dl><div class="footnote">Built to remember the ride, not interrupt it.</div></div></article>
 <article class="idea idea-1" data-idea-num="01">
 <button aria-haspopup="dialog" aria-label="Read about OPEN ROAD" class="card-hit" type="button">
 <div class="idea-top"><div class="num">01 / motorcycles + memories</div><span class="stamp">PROTOTYPE</span></div>
@@ -393,22 +408,7 @@
 <div><dt>On the workbench</dt><dd>Digital cards, multiplayer interactions and the feeling of playing together.</dd></div>
 <div><dt>Scope creep</dt><dd>Someone always suggests another rule.</dd></div>
 </dl><div class="footnote">Open, close, rethink, repeat.</div></div></article>
-<article class="idea idea-9" data-idea-num="09">
-<button aria-haspopup="dialog" aria-label="Read about MYRIDE" class="card-hit" type="button">
-<div class="idea-top"><div class="num">09 / personal rides</div><span class="stamp">PROTOTYPE</span></div>
-<div class="doodle">↗</div>
-<h2>MYRIDE</h2>
-<p>A private, single-rider motorcycle trip recorder: checkpoint notes, odometer photos, fuel and expense logs, and a journal of the road. Not a navigation app:just a place to remember the journey.</p>
-<div class="mini">Small stops. Big memories.</div>
-<div class="idea-bottom"><span class="chip">Ride recorder</span><span class="action">VIEW IDEA <span aria-hidden="true" class="arrow">↗</span></span></div>
-</button>
-<div class="card-detail" hidden=""><dl class="receipt">
-<div><dt>Idea</dt><dd>MYRIDE</dd></div>
-<div><dt>Current status</dt><dd>PROTOTYPE</dd></div>
-<div class="wide"><dt>Started because</dt><dd>“I wanted a cleaner way to record rides without turning it into social media.”</dd></div>
-<div><dt>On the workbench</dt><dd>Trip logs, checkpoints, expenses, odometer history and ride notes.</dd></div>
-<div><dt>Most important rule</dt><dd>Record the ride, don't interrupt it.</dd></div>
-</dl><div class="footnote">Open, close, rethink, repeat.</div></div></article>
+
 <article class="idea idea-10" data-idea-num="10">
 <button aria-haspopup="dialog" aria-label="Read about TRIP PLANNER" class="card-hit" type="button">
 <div class="idea-top"><div class="num">10 / travel tool</div><span class="stamp">CONCEPT</span></div>
