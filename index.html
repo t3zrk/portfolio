@@ -899,14 +899,14 @@ html,body,a,button,[role="button"],summary,input,textarea,select{cursor:none !im
 
 <section id="hobbies" class="wrap lab-highlights" aria-labelledby="lab-title">
   <div class="lab-highlights-copy">
-    <div class="eyebrow"><span class="dot"></span> Lab / shipped tools and prototypes</div>
+    <div class="eyebrow"><span class="dot"></span> Lab / shipped tools, finished products and prototypes</div>
     <h2 id="lab-title">Useful first.<br><em>Curious always.</em></h2>
-    <p>Shipped tools and active experiments.</p>
-    <div class="cta-row"><a class="btn dark" href="app-ideas.html#tool-downloads">Open the Lab ↗</a><a class="btn" href="app-ideas.html#app-concepts">Browse prototypes ↘</a></div>
+    <p>Shipped tools, a finished product and active experiments.</p>
+    <div class="cta-row"><a class="btn dark" href="app-ideas.html#tool-downloads">Open the Lab ↗</a><a class="btn" href="app-ideas.html#app-concepts">Browse products + ideas ↘</a></div>
   </div>
   <div class="lab-highlight-grid">
     <a class="lab-highlight-card" href="app-ideas.html#tool-downloads"><span class="lab-highlight-icon" aria-hidden="true">⌘</span><span><span class="status-badge">Shipped</span><h3>Three original Illustrator tools</h3><p>Small Illustrator shortcuts for repetitive text work.</p></span><span class="lab-highlight-arrow" aria-hidden="true">↗</span></a>
-    <a class="lab-highlight-card" href="app-ideas.html#app-concepts"><span class="lab-highlight-icon" aria-hidden="true">↗</span><span><span class="status-badge">Building</span><h3>Open Road</h3><p>A motorcycle journal for rides, fuel and memories.</p></span><span class="lab-highlight-arrow" aria-hidden="true">↗</span></a>
+    <a class="lab-highlight-card" href="app-ideas.html#app-concepts"><span class="lab-highlight-icon" aria-hidden="true">↗</span><span><span class="status-badge">Finished</span><h3>MYRIDE</h3><p>Offline-first motorcycle journal for rides, fuel, expenses, maintenance and riding history.</p></span><span class="lab-highlight-arrow" aria-hidden="true">↗</span></a>
     <a class="lab-highlight-card" href="app-ideas.html#app-concepts"><span class="lab-highlight-icon" aria-hidden="true">✳</span><span><span class="status-badge">Prototype</span><h3>Stock Lens</h3><p>Signals, questions and research in one place.</p></span><span class="lab-highlight-arrow" aria-hidden="true">↗</span></a>
   </div>
 </section>
@@ -1183,5 +1183,6 @@ aboutButtons.forEach(button=>button.addEventListener('click',()=>{
  const menu=document.querySelector('.site-menu');if(menu){document.addEventListener('click',e=>{if(menu.open&&!menu.contains(e.target))menu.open=false;});menu.addEventListener('keydown',e=>{if(e.key==='Escape'){menu.open=false;menu.querySelector('summary').focus();}});}
 })();
 </script>
+<script src="cursor.js" defer></script>
 </body>
 </html>
