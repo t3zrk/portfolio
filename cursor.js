@@ -1,13 +1,15 @@
 (() => {
   const finePointer = window.matchMedia('(pointer: fine)').matches;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   if (!finePointer || reducedMotion) {
     const fallback = document.createElement('style');
     fallback.id = 'aju-native-cursor-fallback';
-    fallback.textContent = 'html,body{cursor:auto!important}a,button,[role=\"button\"],summary,select{cursor:pointer!important}input,textarea{cursor:text!important}';
+    fallback.textContent = 'html,body{cursor:auto!important}a,button,[role="button"],summary,select{cursor:pointer!important}input,textarea{cursor:text!important}';
     document.head.append(fallback);
     return;
   }
+
   if (document.getElementById('aju-cursor-root')) return;
 
   const style = document.createElement('style');
@@ -18,47 +20,56 @@
     html.aju-cursor-enabled [role="button"], html.aju-cursor-enabled summary,
     html.aju-cursor-enabled input, html.aju-cursor-enabled textarea,
     html.aju-cursor-enabled select { cursor: none !important; }
-    #aju-cursor-root { position: fixed; inset: 0; pointer-events: none; z-index: 2147483646; opacity: 0; transition: opacity .18s ease; }
+    #aju-cursor-root {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2147483646;
+      opacity: 0;
+      transition: opacity .18s ease;
+    }
     #aju-cursor-root.is-visible { opacity: 1; }
-    .aju-cursor-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; mix-blend-mode: difference; }
-    .aju-cursor-trail { fill: none; stroke: #fff; stroke-width: 1.35; stroke-linecap: round; stroke-linejoin: round; opacity: .48; transition: stroke-width .18s ease, opacity .18s ease; }
-    .aju-cursor-ring { position: absolute; left: 0; top: 0; width: 28px; height: 28px; border: 1.7px solid #fff; border-radius: 50%; mix-blend-mode: difference; transform: translate(-50%,-50%); transition: width .2s cubic-bezier(.2,.8,.2,1), height .2s cubic-bezier(.2,.8,.2,1), border-radius .2s ease, rotate .2s ease, background .2s ease; }
-    .aju-cursor-dot { position: absolute; left: 0; top: 0; width: 6px; height: 6px; border-radius: 50%; background: #fff; mix-blend-mode: difference; transform: translate(-50%,-50%); }
-    .aju-cursor-label { position: absolute; left: 0; top: 0; transform: translate(20px,18px) rotate(-7deg); font: 900 10px/1 Arial,Helvetica,sans-serif; letter-spacing: .09em; color: #171717; background: #f3d34a; border: 1.5px solid #171717; border-radius: 999px; padding: 6px 8px; opacity: 0; transition: opacity .15s ease, transform .18s ease; white-space: nowrap; box-shadow: 2px 2px 0 rgba(23,23,23,.28); }
-    #aju-cursor-root.is-hovering .aju-cursor-ring { width: 58px; height: 58px; border-radius: 17px; rotate: 8deg; background: rgba(255,255,255,.12); }
-    #aju-cursor-root.is-hovering .aju-cursor-trail { stroke-width: 2; opacity: .72; }
-    #aju-cursor-root.is-hovering .aju-cursor-label { opacity: 1; transform: translate(25px,23px) rotate(-4deg); }
-    #aju-cursor-root.is-clicking .aju-cursor-ring { width: 42px; height: 42px; rotate: -7deg; }
-    @media (pointer: coarse), (max-width: 900px) { #aju-cursor-root { display: none !important; } }
+    .aju-cursor-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+    .aju-cursor-trail {
+      fill: none;
+      stroke: #111;
+      stroke-width: 1.35;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: .62;
+      transition: stroke-width .18s ease, opacity .18s ease;
+    }
+    #aju-cursor-root.is-hovering .aju-cursor-trail {
+      stroke-width: 2.2;
+      opacity: .95;
+    }
+    @media (pointer: coarse), (max-width: 900px) {
+      #aju-cursor-root { display: none !important; }
+    }
   `;
   document.head.append(style);
 
   const root = document.createElement('div');
   root.id = 'aju-cursor-root';
   root.setAttribute('aria-hidden', 'true');
-  root.innerHTML = '<svg class="aju-cursor-svg"><path class="aju-cursor-trail" d=""></path></svg><div class="aju-cursor-ring"></div><div class="aju-cursor-dot"></div><div class="aju-cursor-label">OPEN</div>';
+  root.innerHTML = '<svg class="aju-cursor-svg"><path class="aju-cursor-trail" d=""></path></svg>';
   document.body.append(root);
   document.documentElement.classList.add('aju-cursor-enabled');
 
-  const ring = root.querySelector('.aju-cursor-ring');
-  const dot = root.querySelector('.aju-cursor-dot');
-  const label = root.querySelector('.aju-cursor-label');
   const trail = root.querySelector('.aju-cursor-trail');
   const points = [];
   const maxPoints = 15;
-  let tx = innerWidth / 2, ty = innerHeight / 2;
-  let rx = tx, ry = ty;
+  let tx = innerWidth / 2;
+  let ty = innerHeight / 2;
   let seenPointer = false;
 
   const interactiveSelector = 'a,button,[role="button"],summary,input,textarea,select,.featured-card,.idea,.plugin-tool,.project,.tile';
-
-  function setLabel(el) {
-    const custom = el?.getAttribute?.('data-cursor-label');
-    if (custom) return custom.toUpperCase();
-    if (el?.matches?.('input,textarea,select')) return 'TYPE';
-    if (el?.matches?.('button,[role="button"],summary')) return 'CLICK';
-    return 'OPEN';
-  }
 
   function smoothPath(history) {
     if (history.length < 2) return '';
@@ -76,43 +87,34 @@
 
   window.addEventListener('pointermove', event => {
     if (event.pointerType && event.pointerType !== 'mouse' && event.pointerType !== 'pen') return;
-    tx = event.clientX; ty = event.clientY;
+    tx = event.clientX;
+    ty = event.clientY;
     if (!seenPointer) {
-      rx = tx; ry = ty; seenPointer = true;
+      seenPointer = true;
       root.classList.add('is-visible');
     }
-    points.unshift({x: tx, y: ty});
+    points.unshift({ x: tx, y: ty });
     if (points.length > maxPoints) points.length = maxPoints;
-  }, {passive: true});
+  }, { passive: true });
 
   document.addEventListener('pointerover', event => {
-    const el = event.target.closest?.(interactiveSelector);
-    if (!el) return;
-    root.classList.add('is-hovering');
-    label.textContent = setLabel(el);
+    if (event.target.closest?.(interactiveSelector)) root.classList.add('is-hovering');
   });
+
   document.addEventListener('pointerout', event => {
     const from = event.target.closest?.(interactiveSelector);
     if (!from) return;
     const to = event.relatedTarget?.closest?.(interactiveSelector);
-    if (to) {
-      label.textContent = setLabel(to);
-      return;
-    }
-    root.classList.remove('is-hovering');
+    if (!to) root.classList.remove('is-hovering');
   });
-  document.addEventListener('pointerdown', () => root.classList.add('is-clicking'));
-  document.addEventListener('pointerup', () => root.classList.remove('is-clicking'));
+
   window.addEventListener('blur', () => root.classList.remove('is-visible'));
   document.addEventListener('mouseleave', () => root.classList.remove('is-visible'));
-  document.addEventListener('mouseenter', () => { if (seenPointer) root.classList.add('is-visible'); });
+  document.addEventListener('mouseenter', () => {
+    if (seenPointer) root.classList.add('is-visible');
+  });
 
   function frame() {
-    rx += (tx - rx) * .22;
-    ry += (ty - ry) * .22;
-    ring.style.left = `${rx}px`; ring.style.top = `${ry}px`;
-    dot.style.left = `${tx}px`; dot.style.top = `${ty}px`;
-    label.style.left = `${tx}px`; label.style.top = `${ty}px`;
     trail.setAttribute('d', smoothPath(points));
     if (points.length) {
       for (let i = points.length - 1; i > 0; i--) {
@@ -124,5 +126,6 @@
     }
     requestAnimationFrame(frame);
   }
+
   requestAnimationFrame(frame);
 })();
