@@ -1,4 +1,27 @@
 (() => {
+  function enhanceMyRideLinks() {
+    const receipt = document.querySelector('.idea[data-idea-num="MYRIDE"] .card-detail .receipt');
+    if (!receipt) return;
+
+    const liveUrl = 'https://t3zrk.github.io/myride-journal/';
+    if (receipt.querySelector(`a[href="${liveUrl}"]`)) return;
+
+    const liveRow = document.createElement('div');
+    liveRow.className = 'wide';
+    liveRow.innerHTML = `<dt>Live site</dt><dd><a class="repo-link" href="${liveUrl}" target="_blank" rel="noopener noreferrer">Open MYRIDE ↗</a></dd>`;
+
+    const githubLink = receipt.querySelector('a[href="https://github.com/t3zrk/myride-journal"]');
+    const githubRow = githubLink?.closest('div.wide');
+    if (githubRow) receipt.insertBefore(liveRow, githubRow);
+    else receipt.append(liveRow);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', enhanceMyRideLinks, { once: true });
+  } else {
+    enhanceMyRideLinks();
+  }
+
   const finePointer = window.matchMedia('(pointer: fine)').matches;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
