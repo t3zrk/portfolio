@@ -284,12 +284,12 @@
     tx = event.clientX;
     ty = event.clientY;
     updateContrast();
+    root.classList.add('is-visible');
 
     if (!seenPointer) {
       rx = tx;
       ry = ty;
       seenPointer = true;
-      root.classList.add('is-visible');
     }
 
     points.unshift({ x: tx, y: ty });
