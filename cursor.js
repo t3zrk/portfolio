@@ -54,7 +54,7 @@
       stroke-linecap: round;
       stroke-linejoin: round;
       opacity: .62;
-      transition: stroke-width .18s ease, opacity .18s ease;
+      transition: stroke .14s ease, stroke-width .18s ease, opacity .18s ease;
     }
 
     .aju-cursor-ring {
@@ -67,6 +67,7 @@
       border-radius: 50%;
       transform: translate(-50%,-50%);
       transition:
+        border-color .14s ease,
         width .2s cubic-bezier(.2,.8,.2,1),
         height .2s cubic-bezier(.2,.8,.2,1),
         border-radius .2s ease,
@@ -81,10 +82,14 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: #fff;
-      mix-blend-mode: difference;
+      background: #111;
       transform: translate(-50%,-50%);
+      transition: background .14s ease;
     }
+
+    #aju-cursor-root.is-on-dark .aju-cursor-trail { stroke: #fff; }
+    #aju-cursor-root.is-on-dark .aju-cursor-ring { border-color: #fff; }
+    #aju-cursor-root.is-on-dark .aju-cursor-dot { background: #fff; }
 
     .aju-cursor-label {
       position: absolute;
@@ -115,6 +120,10 @@
       border-radius: 17px;
       rotate: 8deg;
       background: rgba(255,255,255,.12);
+    }
+
+    #aju-cursor-root.is-on-dark.is-hovering .aju-cursor-ring {
+      background: rgba(255,255,255,.10);
     }
 
     #aju-cursor-root.is-hovering .aju-cursor-label {
@@ -164,6 +173,44 @@
     return 'OPEN';
   }
 
+  function rgbFromColor(color) {
+    const match = color?.match?.(/rgba?\(([^)]+)\)/i);
+    if (!match) return null;
+    const values = match[1].split(',').map(value => Number.parseFloat(value.trim()));
+    if (values.length < 3 || values.some((value, index) => index < 3 && Number.isNaN(value))) return null;
+    return {
+      r: values[0],
+      g: values[1],
+      b: values[2],
+      a: Number.isFinite(values[3]) ? values[3] : 1
+    };
+  }
+
+  function backgroundIsDark(x, y) {
+    let el = document.elementFromPoint(x, y);
+
+    while (el && el !== document.documentElement) {
+      const color = rgbFromColor(getComputedStyle(el).backgroundColor);
+      if (color && color.a > .08) {
+        const luminance = .2126 * color.r + .7152 * color.g + .0722 * color.b;
+        return luminance < 128;
+      }
+      el = el.parentElement;
+    }
+
+    const bodyColor = rgbFromColor(getComputedStyle(document.body).backgroundColor);
+    if (bodyColor && bodyColor.a > .08) {
+      const luminance = .2126 * bodyColor.r + .7152 * bodyColor.g + .0722 * bodyColor.b;
+      return luminance < 128;
+    }
+
+    return false;
+  }
+
+  function updateContrast() {
+    root.classList.toggle('is-on-dark', backgroundIsDark(tx, ty));
+  }
+
   function smoothPath(history) {
     if (history.length < 2) return '';
     const pts = [...history].reverse();
@@ -185,6 +232,7 @@
 
     tx = event.clientX;
     ty = event.clientY;
+    updateContrast();
 
     if (!seenPointer) {
       rx = tx;
