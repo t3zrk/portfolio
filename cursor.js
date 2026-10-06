@@ -54,6 +54,8 @@
     #aju-cursor-root {
       position: fixed;
       inset: 0;
+      width: 100vw;
+      height: 100vh;
       pointer-events: none;
       z-index: 2147483646;
       opacity: 0;
@@ -173,6 +175,31 @@
   document.body.append(root);
   document.documentElement.classList.add('aju-cursor-enabled');
 
+  const pageHost = document.body;
+
+  function syncCursorLayer() {
+    const openDialogs = [...document.querySelectorAll('dialog[open]')];
+    const activeDialog = openDialogs.find(dialog => {
+      try { return dialog.matches(':modal'); }
+      catch { return true; }
+    }) || openDialogs[openDialogs.length - 1];
+    const target = activeDialog || pageHost;
+
+    if (root.parentElement !== target) target.append(root);
+  }
+
+  const dialogObserver = new MutationObserver(syncCursorLayer);
+  dialogObserver.observe(document.documentElement, {
+    subtree: true,
+    childList: true,
+    attributes: true,
+    attributeFilter: ['open']
+  });
+
+  document.addEventListener('close', syncCursorLayer, true);
+  document.addEventListener('cancel', () => requestAnimationFrame(syncCursorLayer), true);
+  syncCursorLayer();
+
   const ring = root.querySelector('.aju-cursor-ring');
   const dot = root.querySelector('.aju-cursor-dot');
   const label = root.querySelector('.aju-cursor-label');
@@ -253,6 +280,7 @@
   window.addEventListener('pointermove', event => {
     if (event.pointerType && event.pointerType !== 'mouse' && event.pointerType !== 'pen') return;
 
+    syncCursorLayer();
     tx = event.clientX;
     ty = event.clientY;
     updateContrast();
