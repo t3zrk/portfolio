@@ -63,9 +63,8 @@
       top: 0;
       width: 28px;
       height: 28px;
-      border: 1.7px solid #fff;
+      border: 1.7px solid #ff0000;
       border-radius: 50%;
-      mix-blend-mode: difference;
       transform: translate(-50%,-50%);
       transition:
         width .2s cubic-bezier(.2,.8,.2,1),
